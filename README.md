@@ -1,3 +1,3 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/e6wqwyotkf2t60ej/branch/master?svg=true)](https://ci.appveyor.com/project/IrynaZakharchenko/librarymanagementsystem/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/e6wqwyotkf2t60ej/branch/master?svg=true)](https://ci.appveyor.com/project/IrynaZakharchenko/librarymanagementsystem/branch/master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/05b8dae713894a189e9d31d2865d4ba4)](https://www.codacy.com/app/IrynaZakharchenko/LibraryManagementSystem?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=IrynaZakharchenko/LibraryManagementSystem&amp;utm_campaign=Badge_Grade)
 # LibraryManagementSystem
 It is system for automation managment of library work. It does nothing for now yet :(
