@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,198 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="adminWelcome" xml:space="preserve">
+    <value>Administaration control window</value>
+  </data>
+  <data name="birth" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="createBook" xml:space="preserve">
+    <value>Create book information</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="deleteConfirm" xml:space="preserve">
+    <value>Do wou want to delete selected</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="editAccountInfo" xml:space="preserve">
+    <value>Window of change information about accounts</value>
+  </data>
+  <data name="editBook" xml:space="preserve">
+    <value>Edit book information</value>
+  </data>
+  <data name="editReaderInfo" xml:space="preserve">
+    <value>Window of change information about readers</value>
+  </data>
+  <data name="errorLoginEmpty" xml:space="preserve">
+    <value>Field "Login" should not be empty</value>
+  </data>
+  <data name="errorLoginUnfulfilledLength" xml:space="preserve">
+    <value>Field "Login" should has length between 6 and 15 symbols</value>
+  </data>
+  <data name="errorPasswordEmpty" xml:space="preserve">
+    <value>Field "Password" should not be empty</value>
+  </data>
+  <data name="failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="fullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="FullTitle" xml:space="preserve">
+    <value>Full title</value>
+  </data>
+  <data name="getBook" xml:space="preserve">
+    <value>Return book to library</value>
+  </data>
+  <data name="giveBook" xml:space="preserve">
+    <value>Give book to reader</value>
+  </data>
+  <data name="importantFieldMark" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="isbn" xml:space="preserve">
+    <value>ISBN code</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="librarian" xml:space="preserve">
+    <value>Librarian</value>
+  </data>
+  <data name="librarianWelcome" xml:space="preserve">
+    <value>Librarian management window</value>
+  </data>
+  <data name="location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="logon" xml:space="preserve">
+    <value>Log on</value>
+  </data>
+  <data name="logonFailed" xml:space="preserve">
+    <value>Log on failed</value>
+  </data>
+  <data name="manageBook" xml:space="preserve">
+    <value>Manage books</value>
+  </data>
+  <data name="manageReader" xml:space="preserve">
+    <value>Manage reader accounts</value>
+  </data>
+  <data name="parentSubject" xml:space="preserve">
+    <value>Parent Subject</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>Mobile Phone: +380</value>
+  </data>
+  <data name="position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="publishDate" xml:space="preserve">
+    <value>Publish Date</value>
+  </data>
+  <data name="publishHouse" xml:space="preserve">
+    <value>Publish House</value>
+  </data>
+  <data name="PublishHouseName" xml:space="preserve">
+    <value>Name </value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="series" xml:space="preserve">
+    <value>Series</value>
+  </data>
+  <data name="showInfo" xml:space="preserve">
+    <value>Show details</value>
+  </data>
+  <data name="statusStripAdminMain" xml:space="preserve">
+    <value>Type name of user that you want to find</value>
+  </data>
+  <data name="statusStripControlAdmin" xml:space="preserve">
+    <value>Create new user in system. Fill all fields that mark with *</value>
+  </data>
+  <data name="statusStripLogOn" xml:space="preserve">
+    <value>Log on and start work with system</value>
+  </data>
+  <data name="statusStripStockmanMain" xml:space="preserve">
+    <value>Type title of book that you want to find</value>
+  </data>
+  <data name="stockman" xml:space="preserve">
+    <value>Stockman</value>
+  </data>
+  <data name="stockmanWelcome" xml:space="preserve">
+    <value>Stockman control window</value>
+  </data>
+  <data name="subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="successfull" xml:space="preserve">
+    <value>Successfull</value>
+  </data>
+  <data name="tabAccountName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="tabAccountType" xml:space="preserve">
+    <value>Account type</value>
+  </data>
+  <data name="tabAuthor" xml:space="preserve">
+    <value>Authors</value>
+  </data>
+  <data name="tabBook" xml:space="preserve">
+    <value>Book's title</value>
+  </data>
+  <data name="tipsAccountType" xml:space="preserve">
+    <value>Choice how you want to log on to system</value>
+  </data>
+  <data name="tipsLogin" xml:space="preserve">
+    <value>Enter your login for log on to library system</value>
+  </data>
+  <data name="tipsPassword" xml:space="preserve">
+    <value>Enter your password for log on to library system</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="viewBook" xml:space="preserve">
+    <value>Book information</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Welcome to library managment system</value>
+  </data>
 </root>
