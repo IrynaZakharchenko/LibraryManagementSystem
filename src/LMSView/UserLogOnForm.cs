@@ -5,13 +5,13 @@ namespace LMSView
 {
     public partial class UserLogOnForm : Form
     {
-        private AccountPermissionWindowControl managerForms;
+        private UserPermissionCheck managerForms;
         private const int countLogonAttempts = 5;
 
         public UserLogOnForm()
         {
             InitializeComponent();
-            managerForms = new AccountPermissionWindowControl(this);
+            managerForms = new UserPermissionCheck(this);
         }
 
         private void UserLogOnForm_Load(object sender, System.EventArgs e)

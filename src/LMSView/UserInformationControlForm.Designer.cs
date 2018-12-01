@@ -1,6 +1,6 @@
 ﻿namespace LMSView
 {
-    partial class AccountControlPanel
+    partial class UserInformationControlForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelPosition = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonModify = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.statusStripAdminControlPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -225,7 +225,7 @@
             this.tableLayoutPanel1.Controls.Add(this.textBoxPhone, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.dateTimeBirth, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxPosition, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.buttonModify, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSave, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.buttonDelete, 0, 9);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 16);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(7);
@@ -246,15 +246,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(617, 396);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // buttonModify
+            // buttonSave
             // 
-            this.buttonModify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonModify.Location = new System.Drawing.Point(170, 353);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(439, 35);
-            this.buttonModify.TabIndex = 27;
-            this.buttonModify.UseVisualStyleBackColor = true;
-            this.buttonModify.Click += new System.EventHandler(this.ButtonModify_Click);
+            this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSave.Location = new System.Drawing.Point(170, 353);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(439, 35);
+            this.buttonSave.TabIndex = 27;
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // buttonDelete
             // 
@@ -266,15 +266,15 @@
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
-            // AccountControlPanel
+            // UserInformationControlForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(643, 448);
             this.Controls.Add(this.statusStripAdminControlPanel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Name = "AccountControlPanel";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.AccountControlPanel_Paint);
+            this.Name = "UserInformationControlForm";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.UserInformationControlForm_Paint);
             this.statusStripAdminControlPanel.ResumeLayout(false);
             this.statusStripAdminControlPanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -301,7 +301,7 @@
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelPosition;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button buttonModify;
+        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAccounts;
     }

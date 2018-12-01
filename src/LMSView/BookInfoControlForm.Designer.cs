@@ -1,6 +1,6 @@
 ﻿namespace LMSView
 {
-    partial class BookControlPanel
+    partial class BookInfoControlForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,8 @@
             this.labelFullTitle = new System.Windows.Forms.Label();
             this.textBoxSubjectParent = new System.Windows.Forms.TextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonModify = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonAddBooksExamples = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -80,16 +81,17 @@
             this.tableLayoutPanel1.Controls.Add(this.labelFullTitle, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.textBoxSubjectParent, 1, 11);
             this.tableLayoutPanel1.Controls.Add(this.buttonDelete, 0, 13);
-            this.tableLayoutPanel1.Controls.Add(this.buttonModify, 1, 13);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSave, 1, 13);
+            this.tableLayoutPanel1.Controls.Add(this.buttonAddBooksExamples, 1, 14);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 15;
+            this.tableLayoutPanel1.RowCount = 16;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.02932F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
@@ -99,8 +101,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(705, 461);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(754, 478);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // labelTitle
@@ -108,9 +111,9 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTitle.Location = new System.Drawing.Point(3, 30);
+            this.labelTitle.Location = new System.Drawing.Point(3, 27);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(155, 36);
+            this.labelTitle.Size = new System.Drawing.Size(166, 37);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -119,9 +122,9 @@
             this.labelIsbn.AutoSize = true;
             this.labelIsbn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelIsbn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelIsbn.Location = new System.Drawing.Point(3, 150);
+            this.labelIsbn.Location = new System.Drawing.Point(3, 147);
             this.labelIsbn.Name = "labelIsbn";
-            this.labelIsbn.Size = new System.Drawing.Size(155, 33);
+            this.labelIsbn.Size = new System.Drawing.Size(166, 33);
             this.labelIsbn.TabIndex = 2;
             this.labelIsbn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -130,9 +133,9 @@
             this.labelLanguage.AutoSize = true;
             this.labelLanguage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelLanguage.Location = new System.Drawing.Point(3, 183);
+            this.labelLanguage.Location = new System.Drawing.Point(3, 180);
             this.labelLanguage.Name = "labelLanguage";
-            this.labelLanguage.Size = new System.Drawing.Size(155, 32);
+            this.labelLanguage.Size = new System.Drawing.Size(166, 32);
             this.labelLanguage.TabIndex = 3;
             this.labelLanguage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -141,9 +144,9 @@
             this.labelPublishDate.AutoSize = true;
             this.labelPublishDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelPublishDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPublishDate.Location = new System.Drawing.Point(3, 215);
+            this.labelPublishDate.Location = new System.Drawing.Point(3, 212);
             this.labelPublishDate.Name = "labelPublishDate";
-            this.labelPublishDate.Size = new System.Drawing.Size(155, 29);
+            this.labelPublishDate.Size = new System.Drawing.Size(166, 29);
             this.labelPublishDate.TabIndex = 4;
             this.labelPublishDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -152,9 +155,9 @@
             this.labelPublishHouse.AutoSize = true;
             this.labelPublishHouse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPublishHouse.Location = new System.Drawing.Point(3, 244);
+            this.labelPublishHouse.Location = new System.Drawing.Point(3, 241);
             this.labelPublishHouse.Name = "labelPublishHouse";
-            this.labelPublishHouse.Size = new System.Drawing.Size(155, 35);
+            this.labelPublishHouse.Size = new System.Drawing.Size(166, 35);
             this.labelPublishHouse.TabIndex = 5;
             this.labelPublishHouse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -163,9 +166,9 @@
             this.labelSeries.AutoSize = true;
             this.labelSeries.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelSeries.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSeries.Location = new System.Drawing.Point(3, 279);
+            this.labelSeries.Location = new System.Drawing.Point(3, 276);
             this.labelSeries.Name = "labelSeries";
-            this.labelSeries.Size = new System.Drawing.Size(155, 37);
+            this.labelSeries.Size = new System.Drawing.Size(166, 37);
             this.labelSeries.TabIndex = 6;
             this.labelSeries.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -174,9 +177,9 @@
             this.labelSubject.AutoSize = true;
             this.labelSubject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelSubject.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelSubject.Location = new System.Drawing.Point(3, 316);
+            this.labelSubject.Location = new System.Drawing.Point(3, 313);
             this.labelSubject.Name = "labelSubject";
-            this.labelSubject.Size = new System.Drawing.Size(155, 23);
+            this.labelSubject.Size = new System.Drawing.Size(166, 23);
             this.labelSubject.TabIndex = 7;
             this.labelSubject.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -185,42 +188,42 @@
             this.labelParentSubject.AutoSize = true;
             this.labelParentSubject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelParentSubject.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelParentSubject.Location = new System.Drawing.Point(3, 339);
+            this.labelParentSubject.Location = new System.Drawing.Point(3, 336);
             this.labelParentSubject.Name = "labelParentSubject";
-            this.labelParentSubject.Size = new System.Drawing.Size(155, 24);
+            this.labelParentSubject.Size = new System.Drawing.Size(166, 24);
             this.labelParentSubject.TabIndex = 8;
             this.labelParentSubject.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxTitle
             // 
             this.textBoxTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxTitle.Location = new System.Drawing.Point(164, 33);
+            this.textBoxTitle.Location = new System.Drawing.Point(175, 30);
             this.textBoxTitle.Multiline = true;
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(538, 30);
+            this.textBoxTitle.Size = new System.Drawing.Size(576, 31);
             this.textBoxTitle.TabIndex = 9;
             // 
             // textBoxFullTitle
             // 
             this.textBoxFullTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxFullTitle.Location = new System.Drawing.Point(164, 69);
+            this.textBoxFullTitle.Location = new System.Drawing.Point(175, 67);
             this.textBoxFullTitle.Multiline = true;
             this.textBoxFullTitle.Name = "textBoxFullTitle";
-            this.textBoxFullTitle.Size = new System.Drawing.Size(538, 78);
+            this.textBoxFullTitle.Size = new System.Drawing.Size(576, 77);
             this.textBoxFullTitle.TabIndex = 10;
             // 
             // textBoxIsbn
             // 
             this.textBoxIsbn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxIsbn.Location = new System.Drawing.Point(164, 153);
+            this.textBoxIsbn.Location = new System.Drawing.Point(175, 150);
             this.textBoxIsbn.Multiline = true;
             this.textBoxIsbn.Name = "textBoxIsbn";
-            this.textBoxIsbn.Size = new System.Drawing.Size(538, 27);
+            this.textBoxIsbn.Size = new System.Drawing.Size(576, 27);
             this.textBoxIsbn.TabIndex = 11;
             // 
             // dateTimePickerPublish
             // 
-            this.dateTimePickerPublish.Location = new System.Drawing.Point(164, 218);
+            this.dateTimePickerPublish.Location = new System.Drawing.Point(175, 215);
             this.dateTimePickerPublish.Name = "dateTimePickerPublish";
             this.dateTimePickerPublish.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerPublish.TabIndex = 13;
@@ -228,10 +231,10 @@
             // textBoxLanguage
             // 
             this.textBoxLanguage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxLanguage.Location = new System.Drawing.Point(164, 186);
+            this.textBoxLanguage.Location = new System.Drawing.Point(175, 183);
             this.textBoxLanguage.Multiline = true;
             this.textBoxLanguage.Name = "textBoxLanguage";
-            this.textBoxLanguage.Size = new System.Drawing.Size(538, 26);
+            this.textBoxLanguage.Size = new System.Drawing.Size(576, 26);
             this.textBoxLanguage.TabIndex = 15;
             // 
             // tableLayoutPanel2
@@ -239,24 +242,24 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.00483F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.99517F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel2.Controls.Add(this.buttonSearchPublishHouse, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxPublishHouse, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonAddPublishHouse, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(164, 247);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(175, 244);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(538, 29);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(576, 29);
             this.tableLayoutPanel2.TabIndex = 16;
             // 
             // buttonSearchPublishHouse
             // 
             this.buttonSearchPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSearchPublishHouse.Location = new System.Drawing.Point(221, 3);
+            this.buttonSearchPublishHouse.Location = new System.Drawing.Point(240, 3);
             this.buttonSearchPublishHouse.Name = "buttonSearchPublishHouse";
-            this.buttonSearchPublishHouse.Size = new System.Drawing.Size(158, 23);
+            this.buttonSearchPublishHouse.Size = new System.Drawing.Size(172, 23);
             this.buttonSearchPublishHouse.TabIndex = 1;
             this.buttonSearchPublishHouse.UseVisualStyleBackColor = true;
             this.buttonSearchPublishHouse.Click += new System.EventHandler(this.buttonSearchPublishHouse_Click);
@@ -267,15 +270,15 @@
             this.textBoxPublishHouse.Location = new System.Drawing.Point(3, 3);
             this.textBoxPublishHouse.Multiline = true;
             this.textBoxPublishHouse.Name = "textBoxPublishHouse";
-            this.textBoxPublishHouse.Size = new System.Drawing.Size(212, 23);
+            this.textBoxPublishHouse.Size = new System.Drawing.Size(231, 23);
             this.textBoxPublishHouse.TabIndex = 2;
             // 
             // buttonAddPublishHouse
             // 
             this.buttonAddPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAddPublishHouse.Location = new System.Drawing.Point(385, 3);
+            this.buttonAddPublishHouse.Location = new System.Drawing.Point(418, 3);
             this.buttonAddPublishHouse.Name = "buttonAddPublishHouse";
-            this.buttonAddPublishHouse.Size = new System.Drawing.Size(150, 23);
+            this.buttonAddPublishHouse.Size = new System.Drawing.Size(155, 23);
             this.buttonAddPublishHouse.TabIndex = 3;
             this.buttonAddPublishHouse.UseVisualStyleBackColor = true;
             this.buttonAddPublishHouse.Click += new System.EventHandler(this.ButtonAddPublishHouse_Click);
@@ -283,18 +286,18 @@
             // textBoxSeries
             // 
             this.textBoxSeries.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSeries.Location = new System.Drawing.Point(164, 282);
+            this.textBoxSeries.Location = new System.Drawing.Point(175, 279);
             this.textBoxSeries.Multiline = true;
             this.textBoxSeries.Name = "textBoxSeries";
-            this.textBoxSeries.Size = new System.Drawing.Size(538, 31);
+            this.textBoxSeries.Size = new System.Drawing.Size(576, 31);
             this.textBoxSeries.TabIndex = 17;
             // 
             // textBoxSubject
             // 
             this.textBoxSubject.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSubject.Location = new System.Drawing.Point(164, 319);
+            this.textBoxSubject.Location = new System.Drawing.Point(175, 316);
             this.textBoxSubject.Name = "textBoxSubject";
-            this.textBoxSubject.Size = new System.Drawing.Size(538, 20);
+            this.textBoxSubject.Size = new System.Drawing.Size(576, 20);
             this.textBoxSubject.TabIndex = 18;
             // 
             // labelFullTitle
@@ -302,47 +305,57 @@
             this.labelFullTitle.AutoSize = true;
             this.labelFullTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelFullTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFullTitle.Location = new System.Drawing.Point(3, 66);
+            this.labelFullTitle.Location = new System.Drawing.Point(3, 64);
             this.labelFullTitle.Name = "labelFullTitle";
-            this.labelFullTitle.Size = new System.Drawing.Size(155, 84);
+            this.labelFullTitle.Size = new System.Drawing.Size(166, 83);
             this.labelFullTitle.TabIndex = 20;
             this.labelFullTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxSubjectParent
             // 
             this.textBoxSubjectParent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSubjectParent.Location = new System.Drawing.Point(164, 342);
+            this.textBoxSubjectParent.Location = new System.Drawing.Point(175, 339);
             this.textBoxSubjectParent.Name = "textBoxSubjectParent";
-            this.textBoxSubjectParent.Size = new System.Drawing.Size(538, 20);
+            this.textBoxSubjectParent.Size = new System.Drawing.Size(576, 20);
             this.textBoxSubjectParent.TabIndex = 21;
             // 
             // buttonDelete
             // 
             this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonDelete.Location = new System.Drawing.Point(3, 394);
+            this.buttonDelete.Location = new System.Drawing.Point(3, 391);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(155, 32);
+            this.buttonDelete.Size = new System.Drawing.Size(166, 32);
             this.buttonDelete.TabIndex = 22;
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
-            // buttonModify
+            // buttonSave
             // 
-            this.buttonModify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonModify.Location = new System.Drawing.Point(164, 394);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(538, 32);
-            this.buttonModify.TabIndex = 23;
-            this.buttonModify.UseVisualStyleBackColor = true;
-            this.buttonModify.Click += new System.EventHandler(this.ButtonModify_Click);
+            this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSave.Location = new System.Drawing.Point(175, 391);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(576, 32);
+            this.buttonSave.TabIndex = 23;
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // BookControlPanel
+            // buttonAddBooksExamples
+            // 
+            this.buttonAddBooksExamples.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAddBooksExamples.Location = new System.Drawing.Point(175, 429);
+            this.buttonAddBooksExamples.Name = "buttonAddBooksExamples";
+            this.buttonAddBooksExamples.Size = new System.Drawing.Size(576, 31);
+            this.buttonAddBooksExamples.TabIndex = 24;
+            this.buttonAddBooksExamples.UseVisualStyleBackColor = true;
+            this.buttonAddBooksExamples.Click += new System.EventHandler(this.ButtonAddBooksExamples_Click);
+            // 
+            // BookInfoControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 461);
+            this.ClientSize = new System.Drawing.Size(754, 478);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "BookControlPanel";
+            this.Name = "BookInfoControlForm";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.BookControlPanel_Paint);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -375,8 +388,9 @@
         private System.Windows.Forms.Label labelFullTitle;
         private System.Windows.Forms.TextBox textBoxSubjectParent;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonModify;
+        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TextBox textBoxPublishHouse;
         private System.Windows.Forms.Button buttonAddPublishHouse;
+        private System.Windows.Forms.Button buttonAddBooksExamples;
     }
 }

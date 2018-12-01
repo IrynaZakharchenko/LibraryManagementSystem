@@ -150,8 +150,8 @@
   <data name="edit" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="editAccountInfo" xml:space="preserve">
-    <value>Window of change information about accounts</value>
+  <data name="editUserInfo" xml:space="preserve">
+    <value>Window of change information about users</value>
   </data>
   <data name="editBook" xml:space="preserve">
     <value>Edit book information</value>
@@ -211,10 +211,10 @@
     <value>Log on failed</value>
   </data>
   <data name="manageBook" xml:space="preserve">
-    <value>Manage books</value>
+    <value>Book information</value>
   </data>
-  <data name="manageReader" xml:space="preserve">
-    <value>Manage reader accounts</value>
+  <data name="manageUser" xml:space="preserve">
+    <value>User information</value>
   </data>
   <data name="parentSubject" xml:space="preserve">
     <value>Parent Subject</value>
@@ -234,11 +234,8 @@
   <data name="publishHouse" xml:space="preserve">
     <value>Publish House</value>
   </data>
-  <data name="PublishHouseName" xml:space="preserve">
+  <data name="publishHouseName" xml:space="preserve">
     <value>Name </value>
-  </data>
-  <data name="reset" xml:space="preserve">
-    <value>Reset</value>
   </data>
   <data name="save" xml:space="preserve">
     <value>Save</value>
@@ -288,13 +285,49 @@
   <data name="Title" xml:space="preserve">
     <value>Title</value>
   </data>
-  <data name="viewBook" xml:space="preserve">
-    <value>Book information</value>
-  </data>
   <data name="welcome" xml:space="preserve">
     <value>Welcome to library managment system</value>
   </data>
-  <data name="accountInfo" xml:space="preserve">
-    <value>Account information</value>
+  <data name="userInfo" xml:space="preserve">
+    <value>User information</value>
+  </data>
+  <data name="libraryNumTicket" xml:space="preserve">
+    <value>Library number ticket</value>
+  </data>
+  <data name="client" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="bookList" xml:space="preserve">
+    <value>List of books on client hands</value>
+  </data>
+  <data name="bookNum" xml:space="preserve">
+    <value>Inventory book number</value>
+  </data>
+  <data name="clientCreate" xml:space="preserve">
+    <value> Create client information</value>
+  </data>
+  <data name="clientEdit" xml:space="preserve">
+    <value>Edit client information</value>
+  </data>
+  <data name="createClient" xml:space="preserve">
+    <value>Create new client</value>
+  </data>
+  <data name="personalInfo" xml:space="preserve">
+    <value>View personal client information</value>
+  </data>
+  <data name="returnBook" xml:space="preserve">
+    <value>Return book</value>
+  </data>
+  <data name="rentBook" xml:space="preserve">
+    <value>Rent book on user hand</value>
+  </data>
+  <data name="bookLibExample" xml:space="preserve">
+    <value>Add new book examples</value>
+  </data>
+  <data name="listBookNum" xml:space="preserve">
+    <value>All inventory numbers for current isbn</value>
+  </data>
+  <data name="setBookNum" xml:space="preserve">
+    <value>Set inventory code for book</value>
   </data>
 </root>

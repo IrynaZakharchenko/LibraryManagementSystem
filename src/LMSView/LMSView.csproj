@@ -40,6 +40,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -74,6 +75,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookInfoSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookInfoSearchForm.Designer.cs">
+      <DependentUpon>BookInfoSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookLibraryInfoControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookLibraryInfoControlForm.Designer.cs">
+      <DependentUpon>BookLibraryInfoControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientLibraryInfoControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientLibraryInfoControlForm.Designer.cs">
+      <DependentUpon>ClientLibraryInfoControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfoSearchForm.Designer.cs">
+      <DependentUpon>UserInfoSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookInfoControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookInfoControlForm.Designer.cs">
+      <DependentUpon>BookInfoControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NViewHelper.cs" />
+    <Compile Include="PublishHouseControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublishHouseControlForm.Designer.cs">
+      <DependentUpon>PublishHouseControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPersonalInfoControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientPersonalInfoControlForm.Designer.cs">
+      <DependentUpon>ClientPersonalInfoControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPermissionCheck.cs" />
+    <Compile Include="UserInformationControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInformationControlForm.Designer.cs">
+      <DependentUpon>UserInformationControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibrarianControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibrarianControlForm.Designer.cs">
+      <DependentUpon>LibrarianControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserLogOnForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +139,27 @@
     </Compile>
     <Compile Include="LMS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BookInfoSearchForm.resx">
+      <DependentUpon>BookInfoSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookLibraryInfoControlForm.resx">
+      <DependentUpon>BookLibraryInfoControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientLibraryInfoControlForm.resx">
+      <DependentUpon>ClientLibraryInfoControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInfoSearchForm.resx">
+      <DependentUpon>UserInfoSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInformationControlForm.resx">
+      <DependentUpon>UserInformationControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookInfoControlForm.resx">
+      <DependentUpon>BookInfoControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibrarianControlForm.resx">
+      <DependentUpon>LibrarianControlForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,7 +168,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="PublishHouseControlForm.resx">
+      <DependentUpon>PublishHouseControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientPersonalInfoControlForm.resx">
+      <DependentUpon>ClientPersonalInfoControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLogOnForm.resx">
+      <DependentUpon>UserLogOnForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="LibraryManagementSystem.snk" />
     <None Include="LMSView.snk" />
     <None Include="Properties\Settings.settings">

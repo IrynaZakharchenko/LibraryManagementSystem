@@ -1,6 +1,6 @@
 ﻿namespace LMSView
 {
-    partial class AccountsBooksListControlPanel
+    partial class UserInfoSearchForm
     {
         /// <summary>
         /// Required designer variable.
@@ -69,7 +69,7 @@
             this.buttonSearch.Size = new System.Drawing.Size(8, 8);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // statusStripControl
             // 
@@ -101,7 +101,7 @@
             this.buttonCreate.Size = new System.Drawing.Size(8, 8);
             this.buttonCreate.TabIndex = 5;
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
             // 
             // AccountsBooksListControlPanel
             // 

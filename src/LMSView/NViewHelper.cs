@@ -10,9 +10,8 @@ namespace LMSView
     { 
         public enum FormViewMode
         {
-            Modify,
-            Create,
-            View
+            Edit,
+            Create
         }
 
         public enum AccountMode

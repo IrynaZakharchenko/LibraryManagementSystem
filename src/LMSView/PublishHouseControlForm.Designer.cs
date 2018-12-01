@@ -1,6 +1,6 @@
 ﻿namespace LMSView
 {
-    partial class PublishHouseControlPanel
+    partial class PublishHouseControlForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             this.labelLocation = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonModify = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.tableLayoutPanel1.Controls.Add(this.labelLocation, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonDelete, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.buttonModify, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSave, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.textBoxName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 3);
@@ -110,15 +110,15 @@
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
             // 
-            // buttonModify
+            // buttonSave
             // 
-            this.buttonModify.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonModify.Location = new System.Drawing.Point(252, 182);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(243, 27);
-            this.buttonModify.TabIndex = 9;
-            this.buttonModify.UseVisualStyleBackColor = true;
-            this.buttonModify.Click += new System.EventHandler(this.ButtonModify_Click);
+            this.buttonSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSave.Location = new System.Drawing.Point(252, 182);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(243, 27);
+            this.buttonSave.TabIndex = 9;
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxName
             // 
@@ -147,13 +147,13 @@
             this.textBox3.Size = new System.Drawing.Size(243, 28);
             this.textBox3.TabIndex = 12;
             // 
-            // PublishHouseControlPanel
+            // PublishHouseControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 248);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "PublishHouseControlPanel";
+            this.Name = "PublishHouseControlForm";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PublishHouseControlPanelcs_Paint);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -168,7 +168,7 @@
         private System.Windows.Forms.Label labelCategory;
         private System.Windows.Forms.Label labelLocation;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonModify;
+        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;

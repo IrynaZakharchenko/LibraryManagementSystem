@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace LMSView
 {
-    public partial class AccountsBooksListControlPanel : Form
+    public partial class UserInfoSearchForm : Form
     {
         private readonly NViewHelper.AccountMode mUserMode;
 
-        public AccountsBooksListControlPanel(NViewHelper.AccountMode user)
+        public UserInfoSearchForm(NViewHelper.AccountMode user)
         {
             mUserMode = user;
             InitializeComponent();
@@ -36,36 +36,36 @@ namespace LMSView
             buttonCreate.Text = Properties.Resources.create;
         }
         
-        private void buttonSearch_Click(object sender, EventArgs e)
+        private void ButtonSearch_Click(object sender, EventArgs e)
         {
             if (NViewHelper.AccountMode.Stockman == mUserMode)
             {
-                using (BookControlPanel bookForm = new BookControlPanel(NViewHelper.FormViewMode.View))
+                using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Edit))
                 {
                     bookForm.ShowDialog();
                 }
             }
             else
             {
-                using (AccountControlPanel accountForm = new AccountControlPanel(NViewHelper.FormViewMode.View))
+                using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Edit))
                 {
                     accountForm.ShowDialog();
                 }
             }
         }
 
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void ButtonCreate_Click(object sender, EventArgs e)
         {
             if (NViewHelper.AccountMode.Stockman == mUserMode)
             {
-                using (BookControlPanel bookForm = new BookControlPanel(NViewHelper.FormViewMode.Create))
+                using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Create))
                 {
                     bookForm.ShowDialog();
                 }
             }
             else
             {
-                using (AccountControlPanel accountForm = new AccountControlPanel(NViewHelper.FormViewMode.Create))
+                using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Create))
                 {
                     accountForm.ShowDialog();
                 }

@@ -9,16 +9,16 @@ using System.Globalization;
 
 namespace LMSView
 {
-    class AccountPermissionWindowControl
+    class UserPermissionCheck
     {
         private Form mStartWindow;
 
-        public AccountPermissionWindowControl(Form startupWindow)
+        public UserPermissionCheck(Form startupWindow)
         {
             mStartWindow = startupWindow;
         }
 
-        private static NViewHelper.AccountMode checkPermission(string login)
+        private static NViewHelper.AccountMode CheckPermission(string login)
         {
             if(true == String.Equals(Properties.Resources.librarian.ToLower(CultureInfo.CurrentCulture), login))
             {
@@ -42,17 +42,17 @@ namespace LMSView
         {
             mStartWindow.Hide();
 
-            NViewHelper.AccountMode userPermission = checkPermission(login);
+            NViewHelper.AccountMode userPermission = CheckPermission(login);
             if(NViewHelper.AccountMode.Library == userPermission)
             {
-                using (LibrarianControlPanel mLibraryManageWin = new LibrarianControlPanel())
+                using (LibrarianControlForm mLibraryManageWin = new LibrarianControlForm())
                 {
                     mLibraryManageWin.ShowDialog();
                 }                
             }
             else
             {
-                using (AccountsBooksListControlPanel mAdminStockmanManageWin = new AccountsBooksListControlPanel(userPermission))
+                using (UserInfoSearchForm mAdminStockmanManageWin = new UserInfoSearchForm(userPermission))
                 {
                     mAdminStockmanManageWin.ShowDialog();
                 }

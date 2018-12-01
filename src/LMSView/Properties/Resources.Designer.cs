@@ -61,15 +61,6 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Account information.
-        /// </summary>
-        internal static string accountInfo {
-            get {
-                return ResourceManager.GetString("accountInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
         internal static string add {
@@ -115,11 +106,65 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new book examples.
+        /// </summary>
+        internal static string bookLibExample {
+            get {
+                return ResourceManager.GetString("bookLibExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List of books on client hands.
+        /// </summary>
+        internal static string bookList {
+            get {
+                return ResourceManager.GetString("bookList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory book number.
+        /// </summary>
+        internal static string bookNum {
+            get {
+                return ResourceManager.GetString("bookNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Category.
         /// </summary>
         internal static string category {
             get {
                 return ResourceManager.GetString("category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client.
+        /// </summary>
+        internal static string client {
+            get {
+                return ResourceManager.GetString("client", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Create client information.
+        /// </summary>
+        internal static string clientCreate {
+            get {
+                return ResourceManager.GetString("clientCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit client information.
+        /// </summary>
+        internal static string clientEdit {
+            get {
+                return ResourceManager.GetString("clientEdit", resourceCulture);
             }
         }
         
@@ -138,6 +183,15 @@ namespace LMSView.Properties {
         internal static string createBook {
             get {
                 return ResourceManager.GetString("createBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create new client.
+        /// </summary>
+        internal static string createClient {
+            get {
+                return ResourceManager.GetString("createClient", resourceCulture);
             }
         }
         
@@ -169,15 +223,6 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Window of change information about accounts.
-        /// </summary>
-        internal static string editAccountInfo {
-            get {
-                return ResourceManager.GetString("editAccountInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Edit book information.
         /// </summary>
         internal static string editBook {
@@ -192,6 +237,15 @@ namespace LMSView.Properties {
         internal static string editReaderInfo {
             get {
                 return ResourceManager.GetString("editReaderInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Window of change information about users.
+        /// </summary>
+        internal static string editUserInfo {
+            get {
+                return ResourceManager.GetString("editUserInfo", resourceCulture);
             }
         }
         
@@ -313,6 +367,24 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Library number ticket.
+        /// </summary>
+        internal static string libraryNumTicket {
+            get {
+                return ResourceManager.GetString("libraryNumTicket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All inventory numbers for current isbn.
+        /// </summary>
+        internal static string listBookNum {
+            get {
+                return ResourceManager.GetString("listBookNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location.
         /// </summary>
         internal static string location {
@@ -349,7 +421,7 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage books.
+        ///   Looks up a localized string similar to Book information.
         /// </summary>
         internal static string manageBook {
             get {
@@ -358,11 +430,11 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manage reader accounts.
+        ///   Looks up a localized string similar to User information.
         /// </summary>
-        internal static string manageReader {
+        internal static string manageUser {
             get {
-                return ResourceManager.GetString("manageReader", resourceCulture);
+                return ResourceManager.GetString("manageUser", resourceCulture);
             }
         }
         
@@ -381,6 +453,15 @@ namespace LMSView.Properties {
         internal static string password {
             get {
                 return ResourceManager.GetString("password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View personal client information.
+        /// </summary>
+        internal static string personalInfo {
+            get {
+                return ResourceManager.GetString("personalInfo", resourceCulture);
             }
         }
         
@@ -423,18 +504,27 @@ namespace LMSView.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Name .
         /// </summary>
-        internal static string PublishHouseName {
+        internal static string publishHouseName {
             get {
-                return ResourceManager.GetString("PublishHouseName", resourceCulture);
+                return ResourceManager.GetString("publishHouseName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reset.
+        ///   Looks up a localized string similar to Rent book on user hand.
         /// </summary>
-        internal static string reset {
+        internal static string rentBook {
             get {
-                return ResourceManager.GetString("reset", resourceCulture);
+                return ResourceManager.GetString("rentBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Return book.
+        /// </summary>
+        internal static string returnBook {
+            get {
+                return ResourceManager.GetString("returnBook", resourceCulture);
             }
         }
         
@@ -462,6 +552,15 @@ namespace LMSView.Properties {
         internal static string series {
             get {
                 return ResourceManager.GetString("series", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set inventory code for book.
+        /// </summary>
+        internal static string setBookNum {
+            get {
+                return ResourceManager.GetString("setBookNum", resourceCulture);
             }
         }
         
@@ -583,11 +682,11 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Book information.
+        ///   Looks up a localized string similar to User information.
         /// </summary>
-        internal static string viewBook {
+        internal static string userInfo {
             get {
-                return ResourceManager.GetString("viewBook", resourceCulture);
+                return ResourceManager.GetString("userInfo", resourceCulture);
             }
         }
         
