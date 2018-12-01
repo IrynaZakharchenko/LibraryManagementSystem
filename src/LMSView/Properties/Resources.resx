@@ -276,18 +276,6 @@
   <data name="successfull" xml:space="preserve">
     <value>Successfull</value>
   </data>
-  <data name="tabAccountName" xml:space="preserve">
-    <value>Full Name</value>
-  </data>
-  <data name="tabAccountType" xml:space="preserve">
-    <value>Account type</value>
-  </data>
-  <data name="tabAuthor" xml:space="preserve">
-    <value>Authors</value>
-  </data>
-  <data name="tabBook" xml:space="preserve">
-    <value>Book's title</value>
-  </data>
   <data name="tipsAccountType" xml:space="preserve">
     <value>Choice how you want to log on to system</value>
   </data>
@@ -305,5 +293,8 @@
   </data>
   <data name="welcome" xml:space="preserve">
     <value>Welcome to library managment system</value>
+  </data>
+  <data name="accountInfo" xml:space="preserve">
+    <value>Account information</value>
   </data>
 </root>

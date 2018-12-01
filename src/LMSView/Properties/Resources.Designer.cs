@@ -61,6 +61,15 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account information.
+        /// </summary>
+        internal static string accountInfo {
+            get {
+                return ResourceManager.GetString("accountInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
         internal static string add {
@@ -534,42 +543,6 @@ namespace LMSView.Properties {
         internal static string successfull {
             get {
                 return ResourceManager.GetString("successfull", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Full Name.
-        /// </summary>
-        internal static string tabAccountName {
-            get {
-                return ResourceManager.GetString("tabAccountName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Account type.
-        /// </summary>
-        internal static string tabAccountType {
-            get {
-                return ResourceManager.GetString("tabAccountType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Authors.
-        /// </summary>
-        internal static string tabAuthor {
-            get {
-                return ResourceManager.GetString("tabAuthor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Book&apos;s title.
-        /// </summary>
-        internal static string tabBook {
-            get {
-                return ResourceManager.GetString("tabBook", resourceCulture);
             }
         }
         
