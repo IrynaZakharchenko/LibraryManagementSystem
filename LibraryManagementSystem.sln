@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{13E620
 		.nuget\nuget.config = .nuget\nuget.config
 	EndProjectSection
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LMSDB", "src\LMSDB\LMSDB.sqlproj", "{96E89473-927D-497F-8259-FC696BCFF013}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,12 @@ Global
 		{A941DFC5-F21D-4FE4-925C-4693B8BE529A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A941DFC5-F21D-4FE4-925C-4693B8BE529A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A941DFC5-F21D-4FE4-925C-4693B8BE529A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E89473-927D-497F-8259-FC696BCFF013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E89473-927D-497F-8259-FC696BCFF013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E89473-927D-497F-8259-FC696BCFF013}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{96E89473-927D-497F-8259-FC696BCFF013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E89473-927D-497F-8259-FC696BCFF013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E89473-927D-497F-8259-FC696BCFF013}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
