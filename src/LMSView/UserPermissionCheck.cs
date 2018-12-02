@@ -40,6 +40,7 @@ namespace LMSView
 
         public void Authorization(string login)
         {
+            
             mStartWindow.Hide();
 
             NViewHelper.AccountMode userPermission = CheckPermission(login);

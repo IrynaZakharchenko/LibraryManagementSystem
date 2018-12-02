@@ -36,6 +36,7 @@ namespace LMSView
 
             if (false == string.IsNullOrEmpty(login))
             {
+                
                 managerForms.Authorization(login);
             }
             else

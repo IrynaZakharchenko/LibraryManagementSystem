@@ -54,7 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserOperations.cs" />
+    <Compile Include="CPersonalInformation.cs" />
+    <Compile Include="CUserCredential.cs" />
+    <Compile Include="CUserInformation.cs" />
+    <Compile Include="IAuthentication.cs" />
+    <Compile Include="IBookFinding.cs" />
+    <Compile Include="IClientInformationRegister.cs" />
+    <Compile Include="ILibrararyOperations.cs" />
+    <Compile Include="IUserInformationRegister.cs" />
+    <Compile Include="IWorkspaceAdmin.cs" />
+    <Compile Include="IWorkspaceLibrarian.cs" />
+    <Compile Include="IWorkspaceStockman.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
