@@ -179,7 +179,6 @@
     <EmbeddedResource Include="UserLogOnForm.resx">
       <DependentUpon>UserLogOnForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="LibraryManagementSystem.snk" />
     <None Include="LMSView.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -210,6 +209,12 @@
     <CodeAnalysisDictionary Include="..\..\LMSDictionary.xml">
       <Link>LMSDictionary.xml</Link>
     </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LMSController\LMSController.csproj">
+      <Project>{d0a02cda-94e6-44d4-8332-66ef9ab146ec}</Project>
+      <Name>LMSController</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
