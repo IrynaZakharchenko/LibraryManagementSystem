@@ -25,7 +25,7 @@ namespace LMSView
             buttonCreate.Text = Properties.Resources.create;
         }
 
-        private void buttonSearch_Click(object sender, EventArgs e)
+        private void ButtonSearch_Click(object sender, EventArgs e)
         {
             using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Edit))
             {
@@ -33,7 +33,7 @@ namespace LMSView
             }
         }
 
-        private void buttonCreate_Click(object sender, EventArgs e)
+        private void ButtonCreate_Click(object sender, EventArgs e)
         {
             using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Create))
             {

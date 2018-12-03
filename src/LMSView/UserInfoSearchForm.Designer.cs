@@ -111,7 +111,7 @@
             this.Controls.Add(this.statusStripControl);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UserInfoSearchForm";
-            this.Load += new System.EventHandler(this.AccountsBooksListControlPanel_Load);
+            this.Load += new System.EventHandler(this.UserInfoSearchForm_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.statusStripControl.ResumeLayout(false);

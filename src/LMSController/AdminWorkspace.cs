@@ -8,9 +8,11 @@ namespace LMSController
 {
     public class AdminWorkspace : IWorkspaceAdmin
     {
+        private IUserInformationRegister adminAllowedOperations = new UserInformationRegister();
+
         public IUserInformationRegister GetUserInformationRegister()
         {
-            throw new NotImplementedException();
+            return adminAllowedOperations;
         }
     }
 }

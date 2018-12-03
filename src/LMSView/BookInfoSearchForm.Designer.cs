@@ -56,7 +56,7 @@
             this.buttonCreate.Size = new System.Drawing.Size(8, 8);
             this.buttonCreate.TabIndex = 1;
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
             // 
             // buttonSearch
             // 
@@ -68,7 +68,7 @@
             this.buttonSearch.Size = new System.Drawing.Size(8, 8);
             this.buttonSearch.TabIndex = 2;
             this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -89,7 +89,6 @@
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(708, 22);
             this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabelBook
             // 

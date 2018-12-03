@@ -12,5 +12,15 @@ namespace LMSController
         public string Password { get; set; }
         public string Position { get; set; }
         public PersonalInformation PersonalInformation { get; set; }
+
+        public UserInformation() { }
+        public UserInformation(string login, string password, 
+            string position, PersonalInformation personalInformation)
+        {
+            Login = login;
+            Password = password;
+            Position = position;
+            PersonalInformation = personalInformation;
+        }
     }
 }

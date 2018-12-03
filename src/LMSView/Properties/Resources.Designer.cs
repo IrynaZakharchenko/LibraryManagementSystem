@@ -151,7 +151,7 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Create client information.
+        ///   Looks up a localized string similar to Create client information.
         /// </summary>
         internal static string clientCreate {
             get {
@@ -687,6 +687,33 @@ namespace LMSView.Properties {
         internal static string userInfo {
             get {
                 return ResourceManager.GetString("userInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field &quot;User&quot; should not be empty.
+        /// </summary>
+        internal static string userSearchEmpty {
+            get {
+                return ResourceManager.GetString("userSearchEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  is not exist in system. You can create it!.
+        /// </summary>
+        internal static string userSearchFailed {
+            get {
+                return ResourceManager.GetString("userSearchFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to String for search user is not valid.
+        /// </summary>
+        internal static string userSearchNull {
+            get {
+                return ResourceManager.GetString("userSearchNull", resourceCulture);
             }
         }
         
