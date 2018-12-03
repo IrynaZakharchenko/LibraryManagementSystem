@@ -242,7 +242,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.00483F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.99517F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
             this.tableLayoutPanel2.Controls.Add(this.buttonSearchPublishHouse, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxPublishHouse, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.buttonAddPublishHouse, 2, 0);
@@ -257,7 +257,7 @@
             // buttonSearchPublishHouse
             // 
             this.buttonSearchPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonSearchPublishHouse.Location = new System.Drawing.Point(239, 3);
+            this.buttonSearchPublishHouse.Location = new System.Drawing.Point(238, 3);
             this.buttonSearchPublishHouse.Name = "buttonSearchPublishHouse";
             this.buttonSearchPublishHouse.Size = new System.Drawing.Size(172, 23);
             this.buttonSearchPublishHouse.TabIndex = 1;
@@ -270,15 +270,15 @@
             this.textBoxPublishHouse.Location = new System.Drawing.Point(3, 3);
             this.textBoxPublishHouse.Multiline = true;
             this.textBoxPublishHouse.Name = "textBoxPublishHouse";
-            this.textBoxPublishHouse.Size = new System.Drawing.Size(230, 23);
+            this.textBoxPublishHouse.Size = new System.Drawing.Size(229, 23);
             this.textBoxPublishHouse.TabIndex = 2;
             // 
             // buttonAddPublishHouse
             // 
             this.buttonAddPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAddPublishHouse.Location = new System.Drawing.Point(417, 3);
+            this.buttonAddPublishHouse.Location = new System.Drawing.Point(416, 3);
             this.buttonAddPublishHouse.Name = "buttonAddPublishHouse";
-            this.buttonAddPublishHouse.Size = new System.Drawing.Size(156, 23);
+            this.buttonAddPublishHouse.Size = new System.Drawing.Size(157, 23);
             this.buttonAddPublishHouse.TabIndex = 3;
             this.buttonAddPublishHouse.UseVisualStyleBackColor = true;
             this.buttonAddPublishHouse.Click += new System.EventHandler(this.ButtonAddPublishHouse_Click);
