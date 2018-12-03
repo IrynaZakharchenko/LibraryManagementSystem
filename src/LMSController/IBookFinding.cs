@@ -8,6 +8,6 @@ namespace LMSController
 {
     public interface IBookFinding
     {
-        CBookInformation FindBookByInventoryCode(int inventoryCode);
+        BookInformation FindBookByInventoryCode(int inventoryCode);
     }
 }

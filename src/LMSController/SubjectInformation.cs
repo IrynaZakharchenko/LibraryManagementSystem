@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    public class CClientInformation
+    public class SubjectInformation
     {
-        public int LibraryTicketNumCode { get; set; }
-        public CPersonalInformation PersonalInformation { get; set; }
+        public string Name { get; set; }
+        public SubjectInformation SubjectParent { get; set; }
     }
 }

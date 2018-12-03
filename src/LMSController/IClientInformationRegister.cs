@@ -8,13 +8,13 @@ namespace LMSController
 {
     public interface IClientInformationRegister
     {
-        CClientInformation FindClientByLibraryTicket(int NumLibraryTicket);
-        CClientInformation FindClientByName(string Name);
-        void AddClient(CClientInformation clientInformation);
-        void EditClient(CClientInformation clientInformation);
-        void DeleteClient(CClientInformation clientInformation);
+        ClientInformation FindClientByLibraryTicket(int numberLibraryTicket);
+        ClientInformation FindClientByName(string name);
+        void AddClient(ClientInformation clientInformation);
+        void EditClient(ClientInformation clientInformation);
+        void DeleteClient(ClientInformation clientInformation);
 
-        void RentBook(CClientInformation client, CBookInformation book);
-        void ReturnBook(CClientInformation client, CBookInformation book);
+        void RentBook(ClientInformation client, BookInformation book);
+        void ReturnBook(ClientInformation client, BookInformation book);
     }
 }

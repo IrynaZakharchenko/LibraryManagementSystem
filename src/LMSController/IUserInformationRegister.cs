@@ -8,10 +8,9 @@ namespace LMSController
 {
     public interface IUserInformationRegister
     {
-        CUserInformation FindUserByName(string name);
-        CUserInformation FindUserByLogin(string login);
-        void AddUser(CUserInformation userInformation);
-        void EditUser(CUserInformation userInformation);
-        void DeleteUser(CUserInformation userInformation);
+        UserInformation FindUser(string searhString);
+        void AddUser(UserInformation userInformation);
+        void EditUser(UserInformation userInformation);
+        void DeleteUser(UserInformation userInformation);
     }
 }

@@ -75,6 +75,7 @@
     <Compile Include="IWorkspaceLibrarian.cs" />
     <Compile Include="IWorkspaceStockman.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInformationRegister.cs" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="..\..\LMSDictionary.xml">
