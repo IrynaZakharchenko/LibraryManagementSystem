@@ -6,60 +6,60 @@ using System.Threading.Tasks;
 using System.Resources;
 using System.Windows.Forms;
 using System.Globalization;
+using LMSController;
 
 namespace LMSView
 {
     class UserPermissionCheck
     {
-        private Form mStartWindow;
+        private UserLogOnForm mStartWindow;
+        private AuthenticationProcess authenticationProcess;
 
-        public UserPermissionCheck(Form startupWindow)
+        public UserPermissionCheck(UserLogOnForm startupWindow)
         {
             mStartWindow = startupWindow;
+            authenticationProcess = new AuthenticationProcess();
+            authenticationProcess.OnAdminLogOn += AuthorizeAdmin;
+            authenticationProcess.OnLibrarianLogOn += AuthorizeLibrarian;
+            authenticationProcess.OnStockmanLogOn += AuthorizeStockman;
         }
 
-        private static NViewHelper.AccountMode CheckPermission(string login)
+        public void AuthorizeLibrarian(IWorkspaceLibrarian workspaceLibrarian)
         {
-            if(true == String.Equals(Properties.Resources.librarian.ToLower(CultureInfo.CurrentCulture), login))
-            {
-                return NViewHelper.AccountMode.Library;
-            }
-            if(true == String.Equals(Properties.Resources. admin.ToLower(CultureInfo.CurrentCulture), login))
-            {
-                return NViewHelper.AccountMode.Admin;
-            }
-            if(true == String.Equals(Properties.Resources.stockman.ToLower(CultureInfo.CurrentCulture), login))
-            {
-                return NViewHelper.AccountMode.Stockman;
-            }
-            else
-            {
-                return NViewHelper.AccountMode.Library;
-            }
-        }
-
-        public void Authorization(string login)
-        {
-            
             mStartWindow.Hide();
-
-            NViewHelper.AccountMode userPermission = CheckPermission(login);
-            if(NViewHelper.AccountMode.Library == userPermission)
+            using (LibrarianControlForm mLibraryManageWin = new LibrarianControlForm())
             {
-                using (LibrarianControlForm mLibraryManageWin = new LibrarianControlForm())
-                {
-                    mLibraryManageWin.ShowDialog();
-                }                
+                mLibraryManageWin.ShowDialog();
             }
-            else
-            {
-                using (UserInfoSearchForm mAdminStockmanManageWin = new UserInfoSearchForm(userPermission))
-                {
-                    mAdminStockmanManageWin.ShowDialog();
-                }
-            };
-            
+            mStartWindow.ClearTextFields();
             mStartWindow.Show();
+        }
+
+        public void AuthorizeAdmin(IWorkspaceAdmin workspaceAdmin)
+        {
+            mStartWindow.Hide();
+            using (UserInfoSearchForm mAdminManageWin = new UserInfoSearchForm())
+            {
+                mAdminManageWin.ShowDialog();
+            }
+            mStartWindow.ClearTextFields();
+            mStartWindow.Show();
+        }
+
+        public void AuthorizeStockman(IWorkspaceStockman workspaceStockman)
+        {
+            mStartWindow.Hide();
+            using (BookInfoSearchForm mStockmanManageWin = new BookInfoSearchForm())
+            {
+                mStockmanManageWin.ShowDialog();
+            }
+            mStartWindow.ClearTextFields();
+            mStartWindow.Show();
+        }
+        
+        public void Authorization(string login, string password)
+        {
+            authenticationProcess.Authorize(new UserCredential(login, password));
         }
         
     }

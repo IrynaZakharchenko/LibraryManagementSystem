@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    public delegate void LibrarianLogon(IWorkspaceLibrarian workspaceLibrarian);
-    public delegate void AdminLogon(IWorkspaceAdmin workspaceLibrarian);
-    public delegate void StockmanLogon(IWorkspaceStockman workspaceLibrarian);
+    public delegate void LibrarianLogOnEventHandler(IWorkspaceLibrarian workspaceLibrarian);
+    public delegate void AdminLogOnEventHandler(IWorkspaceAdmin workspaceLibrarian);
+    public delegate void StockmanLogOnEventHandler(IWorkspaceStockman workspaceLibrarian);
 
     public interface IAuthentication
     {
-        void Authorize(CUserCredential userCredential);
+        void Authorize(UserCredential userCredential);
 
-        event LibrarianLogon OnLibrarianLogon;
-        event AdminLogon OnAdminLogon;
-        event StockmanLogon OnStockmanLogon;
+        event LibrarianLogOnEventHandler OnLibrarianLogOn;
+        event AdminLogOnEventHandler OnAdminLogOn;
+        event StockmanLogOnEventHandler OnStockmanLogOn;
     }
 }

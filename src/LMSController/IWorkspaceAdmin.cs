@@ -8,6 +8,6 @@ namespace LMSController
 {
     public interface IWorkspaceAdmin
     {
-        IUserInformationRegister GetUserInformationRegister();
+        IUserInformationRegister GetUserInformationRegister(); 
     }
 }

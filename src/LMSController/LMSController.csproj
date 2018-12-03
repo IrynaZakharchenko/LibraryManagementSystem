@@ -54,9 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CPersonalInformation.cs" />
-    <Compile Include="CUserCredential.cs" />
-    <Compile Include="CUserInformation.cs" />
+    <Compile Include="AdminWorkspace.cs" />
+    <Compile Include="AuthenticationProcess.cs" />
+    <Compile Include="AuthorInformation.cs" />
+    <Compile Include="BookInformation.cs" />
+    <Compile Include="ClientInformation.cs" />
+    <Compile Include="LibrarianWorkspace .cs" />
+    <Compile Include="PersonalInformation.cs" />
+    <Compile Include="PublishHouseInformation.cs" />
+    <Compile Include="StockmanWorkspace.cs" />
+    <Compile Include="SubjectInformation.cs" />
+    <Compile Include="UserCredential.cs" />
+    <Compile Include="UserInformation.cs" />
     <Compile Include="IAuthentication.cs" />
     <Compile Include="IBookFinding.cs" />
     <Compile Include="IClientInformationRegister.cs" />

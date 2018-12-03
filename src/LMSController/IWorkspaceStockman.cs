@@ -9,6 +9,7 @@ namespace LMSController
     public interface IWorkspaceStockman
     {
         IBookFinding GetBookFinding();
-        ILibrararyOperations GetLibrararyOperations();
+
+        ILibraryOperations LibraryOperations();
     }
 }

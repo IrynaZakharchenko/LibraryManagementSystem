@@ -9,6 +9,7 @@ namespace LMSController
     public interface IWorkspaceLibrarian
     {
         IBookFinding GetBookFinding();
+
         IClientInformationRegister GetClientInformationRegister();
     }
 }
