@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    class CUserInformation
+    public class CUserInformation
     {
         public string Login { get; set; }
         public string Password { get; set; }

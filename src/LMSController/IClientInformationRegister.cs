@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    interface IClientInformationRegister
+    public interface IClientInformationRegister
     {
+        CClientInformation FindClientByLibraryTicket(int NumLibraryTicket);
+        CClientInformation FindClientByName(string Name);
+        void AddClient(CClientInformation clientInformation);
+        void EditClient(CClientInformation clientInformation);
+        void DeleteClient(CClientInformation clientInformation);
+
+        void RentBook(CClientInformation client, CBookInformation book);
+        void ReturnBook(CClientInformation client, CBookInformation book);
     }
 }

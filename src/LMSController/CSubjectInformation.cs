@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    public interface IWorkspaceLibrarian
+    public class CSubjectInformation
     {
-        IBookFinding GetBookFinding();
-        IClientInformationRegister GetClientInformationRegister();
+        public string Name { get; set; }
+        public CSubjectInformation SubjectParent { get; set; }
     }
 }

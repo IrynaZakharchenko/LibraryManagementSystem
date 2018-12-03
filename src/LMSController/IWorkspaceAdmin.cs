@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    interface IWorkspaceAdmin
+    public interface IWorkspaceAdmin
     {
         IUserInformationRegister GetUserInformationRegister();
     }

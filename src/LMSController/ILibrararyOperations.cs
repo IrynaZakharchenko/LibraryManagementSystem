@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    interface ILibrararyOperations
+    public interface ILibrararyOperations
     {
+        void AddBook(CBookInformation bookInformation);
+        void EditBook(CBookInformation bookInformation);
+        void DeleteBook(CBookInformation bookInformation);
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    interface IBookFinding
+    public interface IBookFinding
     {
+        CBookInformation FindBookByInventoryCode(int inventoryCode);
     }
 }

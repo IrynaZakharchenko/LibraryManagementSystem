@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    class CUserCredential
+    public class CUserCredential
     {
+        public CUserCredential(string login, string password)
+        {
+            Login = login;
+            Password = password;
+        }
         public string Login { get; set; }
         public string Password { get; set; }
     }
