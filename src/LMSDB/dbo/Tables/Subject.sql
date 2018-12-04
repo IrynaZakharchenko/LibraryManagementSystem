@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Subject] (
-    [id_subject]        INT        NOT NULL,
+    [id_subject]        INT        NOT NULL IDENTITY,
     [name]              NCHAR (10) NOT NULL,
     [id_parent_subject] INT        NULL,
     CONSTRAINT [PK_Subject] PRIMARY KEY CLUSTERED ([id_subject] ASC),

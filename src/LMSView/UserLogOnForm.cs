@@ -14,7 +14,7 @@ namespace LMSView
             managerForms = new UserPermissionCheck(this);
         }
 
-        public void ClearTextFields()
+        private void ClearTextFields()
         {
             textBoxLogin.Clear();
             textBoxPassword.Clear();
@@ -38,20 +38,9 @@ namespace LMSView
 
         private void buttonlogOn_Click(object sender, System.EventArgs e)
         {
-            var login = textBoxLogin.Text;
-            var password = textBoxPassword.Text;
-
-            if (false == string.IsNullOrEmpty(login))
-            {
-                
-                managerForms.Authorization(login, password);
-            }
-            else
-            {
-                MessageBox.Show(Properties.Resources.errorLoginEmpty, Properties.Resources.logonFailed,
-                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
-            }
-            Activate();
+             managerForms.Authorization(textBoxLogin.Text, textBoxPassword.Text);
+             ClearTextFields();
+             Activate();
         }
     }
 }

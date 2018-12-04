@@ -86,5 +86,11 @@
   <ItemGroup>
     <None Include="LMSController.snk" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LMSModel\LMSModel.csproj">
+      <Project>{384aea60-878d-4a97-bc88-b753b079dcaf}</Project>
+      <Name>LMSModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

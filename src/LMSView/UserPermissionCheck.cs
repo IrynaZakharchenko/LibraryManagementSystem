@@ -22,7 +22,8 @@ namespace LMSView
             authenticationProcess.OnAdminLogOn += AuthorizeAdmin;
             authenticationProcess.OnLibrarianLogOn += AuthorizeLibrarian;
             authenticationProcess.OnStockmanLogOn += AuthorizeStockman;
-        }
+            authenticationProcess.OnFailedLogOn += OnFailedLogOn;
+      }
 
         public void AuthorizeLibrarian(IWorkspaceLibrarian workspaceLibrarian)
         {
@@ -31,7 +32,6 @@ namespace LMSView
             {
                 mLibraryManageWin.ShowDialog();
             }
-            mStartWindow.ClearTextFields();
             mStartWindow.Show();
         }
 
@@ -42,7 +42,6 @@ namespace LMSView
             {
                 mAdminManageWin.ShowDialog();
             }
-            mStartWindow.ClearTextFields();
             mStartWindow.Show();
         }
 
@@ -53,11 +52,16 @@ namespace LMSView
             {
                 mStockmanManageWin.ShowDialog();
             }
-            mStartWindow.ClearTextFields();
             mStartWindow.Show();
         }
-        
-        public void Authorization(string login, string password)
+
+        public void OnFailedLogOn()
+        {
+            MessageBox.Show(Properties.Resources.errorLoginEmpty, Properties.Resources.logonFailed,
+            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+        }
+
+      public void Authorization(string login, string password)
         {
             authenticationProcess.Authorize(new UserCredential(login, password));
         }
