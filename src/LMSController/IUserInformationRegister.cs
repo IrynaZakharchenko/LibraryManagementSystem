@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    public interface IUserInformationRegister
-    {
-        UserInformation FindUser(string searhString);
-        void AddUser(UserInformation userInformation);
-        void EditUser(UserInformation userInformation);
-        void DeleteUser(UserInformation userInformation);
-    }
+   public interface IUserInformationRegister
+   {
+      UserInformation FindUser(string searhString);
+      string[] PossiblePositions();
+      void AddUser(UserInformation userInformation);
+      void EditUser(UserInformation userInformation);
+      void DeleteUser(UserInformation userInformation);
+   }
 }
