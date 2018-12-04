@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Person] (
-    [id_person] INT            NOT NULL,
+    [id_person] INT            NOT NULL IDENTITY,
     [full_name] NVARCHAR (50)  NOT NULL,
     [birthday]  DATE           NOT NULL,
     [address]   NVARCHAR (150) NULL,

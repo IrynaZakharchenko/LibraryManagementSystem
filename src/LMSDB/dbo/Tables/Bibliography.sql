@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Bibliography] (
-    [id_bibliography_record] INT      NOT NULL,
+    [id_bibliography_record] INT      NOT NULL IDENTITY,
     [id_reader_ticket]       INT      NOT NULL,
     [id_book_instance]       INT      NOT NULL,
     [give_date]              DATETIME NOT NULL,

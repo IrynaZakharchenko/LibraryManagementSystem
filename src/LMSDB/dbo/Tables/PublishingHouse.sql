@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[PublishingHouse] (
-    [id_publishing] INT            NOT NULL,
+    [id_publishing] INT            NOT NULL IDENTITY,
     [name]          NVARCHAR (100) NOT NULL,
     [location]      NVARCHAR (50)  NULL,
     [category]      NVARCHAR (30)  NULL,

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 14.75" name="LMSDB">
+  <DataContextMoniker Name="/LMSDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="05c97241-2b44-4f4f-88f1-987dc1f0acc4" absoluteBounds="6.25, 6.875, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/LMSDBDataContext/Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b42c15d-ed14-4f79-a87f-d04fcd14b0ad" absoluteBounds="6.265, 7.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f5f5b81-f4d2-42ba-b262-d8bc3f071d84" absoluteBounds="3.5, 6.25, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/LMSDBDataContext/Author" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9dffec70-7dd8-4369-96f7-61a1f73b496e" absoluteBounds="3.515, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="72288dd6-9ac4-4802-b725-78334edc006e" absoluteBounds="9, 3.875, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/LMSDBDataContext/Bibliography" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3cbfd403-e54f-4b56-ade8-ddc4429d3604" absoluteBounds="9.015, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="672dca6e-41f6-48a9-88b5-066c33f71e4f" absoluteBounds="3.5, 1.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/LMSDBDataContext/Book" />
+      <nestedChildShapes>
+        <elementListCompartment Id="693d5de2-b089-4f25-ac9a-6005b87426a0" absoluteBounds="3.515, 1.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d11e41f3-0b6c-4501-b24f-5bb8e37b279d" absoluteBounds="6.25, 2.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/LMSDBDataContext/Book_related_Author" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9bf4ba58-31b4-4585-b2ed-a5c70c26aa20" absoluteBounds="6.265, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7f55e2e-82c7-4939-96b2-badeb232fd5a" absoluteBounds="6.25, 4.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LMSDBDataContext/Instance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a63b381-bd2c-4489-9b17-9848d08a8bbe" absoluteBounds="6.265, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6a57b83-6d1c-4b6a-8404-e6acf947c904" absoluteBounds="3.5, 9.875, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/LMSDBDataContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f755bf99-07e9-445d-b97a-5a863a98243e" absoluteBounds="3.515, 10.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a035bfad-e55a-438a-be45-696b3c1ab768" absoluteBounds="3.5, 13.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LMSDBDataContext/Position" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afd021a9-0e83-4207-a73f-6bb5bc58c383" absoluteBounds="3.515, 13.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d44d2f6b-2c1e-42c8-ab27-10f1132ccc6d" absoluteBounds="0.75, 2.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LMSDBDataContext/PublishingHouse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5de5c7fb-df51-4d96-a9a1-7e525679a5d3" absoluteBounds="0.765, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0d72594-2ea7-47c6-a45a-964c956b93b2" absoluteBounds="6.25, 10.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/LMSDBDataContext/Reader" />
+      <nestedChildShapes>
+        <elementListCompartment Id="285b5f28-638b-4c16-8daf-0f4c5af91fa1" absoluteBounds="6.265, 10.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8196c1aa-4027-4558-bf3a-87ff8fd55292" absoluteBounds="0.75, 6.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/LMSDBDataContext/Subject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26064f14-8408-40c5-9db4-09b8fd9e0117" absoluteBounds="0.765, 6.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.25); (5.875 : 5.875); (5.875 : 3.81899251302083); (6.25 : 3.44399251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Author/Author_Book_related_Author" />
+      <nodes>
+        <classShapeMoniker Id="0f5f5b81-f4d2-42ba-b262-d8bc3f071d84" />
+        <classShapeMoniker Id="d11e41f3-0b6c-4501-b24f-5bb8e37b279d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.81574375651042); (6.25 : 2.81574375651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Book/Book_Book_related_Author" />
+      <nodes>
+        <classShapeMoniker Id="672dca6e-41f6-48a9-88b5-066c33f71e4f" />
+        <classShapeMoniker Id="d11e41f3-0b6c-4501-b24f-5bb8e37b279d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.84699625651042); (9 : 4.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Instance/Instance_Bibliography" />
+      <nodes>
+        <classShapeMoniker Id="b7f55e2e-82c7-4939-96b2-badeb232fd5a" />
+        <classShapeMoniker Id="72288dd6-9ac4-4802-b725-78334edc006e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 4.23240397135417); (4.5 : 4.84699625651042); (5.79166666666667 : 4.84699625651042 : JumpStart); (5.95833333333333 : 4.84699625651042 : JumpEnd); (6.25 : 4.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Book/Book_Instance" />
+      <nodes>
+        <classShapeMoniker Id="672dca6e-41f6-48a9-88b5-066c33f71e4f" />
+        <classShapeMoniker Id="b7f55e2e-82c7-4939-96b2-badeb232fd5a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.87636122831531); (5.875 : 9.50136122831531); (5.875 : 7.76044840494792); (6.25 : 7.76044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Person/Person_Account" />
+      <nodes>
+        <classShapeMoniker Id="e6a57b83-6d1c-4b6a-8404-e6acf947c904" />
+        <classShapeMoniker Id="05c97241-2b44-4f4f-88f1-987dc1f0acc4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 13.2812264964944); (6.03125 : 12.7499764964944); (6.03125 : 8.23442460742188); (6.25 : 8.23442460742188)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Position/Position_Account" />
+      <nodes>
+        <classShapeMoniker Id="a035bfad-e55a-438a-be45-696b3c1ab768" />
+        <classShapeMoniker Id="05c97241-2b44-4f4f-88f1-987dc1f0acc4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.91429768880208); (3.5 : 2.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/PublishingHouse/PublishingHouse_Book" />
+      <nodes>
+        <classShapeMoniker Id="d44d2f6b-2c1e-42c8-ab27-10f1132ccc6d" />
+        <classShapeMoniker Id="672dca6e-41f6-48a9-88b5-066c33f71e4f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 10.8469962565104); (10 : 10.8469962565104); (10 : 5.64589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Reader/Reader_Bibliography" />
+      <nodes>
+        <classShapeMoniker Id="d0d72594-2ea7-47c6-a45a-964c956b93b2" />
+        <classShapeMoniker Id="72288dd6-9ac4-4802-b725-78334edc006e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.8469962565104); (6.25 : 10.8469962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Person/Person_Reader" />
+      <nodes>
+        <classShapeMoniker Id="e6a57b83-6d1c-4b6a-8404-e6acf947c904" />
+        <classShapeMoniker Id="d0d72594-2ea7-47c6-a45a-964c956b93b2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.125); (3.125 : 5.75); (3.125 : 2.17589684440104); (3.5 : 2.17589684440104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Subject/Subject_Book" />
+      <nodes>
+        <classShapeMoniker Id="8196c1aa-4027-4558-bf3a-87ff8fd55292" />
+        <classShapeMoniker Id="672dca6e-41f6-48a9-88b5-066c33f71e4f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.44931705603966 : 7.5112939453125); (1.44931705603966 : 7.7612939453125); (2.06500117938702 : 7.7612939453125); (2.06500117938702 : 7.5112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LMSDBDataContext/Subject/Subject_Subject" />
+      <nodes>
+        <classShapeMoniker Id="8196c1aa-4027-4558-bf3a-87ff8fd55292" />
+        <classShapeMoniker Id="8196c1aa-4027-4558-bf3a-87ff8fd55292" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

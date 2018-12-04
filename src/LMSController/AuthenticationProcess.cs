@@ -1,34 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LMSModel;
 
 namespace LMSController
 {
-    public class AuthenticationProcess : IAuthentication
-    {
-        public event LibrarianLogOnEventHandler OnLibrarianLogOn;
-        public event AdminLogOnEventHandler OnAdminLogOn;
-        public event StockmanLogOnEventHandler OnStockmanLogOn;
+   public class AuthenticationProcess : IAuthentication
+   {
+      public event LibrarianLogOnEventHandler OnLibrarianLogOn;
+      public event AdminLogOnEventHandler OnAdminLogOn;
+      public event StockmanLogOnEventHandler OnStockmanLogOn;
+      public event FailedLogOnEventHandler OnFailedLogOn;
 
-        public void Authorize(UserCredential userCredential)
-        {
-            if(null != userCredential)
+      public void Authorize(UserCredential userCredential)
+      {
+         Account account = Accounts.FindByLoginAndPassword(userCredential.Login, userCredential.Password);
+         
+         if (null != account)
+         {
+            switch (account.Position.position_enum)
             {
-                switch (userCredential.Login)
-                {
-                    case "librarian":
-                        OnLibrarianLogOn(new LibrarianWorkspace());
-                        break;
-                    case "admin":
-                        OnAdminLogOn(new AdminWorkspace());
-                        break;
-                    case "stockman":
-                        OnStockmanLogOn(new StockmanWorkspace());
-                        break;
-                }
+               case PositionEnum.Librarian:
+                  OnLibrarianLogOn(new LibrarianWorkspace());
+                  break;
+               case PositionEnum.Administrator:
+                  OnAdminLogOn(new AdminWorkspace());
+                  break;
+               case PositionEnum.Stockman:
+                  OnStockmanLogOn(new StockmanWorkspace());
+                  break;
             }
-        }
-    }
+         }
+         else
+         {
+            OnFailedLogOn();
+         }
+      }
+   }
 }
