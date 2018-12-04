@@ -7,69 +7,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LMSController;
 
 namespace LMSView
 {
     public partial class UserInfoSearchForm : Form
     {
-        private readonly NViewHelper.AccountMode mUserMode;
+        private readonly IWorkspaceAdmin workspace;
 
-        public UserInfoSearchForm(NViewHelper.AccountMode user)
+        public UserInfoSearchForm(IWorkspaceAdmin workspaceAdmin)
         {
-            mUserMode = user;
+            workspace = workspaceAdmin;
             InitializeComponent();
         }
 
-        private void AccountsBooksListControlPanel_Load(object sender, EventArgs e)
-        {
-            if(NViewHelper.AccountMode.Stockman == mUserMode)
-            {
-                Text = Properties.Resources.stockmanWelcome;
-                toolStripStatusLabelListControl.Text = Properties.Resources.statusStripStockmanMain;
-            }
-            else
-            {
-                Text = Properties.Resources.adminWelcome;
-                toolStripStatusLabelListControl.Text = Properties.Resources.statusStripAdminMain;
-            }
-            buttonSearch.Text = Properties.Resources.search;
-            buttonCreate.Text = Properties.Resources.create;
-        }
-        
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            if (NViewHelper.AccountMode.Stockman == mUserMode)
+            try
             {
-                using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Edit))
+                string search = textBoxSearch.Text;
+                if (false == String.IsNullOrEmpty(search))
                 {
-                    bookForm.ShowDialog();
+                    using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Edit,
+                                                                                                   workspace.GetUserInformationRegister(),
+                                                                                                   search))
+                    {
+                        accountForm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(Properties.Resources.userSearchEmpty, Properties.Resources.failed,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
                 }
             }
-            else
+            catch(InvalidOperationException)
             {
-                using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Edit))
-                {
-                    accountForm.ShowDialog();
-                }
+                MessageBox.Show(Properties.Resources.userSearchFailed, Properties.Resources.failed,
+                   MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
             }
         }
 
         private void ButtonCreate_Click(object sender, EventArgs e)
         {
-            if (NViewHelper.AccountMode.Stockman == mUserMode)
+            using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Create,
+                                                                                           workspace.GetUserInformationRegister()))
             {
-                using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Create))
-                {
-                    bookForm.ShowDialog();
-                }
+                accountForm.ShowDialog();
             }
-            else
-            {
-                using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Create))
-                {
-                    accountForm.ShowDialog();
-                }
-            }
+        }
+
+        private void UserInfoSearchForm_Load(object sender, EventArgs e)
+        {
+            Text = Properties.Resources.adminWelcome;
+            toolStripStatusLabelListControl.Text = Properties.Resources.statusStripAdminMain;
+            buttonSearch.Text = Properties.Resources.search;
+            buttonCreate.Text = Properties.Resources.create;
         }
     }
 }

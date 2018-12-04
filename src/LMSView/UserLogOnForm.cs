@@ -14,6 +14,12 @@ namespace LMSView
             managerForms = new UserPermissionCheck(this);
         }
 
+        public void ClearTextFields()
+        {
+            textBoxLogin.Clear();
+            textBoxPassword.Clear();
+        }
+
         private void UserLogOnForm_Load(object sender, System.EventArgs e)
         {
             Text = Properties.Resources.welcome;
@@ -33,10 +39,12 @@ namespace LMSView
         private void buttonlogOn_Click(object sender, System.EventArgs e)
         {
             var login = textBoxLogin.Text;
+            var password = textBoxPassword.Text;
 
             if (false == string.IsNullOrEmpty(login))
             {
-                managerForms.Authorization(login);
+                
+                managerForms.Authorization(login, password);
             }
             else
             {

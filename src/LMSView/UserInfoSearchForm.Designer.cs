@@ -31,10 +31,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonCreate = new System.Windows.Forms.Button();
             this.statusStripControl = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelListControl = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelControl = new System.Windows.Forms.ToolStripStatusLabel();
-            this.buttonCreate = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.statusStripControl.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +71,18 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
+            // buttonCreate
+            // 
+            this.buttonCreate.AutoSize = true;
+            this.buttonCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonCreate.Location = new System.Drawing.Point(496, 13);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Padding = new System.Windows.Forms.Padding(1);
+            this.buttonCreate.Size = new System.Drawing.Size(8, 8);
+            this.buttonCreate.TabIndex = 5;
+            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
+            // 
             // statusStripControl
             // 
             this.statusStripControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -91,27 +103,15 @@
             this.toolStripStatusLabelControl.Name = "toolStripStatusLabelControl";
             this.toolStripStatusLabelControl.Size = new System.Drawing.Size(0, 17);
             // 
-            // buttonCreate
-            // 
-            this.buttonCreate.AutoSize = true;
-            this.buttonCreate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonCreate.Location = new System.Drawing.Point(496, 13);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Padding = new System.Windows.Forms.Padding(1);
-            this.buttonCreate.Size = new System.Drawing.Size(8, 8);
-            this.buttonCreate.TabIndex = 5;
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
-            // 
-            // AccountsBooksListControlPanel
+            // UserInfoSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 127);
             this.Controls.Add(this.statusStripControl);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "AccountsBooksListControlPanel";
-            this.Load += new System.EventHandler(this.AccountsBooksListControlPanel_Load);
+            this.Name = "UserInfoSearchForm";
+            this.Load += new System.EventHandler(this.UserInfoSearchForm_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.statusStripControl.ResumeLayout(false);
