@@ -1,61 +1,78 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LMSModel;
+using System;
 
 namespace LMSController
 {
-    class UserInformationRegister : IUserInformationRegister
-    {
-        private List<UserInformation> localUsersList = new List<UserInformation>();
+   class UserInformationRegister : IUserInformationRegister
+   {
+      public string[] PossiblePositions()
+      {
+         return Enum.GetNames(typeof(PositionEnum));
+      }
 
-        private void InitializationTest()
-        {
-            UserInformation user = new UserInformation("izaharchenko", "123456", "admin", new PersonalInformation("Irina Zaharchenko",
-                new DateTime(1996, 10, 16), "3465768", "Odessa, st. House"));
-            UserInformation user1 = new UserInformation("hzinovatna", "123456", "librarian", new PersonalInformation("Hanna Zinovatna",
-                new DateTime(1996, 11, 26), "346345768", "Odessa, Mr. House"));
-            UserInformation user2 = new UserInformation("hpotter", "123456", "stockman", new PersonalInformation("Harry Potter",
-                new DateTime(1980, 1, 22), "346345768", "4, Private Drive"));
-
-            localUsersList.Add(user);
-            localUsersList.Add(user1);
-            localUsersList.Add(user2);
-        }
-
-        public UserInformationRegister() 
-        {
-            InitializationTest();
-        }
-
-        public void AddUser(UserInformation userInformation)
-        {
-            localUsersList.Add(userInformation);
-        }
-
-        public void DeleteUser(UserInformation userInformation)
-        {
-            localUsersList.Remove(userInformation);
-        }
-
-        public void EditUser(UserInformation userInformation)
-        {
-            localUsersList.Add(userInformation);
-        }
-        
-        public UserInformation FindUser(string searhString)
-        {
-            UserInformation result = localUsersList.Find(user => user.PersonalInformation.FullName.Contains(searhString));
-            if (result == null)
+      public void AddUser(UserInformation userInformation)
+      {
+         Accounts.Add(new Account
+         {
+            login = userInformation.Login,
+            password = userInformation.Password,
+            Position = new Position
             {
-                result = localUsersList.Find(user => user.Login.Equals(searhString));
-                if (result == null)
-                {
-                    throw new InvalidOperationException();
-                }
+               position_enum = (PositionEnum)Enum.Parse(typeof(PositionEnum), userInformation.Position)
+            },
+            Person = new Person
+            {
+               address = userInformation.PersonalInformation.Address,
+               birthday = userInformation.PersonalInformation.Birthday,
+               phone = userInformation.PersonalInformation.Phone,
+               full_name = userInformation.PersonalInformation.FullName,
             }
-            return result;
-        }
-    }
+         });
+         Accounts.Save();
+      }
+
+      public void DeleteUser(UserInformation userInformation)
+      {
+         Accounts.Delete(userInformation.Login);
+         Accounts.Save();
+      }
+
+      public void EditUser(UserInformation userInformation)
+      {
+         Accounts.Edit(new Account
+         {
+            id_account = userInformation.UserId,
+            login = userInformation.Login,
+            password = userInformation.Password,
+            Position = new Position
+            {
+               position_enum = (PositionEnum)Enum.Parse(typeof(PositionEnum), userInformation.Position)
+            },
+            Person = new Person
+            {
+               address = userInformation.PersonalInformation.Address,
+               birthday = userInformation.PersonalInformation.Birthday,
+               phone = userInformation.PersonalInformation.Phone,
+               full_name = userInformation.PersonalInformation.FullName,
+            }
+         });
+         Accounts.Save();
+      }
+        
+      public UserInformation FindUser(string searhString)
+      {
+         Account account = Accounts.FindByLogin(searhString);
+
+         UserInformation result = null;
+         if (account != null)
+         {
+            result = new UserInformation(account.login, account.password, account.Position.position_enum.ToString(), new PersonalInformation(account.Person.full_name,
+               account.Person.birthday, account.Person.phone, account.Person.address))
+               {
+                  UserId = account.id_account
+               };
+         }
+         return result;
+      }
+   }
 }

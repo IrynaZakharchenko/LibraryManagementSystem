@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LMSController;
 
@@ -32,6 +25,7 @@ namespace LMSView
             Text = Properties.Resources.adminWelcome;
             buttonSave.Text = Properties.Resources.save;
             buttonDelete.Text = Properties.Resources.delete;
+            comboBoxPosition.Items.AddRange(userInformationRegister.PossiblePositions());
 
             labelLogin.Text = Properties.Resources.login;
             labelPassword.Text = Properties.Resources.password;
@@ -68,7 +62,7 @@ namespace LMSView
             textBoxPassword.Text = userFind.Password;
             textBoxName.Text = userFind.PersonalInformation.FullName;
             dateTimeBirth.Value = userFind.PersonalInformation.Birthday;
-            textBoxPhone.Text = userFind.PersonalInformation.Phone;
+            textBoxPhone.Text = userFind.PersonalInformation.Phone.ToString();
             textBoxAddress.Text = userFind.PersonalInformation.Address;
             comboBoxPosition.Text = userFind.Position;
         }
@@ -102,17 +96,18 @@ namespace LMSView
                 {
                     userInformationRegister.AddUser(ExtractInputInformation());
                 }
+
+                result = MessageBox.Show(Properties.Resources.successfull, Properties.Resources.save,
+                  MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+                if (DialogResult.OK == result.Value)
+                {
+                    Close();
+                }
             }
             catch(Exception ex)
             {
                 result = MessageBox.Show(ex.Message, Properties.Resources.failed,
                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
-            }
-            result = MessageBox.Show(Properties.Resources.successfull, Properties.Resources.save,
-                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
-            if(DialogResult.OK == result.Value)
-            {
-                Close();
             }
         }
 
@@ -121,11 +116,11 @@ namespace LMSView
             UserInformation newUserInformation = new UserInformation();
             newUserInformation.Login = textBoxLogin.Text;
             newUserInformation.Password = textBoxPassword.Text;
-            newUserInformation.Position = comboBoxPosition.SelectedText;
+            newUserInformation.Position = comboBoxPosition.SelectedItem.ToString();
             PersonalInformation personInfo = new PersonalInformation();
             personInfo.FullName = textBoxName.Text;
             personInfo.Birthday = dateTimeBirth.Value;
-            personInfo.Phone = textBoxPhone.Text;
+            personInfo.Phone = Convert.ToDecimal(textBoxPhone.Text);
             personInfo.Address = textBoxAddress.Text;
             newUserInformation.PersonalInformation = personInfo;
 

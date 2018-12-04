@@ -10,11 +10,11 @@ namespace LMSController
     {
         public string FullName { get; set; }
         public DateTime Birthday { get; set; }
-        public string Phone { get; set; }
+        public decimal Phone { get; set; }
         public string Address { get; set; }
 
         public PersonalInformation() { }
-        public PersonalInformation(string name, DateTime birth, string phone, string address)
+        public PersonalInformation(string name, DateTime birth, decimal phone, string address)
         {
             FullName = name;
             Birthday = birth;
