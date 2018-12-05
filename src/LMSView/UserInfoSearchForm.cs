@@ -11,58 +11,76 @@ using LMSController;
 
 namespace LMSView
 {
-    public partial class UserInfoSearchForm : Form
-    {
-        private readonly IWorkspaceAdmin workspace;
+   public partial class UserInfoSearchForm : Form
+   {
+      private readonly IWorkspaceAdmin workspace;
+      private readonly IUserInformationRegister userInformationRegister;
 
-        public UserInfoSearchForm(IWorkspaceAdmin workspaceAdmin)
-        {
-            workspace = workspaceAdmin;
-            InitializeComponent();
-        }
+      public UserInfoSearchForm(IWorkspaceAdmin workspaceAdmin)
+      {
+         workspace = workspaceAdmin;
+         userInformationRegister = workspaceAdmin.GetUserInformationRegister();
 
-        private void ButtonSearch_Click(object sender, EventArgs e)
-        {
-            try
+         InitializeComponent();
+      }
+
+      private void ButtonSearch_Click(object sender, EventArgs e)
+      {
+         try
+         {
+            string search = textBoxSearch.Text;
+            if (false == String.IsNullOrEmpty(search))
             {
-                string search = textBoxSearch.Text;
-                if (false == String.IsNullOrEmpty(search))
-                {
-                    using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Edit,
-                                                                                                   workspace.GetUserInformationRegister(),
-                                                                                                   search))
-                    {
+               UserInformation user = userInformationRegister.FindUser(search);
+               if (user != null)
+               {
+                  using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Edit, userInformationRegister, user))
+                  {
+                     accountForm.ShowDialog();
+                  }
+               }
+               else
+               {
+                  DialogResult result = MessageBox.Show(search + Properties.Resources.userSearchFailed, Properties.Resources.failed,
+                  MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+                  if(DialogResult.Yes == result)
+                  {
+                     using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Create, userInformationRegister))
+                     {
                         accountForm.ShowDialog();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(Properties.Resources.userSearchEmpty, Properties.Resources.failed,
-                    MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
-                }
+                     }
+                  }
+               }
+               Activate();
             }
-            catch(InvalidOperationException)
+            else
             {
-                MessageBox.Show(Properties.Resources.userSearchFailed, Properties.Resources.failed,
-                   MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+               MessageBox.Show(Properties.Resources.userSearchEmpty, Properties.Resources.failed,
+               MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
             }
-        }
+         }
+         catch (InvalidOperationException)
+         {
+            MessageBox.Show(Properties.Resources.userSearchFailed, Properties.Resources.failed,
+               MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+         }
+      }
 
-        private void ButtonCreate_Click(object sender, EventArgs e)
-        {
-            using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Create,
-                                                                                           workspace.GetUserInformationRegister()))
-            {
-                accountForm.ShowDialog();
-            }
-        }
+      private void ButtonCreate_Click(object sender, EventArgs e)
+      {
+         using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Create, userInformationRegister))
+         {
+            accountForm.ShowDialog();
+            Activate();
+         }
+      }
 
-        private void UserInfoSearchForm_Load(object sender, EventArgs e)
-        {
-            Text = Properties.Resources.adminWelcome;
-            toolStripStatusLabelListControl.Text = Properties.Resources.statusStripAdminMain;
-            buttonSearch.Text = Properties.Resources.search;
-            buttonCreate.Text = Properties.Resources.create;
-        }
-    }
+      private void UserInfoSearchForm_Load(object sender, EventArgs e)
+      {
+         Text = Properties.Resources.adminWelcome;
+         toolStripStatusLabelListControl.Text = Properties.Resources.statusStripAdminMain;
+         buttonSearch.Text = Properties.Resources.search;
+         buttonCreate.Text = Properties.Resources.create;
+      }
+   }
 }

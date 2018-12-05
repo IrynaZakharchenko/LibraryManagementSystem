@@ -1,46 +1,87 @@
 ﻿using System.Resources;
 using System.Windows.Forms;
+using LMSController;
 
 namespace LMSView
 {
-    public partial class UserLogOnForm : Form
-    {
-        private UserPermissionCheck managerForms;
-        private const int countLogonAttempts = 5;
+   public partial class UserLogOnForm : Form
+   {
+      private AuthenticationProcess authenticationProcess;
 
-        public UserLogOnForm()
-        {
-            InitializeComponent();
-            managerForms = new UserPermissionCheck(this);
-        }
+      public UserLogOnForm()
+      {
+         InitializeComponent();
+         authenticationProcess = new AuthenticationProcess();
+         authenticationProcess.OnAdminLogOn += AuthorizeAdmin;
+         authenticationProcess.OnLibrarianLogOn += AuthorizeLibrarian;
+         authenticationProcess.OnStockmanLogOn += AuthorizeStockman;
+         authenticationProcess.OnFailedLogOn += OnFailedLogOn;
+      }
 
-        private void ClearTextFields()
-        {
-            textBoxLogin.Clear();
-            textBoxPassword.Clear();
-        }
+      private void ClearTextFields()
+      {
+         textBoxLogin.Clear();
+         textBoxPassword.Clear();
+      }
 
-        private void UserLogOnForm_Load(object sender, System.EventArgs e)
-        {
-            Text = Properties.Resources.welcome;
+      private void UserLogOnForm_Load(object sender, System.EventArgs e)
+      {
+         Text = Properties.Resources.welcome;
 
-            buttonlogOn.Text = Properties.Resources.logon;
-            labelLogin.Text = Properties.Resources.login;
-            labelLogin.Dock = DockStyle.Fill;
-            labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            labelPassword.Text = Properties.Resources.password;
-            labelPassword.Dock = DockStyle.Fill;
-            labelPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            toolTipsLogon.SetToolTip(textBoxLogin, Properties.Resources.tipsLogin);
-            toolTipsLogon.SetToolTip(textBoxPassword, Properties.Resources.tipsPassword);
-            toolStripStatusLabelLogOn.Text = Properties.Resources.statusStripLogOn;
-        }
+         buttonlogOn.Text = Properties.Resources.logon;
+         labelLogin.Text = Properties.Resources.login;
+         labelLogin.Dock = DockStyle.Fill;
+         labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+         labelPassword.Text = Properties.Resources.password;
+         labelPassword.Dock = DockStyle.Fill;
+         labelPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+         toolTipsLogon.SetToolTip(textBoxLogin, Properties.Resources.tipsLogin);
+         toolTipsLogon.SetToolTip(textBoxPassword, Properties.Resources.tipsPassword);
+         toolStripStatusLabelLogOn.Text = Properties.Resources.statusStripLogOn;
+      }
 
-        private void buttonlogOn_Click(object sender, System.EventArgs e)
-        {
-             managerForms.Authorization(textBoxLogin.Text, textBoxPassword.Text);
-             ClearTextFields();
-             Activate();
-        }
-    }
+      private void ButtonlogOn_Click(object sender, System.EventArgs e)
+      {
+         authenticationProcess.Authorize(new UserCredential(textBoxLogin.Text, textBoxPassword.Text));
+         ClearTextFields();
+         Activate();
+      }
+
+      public void AuthorizeLibrarian(IWorkspaceLibrarian workspaceLibrarian)
+      {
+         Hide();
+         using (LibrarianControlForm mLibraryManageWin = new LibrarianControlForm())
+         {
+            mLibraryManageWin.ShowDialog();
+         }
+         Show();
+      }
+
+      public void AuthorizeAdmin(IWorkspaceAdmin workspaceAdmin)
+      {
+         Hide();
+         using (UserInfoSearchForm mAdminManageWin = new UserInfoSearchForm(workspaceAdmin))
+         {
+            mAdminManageWin.ShowDialog();
+         }
+         Show();
+      }
+
+      public void AuthorizeStockman(IWorkspaceStockman workspaceStockman)
+      {
+         Hide();
+         using (BookInfoSearchForm mStockmanManageWin = new BookInfoSearchForm())
+         {
+            mStockmanManageWin.ShowDialog();
+         }
+         Show();
+      }
+
+      public void OnFailedLogOn()
+      {
+         MessageBox.Show(Properties.Resources.errorLoginEmpty, Properties.Resources.logonFailed,
+         MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+      }
+
+   }
 }

@@ -127,7 +127,7 @@
     <value>Admin</value>
   </data>
   <data name="adminWelcome" xml:space="preserve">
-    <value>Administaration control window</value>
+    <value>Administration control window</value>
   </data>
   <data name="birth" xml:space="preserve">
     <value>Birthday</value>
@@ -161,9 +161,6 @@
   </data>
   <data name="errorLoginEmpty" xml:space="preserve">
     <value>Field "Login" should not be empty</value>
-  </data>
-  <data name="errorLoginUnfulfilledLength" xml:space="preserve">
-    <value>Field "Login" should has length between 6 and 15 symbols</value>
   </data>
   <data name="errorPasswordEmpty" xml:space="preserve">
     <value>Field "Password" should not be empty</value>
@@ -273,9 +270,6 @@
   <data name="successfull" xml:space="preserve">
     <value>Successfull</value>
   </data>
-  <data name="tipsAccountType" xml:space="preserve">
-    <value>Choice how you want to log on to system</value>
-  </data>
   <data name="tipsLogin" xml:space="preserve">
     <value>Enter your login for log on to library system</value>
   </data>
@@ -338,5 +332,8 @@
   </data>
   <data name="userSearchFailed" xml:space="preserve">
     <value> is not exist in system. You can create it!</value>
+  </data>
+  <data name="userDeleteFailed" xml:space="preserve">
+    <value>User is not register yet</value>
   </data>
 </root>

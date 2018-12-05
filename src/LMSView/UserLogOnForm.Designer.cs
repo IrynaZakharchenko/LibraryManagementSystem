@@ -59,7 +59,7 @@
             this.buttonlogOn.Size = new System.Drawing.Size(113, 34);
             this.buttonlogOn.TabIndex = 0;
             this.buttonlogOn.UseVisualStyleBackColor = true;
-            this.buttonlogOn.Click += new System.EventHandler(this.buttonlogOn_Click);
+            this.buttonlogOn.Click += new System.EventHandler(this.ButtonlogOn_Click);
             // 
             // labelLogin
             // 

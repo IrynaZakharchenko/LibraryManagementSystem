@@ -118,7 +118,6 @@
     <Compile Include="ClientPersonalInfoControlForm.Designer.cs">
       <DependentUpon>ClientPersonalInfoControlForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserPermissionCheck.cs" />
     <Compile Include="UserInformationControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
