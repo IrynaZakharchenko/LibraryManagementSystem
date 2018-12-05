@@ -11,5 +11,13 @@ namespace LMSController
         public string Name { get; set; }
         public string Location { get; set; }
         public string Category { get; set; }
+
+        public PublishHouseInformation() { }
+        public PublishHouseInformation(string name, string location, string category)
+        {
+            Name = name;
+            Location = location;
+            Category = category;
+        }
     }
 }

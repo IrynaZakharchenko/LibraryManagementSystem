@@ -174,7 +174,7 @@
   <data name="fullName" xml:space="preserve">
     <value>Full Name</value>
   </data>
-  <data name="FullTitle" xml:space="preserve">
+  <data name="fullTitle" xml:space="preserve">
     <value>Full title</value>
   </data>
   <data name="getBook" xml:space="preserve">
@@ -282,7 +282,7 @@
   <data name="tipsPassword" xml:space="preserve">
     <value>Enter your password for log on to library system</value>
   </data>
-  <data name="Title" xml:space="preserve">
+  <data name="title" xml:space="preserve">
     <value>Title</value>
   </data>
   <data name="welcome" xml:space="preserve">
@@ -338,5 +338,23 @@
   </data>
   <data name="userSearchFailed" xml:space="preserve">
     <value> is not exist in system. You can create it!</value>
+  </data>
+  <data name="operationNOK" xml:space="preserve">
+    <value>During processing your operation something went wrong</value>
+  </data>
+  <data name="operationOK" xml:space="preserve">
+    <value>Operation was successfully done</value>
+  </data>
+  <data name="annotation" xml:space="preserve">
+    <value>Annotation</value>
+  </data>
+  <data name="author" xml:space="preserve">
+    <value>Authors</value>
+  </data>
+  <data name="inventoryCode" xml:space="preserve">
+    <value>Inventore Code</value>
+  </data>
+  <data name="searchPublishHouseFailed" xml:space="preserve">
+    <value>Publishing house with this name is not exist in library. Do you want to add it?</value>
   </data>
 </root>

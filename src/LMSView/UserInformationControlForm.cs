@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using LMSController;
+using LMSView.NViewHelper;
 
 namespace LMSView
 {
@@ -38,12 +39,12 @@ namespace LMSView
 
         private void ApplyCreateViewMode()
         {
-            labelLogin.Text = MarkFieldAsImportant(labelLogin.Text);
-            labelPassword.Text = MarkFieldAsImportant(labelPassword.Text);
-            labelBirth.Text = MarkFieldAsImportant(labelBirth.Text);
-            labelName.Text = MarkFieldAsImportant(labelName.Text);
-            labelPhone.Text = MarkFieldAsImportant(labelPhone.Text);
-            labelPosition.Text = MarkFieldAsImportant(labelPosition.Text);
+            labelLogin.Text = ViewHelper.MarkFieldAsImportant(labelLogin.Text);
+            labelPassword.Text = ViewHelper.MarkFieldAsImportant(labelPassword.Text);
+            labelBirth.Text = ViewHelper.MarkFieldAsImportant(labelBirth.Text);
+            labelName.Text = ViewHelper.MarkFieldAsImportant(labelName.Text);
+            labelPhone.Text = ViewHelper.MarkFieldAsImportant(labelPhone.Text);
+            labelPosition.Text = ViewHelper.MarkFieldAsImportant(labelPosition.Text);
         }
 
         private void ApplyEditViewMode()
@@ -65,11 +66,6 @@ namespace LMSView
             textBoxPhone.Text = userFind.PersonalInformation.Phone.ToString();
             textBoxAddress.Text = userFind.PersonalInformation.Address;
             comboBoxPosition.Text = userFind.Position;
-        }
-
-        static private string MarkFieldAsImportant(string field)
-        {
-            return Properties.Resources.importantFieldMark + field;
         }
 
         private void ButtonDelete_Click(object sender, EventArgs e)

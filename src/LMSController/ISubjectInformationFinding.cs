@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace LMSController
 {
-    public interface IWorkspaceStockman
+    public interface ISubjectInformationFinding
     {
-        IBookFinding GetBookFinding();
-
-        ILibraryOperations GetLibraryOperations();
+        SubjectInformation FindByName(string name);
     }
 }
