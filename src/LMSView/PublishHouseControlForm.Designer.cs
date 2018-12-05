@@ -35,8 +35,8 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxLocation = new System.Windows.Forms.TextBox();
+            this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,8 +51,8 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonDelete, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.buttonSave, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.textBoxName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxLocation, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxCategory, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -118,7 +118,7 @@
             this.buttonSave.Size = new System.Drawing.Size(243, 27);
             this.buttonSave.TabIndex = 9;
             this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // textBoxName
             // 
@@ -129,23 +129,23 @@
             this.textBoxName.Size = new System.Drawing.Size(243, 33);
             this.textBoxName.TabIndex = 10;
             // 
-            // textBox2
+            // textBoxLocation
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(252, 73);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(243, 27);
-            this.textBox2.TabIndex = 11;
+            this.textBoxLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxLocation.Location = new System.Drawing.Point(252, 73);
+            this.textBoxLocation.Multiline = true;
+            this.textBoxLocation.Name = "textBoxLocation";
+            this.textBoxLocation.Size = new System.Drawing.Size(243, 27);
+            this.textBoxLocation.TabIndex = 11;
             // 
-            // textBox3
+            // textBoxCategory
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(252, 106);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(243, 28);
-            this.textBox3.TabIndex = 12;
+            this.textBoxCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxCategory.Location = new System.Drawing.Point(252, 106);
+            this.textBoxCategory.Multiline = true;
+            this.textBoxCategory.Name = "textBoxCategory";
+            this.textBoxCategory.Size = new System.Drawing.Size(243, 28);
+            this.textBoxCategory.TabIndex = 12;
             // 
             // PublishHouseControlForm
             // 
@@ -154,7 +154,7 @@
             this.ClientSize = new System.Drawing.Size(498, 248);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PublishHouseControlForm";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.PublishHouseControlPanelcs_Paint);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.PublishHouseControlPanel_Paint);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -170,7 +170,7 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxLocation;
+        private System.Windows.Forms.TextBox textBoxCategory;
     }
 }

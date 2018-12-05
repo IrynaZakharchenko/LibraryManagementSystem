@@ -10,5 +10,12 @@ namespace LMSController
     {
         public string Name { get; set; }
         public SubjectInformation SubjectParent { get; set; }
+
+        public SubjectInformation() { }
+        public SubjectInformation(string subjectName, SubjectInformation parent)
+        {
+            Name = subjectName;
+            SubjectParent = parent;
+        }
     }
 }

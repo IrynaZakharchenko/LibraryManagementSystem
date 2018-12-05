@@ -2,6 +2,7 @@
    <Acronyms>  
       <CasingExceptions>  
          <Acronym>LMS</Acronym>   <!-- Library Management System -->  
+         <Acronym>Isbn</Acronym>   <!-- International Standard Book Number -->  
       </CasingExceptions>  
    </Acronyms>  
 </Dictionary> 

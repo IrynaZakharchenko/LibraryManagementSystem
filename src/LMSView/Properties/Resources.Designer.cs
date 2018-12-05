@@ -97,6 +97,24 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Annotation.
+        /// </summary>
+        internal static string annotation {
+            get {
+                return ResourceManager.GetString("annotation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Authors.
+        /// </summary>
+        internal static string author {
+            get {
+                return ResourceManager.GetString("author", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Birthday.
         /// </summary>
         internal static string birth {
@@ -297,9 +315,9 @@ namespace LMSView.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Full title.
         /// </summary>
-        internal static string FullTitle {
+        internal static string fullTitle {
             get {
-                return ResourceManager.GetString("FullTitle", resourceCulture);
+                return ResourceManager.GetString("fullTitle", resourceCulture);
             }
         }
         
@@ -327,6 +345,15 @@ namespace LMSView.Properties {
         internal static string importantFieldMark {
             get {
                 return ResourceManager.GetString("importantFieldMark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventore Code.
+        /// </summary>
+        internal static string inventoryCode {
+            get {
+                return ResourceManager.GetString("inventoryCode", resourceCulture);
             }
         }
         
@@ -435,6 +462,24 @@ namespace LMSView.Properties {
         internal static string manageUser {
             get {
                 return ResourceManager.GetString("manageUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to During processing your operation something went wrong.
+        /// </summary>
+        internal static string operationNOK {
+            get {
+                return ResourceManager.GetString("operationNOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation was successfully done.
+        /// </summary>
+        internal static string operationOK {
+            get {
+                return ResourceManager.GetString("operationOK", resourceCulture);
             }
         }
         
@@ -675,9 +720,9 @@ namespace LMSView.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
-        internal static string Title {
+        internal static string title {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("title", resourceCulture);
             }
         }
         

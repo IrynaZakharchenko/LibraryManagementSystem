@@ -20,6 +20,15 @@ namespace LMSView
             Library,
             Stockman
         }
+
+        public static class ViewHelper
+        {
+            static public string MarkFieldAsImportant(string field)
+            {
+                return Properties.Resources.importantFieldMark + field;
+            }
+        }
+
     }
 
 }
