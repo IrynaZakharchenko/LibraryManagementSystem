@@ -43,9 +43,9 @@
          this.dateTimePickerPublish = new System.Windows.Forms.DateTimePicker();
          this.textBoxLanguage = new System.Windows.Forms.TextBox();
          this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+         this.textBoxPublishHouseResult = new System.Windows.Forms.TextBox();
          this.buttonSearchPublishHouse = new System.Windows.Forms.Button();
-         this.textBoxPublishHouse = new System.Windows.Forms.TextBox();
-         this.buttonAddPublishHouse = new System.Windows.Forms.Button();
+         this.textBoxPublishHouseSearch = new System.Windows.Forms.TextBox();
          this.textBoxSeries = new System.Windows.Forms.TextBox();
          this.textBoxSubject = new System.Windows.Forms.TextBox();
          this.labelFullTitle = new System.Windows.Forms.Label();
@@ -257,12 +257,12 @@
          // tableLayoutPanel2
          // 
          this.tableLayoutPanel2.ColumnCount = 3;
-         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.00483F));
-         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.99517F));
-         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 166F));
-         this.tableLayoutPanel2.Controls.Add(this.buttonSearchPublishHouse, 1, 0);
-         this.tableLayoutPanel2.Controls.Add(this.textBoxPublishHouse, 0, 0);
-         this.tableLayoutPanel2.Controls.Add(this.buttonAddPublishHouse, 2, 0);
+         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.30813F));
+         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.69187F));
+         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
+         this.tableLayoutPanel2.Controls.Add(this.textBoxPublishHouseResult, 0, 0);
+         this.tableLayoutPanel2.Controls.Add(this.buttonSearchPublishHouse, 2, 0);
+         this.tableLayoutPanel2.Controls.Add(this.textBoxPublishHouseSearch, 1, 0);
          this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
          this.tableLayoutPanel2.Location = new System.Drawing.Point(196, 266);
          this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -271,34 +271,35 @@
          this.tableLayoutPanel2.Size = new System.Drawing.Size(623, 31);
          this.tableLayoutPanel2.TabIndex = 16;
          // 
+         // textBoxPublishHouseResult
+         // 
+         this.textBoxPublishHouseResult.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.textBoxPublishHouseResult.Location = new System.Drawing.Point(3, 3);
+         this.textBoxPublishHouseResult.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+         this.textBoxPublishHouseResult.Multiline = true;
+         this.textBoxPublishHouseResult.Name = "textBoxPublishHouseResult";
+         this.textBoxPublishHouseResult.ReadOnly = true;
+         this.textBoxPublishHouseResult.Size = new System.Drawing.Size(268, 25);
+         this.textBoxPublishHouseResult.TabIndex = 2;
+         // 
          // buttonSearchPublishHouse
          // 
          this.buttonSearchPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.buttonSearchPublishHouse.Location = new System.Drawing.Point(263, 3);
+         this.buttonSearchPublishHouse.Location = new System.Drawing.Point(531, 3);
          this.buttonSearchPublishHouse.Name = "buttonSearchPublishHouse";
-         this.buttonSearchPublishHouse.Size = new System.Drawing.Size(190, 25);
-         this.buttonSearchPublishHouse.TabIndex = 1;
+         this.buttonSearchPublishHouse.Size = new System.Drawing.Size(89, 25);
+         this.buttonSearchPublishHouse.TabIndex = 3;
          this.buttonSearchPublishHouse.UseVisualStyleBackColor = true;
          this.buttonSearchPublishHouse.Click += new System.EventHandler(this.ButtonSearchPublishHouse_Click);
          // 
-         // textBoxPublishHouse
+         // textBoxPublishHouseSearch
          // 
-         this.textBoxPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.textBoxPublishHouse.Location = new System.Drawing.Point(3, 3);
-         this.textBoxPublishHouse.Multiline = true;
-         this.textBoxPublishHouse.Name = "textBoxPublishHouse";
-         this.textBoxPublishHouse.Size = new System.Drawing.Size(254, 25);
-         this.textBoxPublishHouse.TabIndex = 2;
-         // 
-         // buttonAddPublishHouse
-         // 
-         this.buttonAddPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.buttonAddPublishHouse.Location = new System.Drawing.Point(459, 3);
-         this.buttonAddPublishHouse.Name = "buttonAddPublishHouse";
-         this.buttonAddPublishHouse.Size = new System.Drawing.Size(161, 25);
-         this.buttonAddPublishHouse.TabIndex = 3;
-         this.buttonAddPublishHouse.UseVisualStyleBackColor = true;
-         this.buttonAddPublishHouse.Click += new System.EventHandler(this.ButtonAddPublishHouse_Click);
+         this.textBoxPublishHouseSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.textBoxPublishHouseSearch.Location = new System.Drawing.Point(284, 3);
+         this.textBoxPublishHouseSearch.Multiline = true;
+         this.textBoxPublishHouseSearch.Name = "textBoxPublishHouseSearch";
+         this.textBoxPublishHouseSearch.Size = new System.Drawing.Size(241, 25);
+         this.textBoxPublishHouseSearch.TabIndex = 4;
          // 
          // textBoxSeries
          // 
@@ -458,15 +459,14 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerPublish;
         private System.Windows.Forms.TextBox textBoxLanguage;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button buttonSearchPublishHouse;
         private System.Windows.Forms.TextBox textBoxSeries;
         private System.Windows.Forms.TextBox textBoxSubject;
         private System.Windows.Forms.Label labelFullTitle;
         private System.Windows.Forms.TextBox textBoxAnnotation;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.TextBox textBoxPublishHouse;
-        private System.Windows.Forms.Button buttonAddPublishHouse;
+        private System.Windows.Forms.TextBox textBoxPublishHouseResult;
+        private System.Windows.Forms.Button buttonSearchPublishHouse;
         private System.Windows.Forms.Label labelParentSubject;
         private System.Windows.Forms.TextBox textBoxSubjectParent;
       private System.Windows.Forms.Label labelTitle;
@@ -476,5 +476,6 @@
       private System.Windows.Forms.TextBox textBoxInventoryCode;
       private System.Windows.Forms.TextBox textBoxAuthors;
       private System.Windows.Forms.Label labelAuthors;
+      private System.Windows.Forms.TextBox textBoxPublishHouseSearch;
    }
 }

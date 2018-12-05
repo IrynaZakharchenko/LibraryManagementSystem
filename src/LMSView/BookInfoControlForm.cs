@@ -37,7 +37,7 @@ namespace LMSView
       {
          if (FormViewMode.Edit == viewMode)
          {
-            libraryManagment.DeleteBook(PackageBookInformation(currentBook));
+            libraryManagment.DeleteBook(currentBook);
          }
       }
 
@@ -51,17 +51,17 @@ namespace LMSView
 
             textBoxInventoryCode.Text = currentBook.InventoryCode.ToString();
             textBoxTitle.Text = currentBook.Title;
-            
+
             AuthorInformation[] authors = currentBook.Authors;
             foreach (var name in authors)
             {
                textBoxAuthors.Text += " " + name.Name;
             }
-            textBoxFullTitle.Text = currentBook.FullTitle;            
+            textBoxFullTitle.Text = currentBook.FullTitle;
             textBoxIsbn.Text = currentBook.Isbn.ToString();
             textBoxLanguage.Text = currentBook.Language;
             dateTimePickerPublish.Value = currentBook.PublishDate;
-            textBoxPublishHouse.Text = currentBook.PublishHouse.Name;
+            textBoxPublishHouseResult.Text = currentBook.PublishHouse.Name;
             textBoxSeries.Text = currentBook.BookSeries;
             textBoxSubject.Text = currentBook.Subject.Name;
             textBoxSubjectParent.Text = currentBook.Subject.SubjectParent.Name;
@@ -83,23 +83,25 @@ namespace LMSView
 
       private BookInformation PackageBookInformation(BookInformation book)
       {
+         book.InventoryCode = Convert.ToInt32(textBoxInventoryCode.Text);
          book.Title = textBoxTitle.Text;
          book.FullTitle = textBoxFullTitle.Text;
          book.Isbn = Convert.ToInt16(textBoxIsbn.Text);
          book.Language = textBoxLanguage.Text;
-         book.PublishHouse = publishHouseRegister.FindPublishHouseByName(textBoxPublishHouse.Text);
+         book.PublishHouse = publishHouseRegister.FindPublishHouseByName(textBoxPublishHouseResult.Text);
          book.PublishDate = dateTimePickerPublish.Value;
          book.Annotation = textBoxAnnotation.Text;
-         string[] authorsNames = textBoxAuthors.Text.Split(new char[]{ ',', ' '});
+         string[] authorsNames = textBoxAuthors.Text.Split(new char[] { ',', ' ' });
          List<AuthorInformation> authors = new List<AuthorInformation>();
-         foreach(string name in authorsNames)
+         foreach (string name in authorsNames)
          {
-            authors.Add(new AuthorInformation(name)); 
+            authors.Add(new AuthorInformation(name));
          }
          book.Authors = authors.ToArray();
          SubjectInformationFinding subjectFinding = new SubjectInformationFinding();
          book.Subject = subjectFinding.FindByName(textBoxSubject.Text);
-         
+         book.Subject.SubjectParent = subjectFinding.FindByName(textBoxSubjectParent.Text);
+
          return book;
       }
 
@@ -109,7 +111,6 @@ namespace LMSView
          buttonDelete.Text = Properties.Resources.delete;
          buttonSearchPublishHouse.Text = Properties.Resources.search;
          buttonAddBooksExamples.Text = Properties.Resources.bookLibExample;
-         buttonAddPublishHouse.Text = Properties.Resources.add;
 
          labelInventoryCode.Text = Properties.Resources.inventoryCode;
          labelTitle.Text = Properties.Resources.title;
@@ -125,30 +126,29 @@ namespace LMSView
          labelAnnotation.Text = Properties.Resources.annotation;
       }
 
-      private void ButtonAddPublishHouse_Click(object sender, EventArgs e)
-      {
-         using (PublishHouseControlForm publishControl = new PublishHouseControlForm(FormViewMode.Create, publishHouseRegister))
-         {
-            publishControl.ShowDialog();
-         }
-         Activate();
-      }
-
-      private void ButtonSearchPublishHouse_Click(object sender, EventArgs e)
-      {
-         using (PublishHouseControlForm publishControl = new PublishHouseControlForm(FormViewMode.Edit, publishHouseRegister,
-                                                             textBoxPublishHouse.Name))
-         {
-            publishControl.ShowDialog();
-         }
-         Activate();
-      }
-
       private void ButtonAddBooksExamples_Click(object sender, EventArgs e)
       {
          using (BookLibraryInfoControlForm examples = new BookLibraryInfoControlForm())
          {
             examples.ShowDialog();
+         }
+      }
+
+      private void ButtonSearchPublishHouse_Click(object sender, EventArgs e)
+      {
+         PublishHouseInformation publishHouse = publishHouseRegister.FindPublishHouseByName(textBoxPublishHouseSearch.Text);
+         if (null == publishHouse)
+         {
+            DialogResult userChoice = MessageBox.Show(Properties.Resources.searchPublishHouseFailed, Properties.Resources.failed,
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+            if (DialogResult.Yes == userChoice)
+            {
+               using (PublishHouseControlForm publishControl = new PublishHouseControlForm(FormViewMode.Create, publishHouseRegister))
+               {
+                  publishControl.ShowDialog();
+               }
+            }
+            Activate();
          }
       }
    }

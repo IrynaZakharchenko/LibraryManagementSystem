@@ -592,6 +592,15 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Publishing house with this name is not exist in library. Do you want to add it?.
+        /// </summary>
+        internal static string searchPublishHouseFailed {
+            get {
+                return ResourceManager.GetString("searchPublishHouseFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Series.
         /// </summary>
         internal static string series {

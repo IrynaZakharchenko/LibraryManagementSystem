@@ -15,15 +15,16 @@ namespace LMSView
    {
       private NViewHelper.FormViewMode viewModeForm;
       private IPublishHouseInformationRegister publishHouseInformationRegister;
-      private PublishHouseInformation publishHouseInfo;
+      private PublishHouseInformation publishHouseInformation;
 
       public PublishHouseControlForm(NViewHelper.FormViewMode mode,
-             IPublishHouseInformationRegister publishHouseRegister, string name = null)
+             IPublishHouseInformationRegister publishHouseRegister, 
+             PublishHouseInformation publishHouseInfo = null)
       {
          viewModeForm = mode;
          publishHouseInformationRegister = publishHouseRegister;
          publishHouseInformationRegister.OnOperationExecute += PrintMessageForUser;
-         publishHouseInfo = publishHouseInformationRegister.FindPublishHouseByName(name);
+         publishHouseInformation = publishHouseInfo;
 
          InitializeComponent();
       }
@@ -54,7 +55,7 @@ namespace LMSView
       {
          if (NViewHelper.FormViewMode.Edit == viewModeForm)
          {
-            publishHouseInformationRegister.DeletePublishHouse(PackagePublishHouse(publishHouseInfo));
+            publishHouseInformationRegister.DeletePublishHouse(publishHouseInformation);
          }
          
       }
@@ -73,14 +74,14 @@ namespace LMSView
          labelLocation.Text = Properties.Resources.location;
          labelCategory.Text = Properties.Resources.category;
 
-         if (NViewHelper.FormViewMode.Edit == viewModeForm)
-         {
-            Text = Properties.Resources.edit;
-         }
-         else
+         if (NViewHelper.FormViewMode.Create == viewModeForm)
          {
             Text = Properties.Resources.add;
             labelName.Text = NViewHelper.ViewHelper.MarkFieldAsImportant(labelName.Text);
+         }
+         else
+         {
+            Text = Properties.Resources.edit;
          }
       }
    }
