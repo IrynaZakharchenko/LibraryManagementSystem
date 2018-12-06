@@ -335,6 +335,7 @@
   </data>
   <data name="userDeleteFailed" xml:space="preserve">
     <value>User is not register yet</value>
+  </data>
   <data name="operationNOK" xml:space="preserve">
     <value>During processing your operation something went wrong</value>
   </data>
