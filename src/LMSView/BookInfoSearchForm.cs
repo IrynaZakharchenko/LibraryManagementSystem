@@ -1,44 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using LMSController;
 
 namespace LMSView
 {
-    public partial class BookInfoSearchForm : Form
-    {
-        public BookInfoSearchForm()
-        {
-            InitializeComponent();
-        }
+   public partial class BookInfoSearchForm : Form
+   {
+      private IWorkspaceStockman workspaceStockman = new StockmanWorkspace();
 
-        private void BookInfoSearchForm_Load(object sender, EventArgs e)
-        {
-            Text = Properties.Resources.stockmanWelcome;
-            toolStripStatusLabelBook.Text = Properties.Resources.statusStripStockmanMain;
-            buttonSearch.Text = Properties.Resources.search;
-            buttonCreate.Text = Properties.Resources.create;
-        }
+      public BookInfoSearchForm()
+      {
+         InitializeComponent();
+      }
 
-        private void ButtonSearch_Click(object sender, EventArgs e)
-        {
-            using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Edit))
+      private void BookInfoSearchForm_Load(object sender, EventArgs e)
+      {
+         Text = Properties.Resources.stockmanWelcome;
+         toolStripStatusLabelBook.Text = Properties.Resources.statusStripStockmanMain;
+         buttonSearch.Text = Properties.Resources.search;
+         buttonCreate.Text = Properties.Resources.create;
+      }
+
+      private void ButtonSearch_Click(object sender, EventArgs e)
+      {
+         BookInformation book = workspaceStockman.GetBookFinding().FindBookByTitle(textBoxSearch.Text);
+         if(book != null)
+         {
+            using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Edit, 
+                   workspaceStockman.GetLibraryOperations(), book))
             {
-                bookForm.ShowDialog();
+               Hide();
+               bookForm.ShowDialog();
+               Show();
             }
-        }
+         }
+      }
 
-        private void ButtonCreate_Click(object sender, EventArgs e)
-        {
-            using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Create))
-            {
-                bookForm.ShowDialog();
-            }
-        }
-    }
+      private void ButtonCreate_Click(object sender, EventArgs e)
+      {
+         using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Create,
+                  workspaceStockman.GetLibraryOperations()))
+         {
+            Hide();
+            bookForm.ShowDialog();
+            Show();
+         }
+      }
+   }
 }

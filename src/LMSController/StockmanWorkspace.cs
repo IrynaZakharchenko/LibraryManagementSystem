@@ -8,14 +8,29 @@ namespace LMSController
 {
     public class StockmanWorkspace : IWorkspaceStockman
     {
-        public IBookFinding GetBookFinding()
+        private List<BookInformation> bookStorage;
+        private BookFinding bookFinder;
+        private LibraryOperations libraryOperations;
+
+      public StockmanWorkspace()
         {
-            throw new NotImplementedException();
+            bookStorage = new List<BookInformation>() { new BookInformation(1234, "Harry Potter",
+            "Harry Potter and chamber os secret", 786, new AuthorInformation[] { new AuthorInformation("J.K. Rowling") },
+            "Harry Potter is about to start his second year at Hogwarts.",
+            new PublishHouseInformation("Bloomsbury", "USA", "fantasy"), new DateTime(1991, 02, 1),
+            "english", "Harry Potter", new SubjectInformation("magic", new SubjectInformation("fairy tails", null))) };
+            bookFinder = new BookFinding(ref bookStorage);
+            libraryOperations = new LibraryOperations(ref bookStorage);
         }
 
-        public ILibraryOperations LibraryOperations()
+        public IBookFinding GetBookFinding()
         {
-            throw new NotImplementedException();
+            return bookFinder;
+        }
+
+        public ILibraryOperations GetLibraryOperations()
+        {
+            return libraryOperations;
         }
     }
 }

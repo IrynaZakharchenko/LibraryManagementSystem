@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using LMSController;
+using LMSView.NViewHelper;
 
 namespace LMSView
 {
@@ -35,7 +36,6 @@ namespace LMSView
          labelAddress.Text = Properties.Resources.address;
          labelPosition.Text = Properties.Resources.position;
       }
-
       private void ApplyCreateViewMode()
       {
          labelLogin.Text = MarkFieldAsImportant(labelLogin.Text);
@@ -71,6 +71,7 @@ namespace LMSView
 
             result = MessageBox.Show(Properties.Resources.successfull, Properties.Resources.delete,
                      MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+
             if (DialogResult.OK == result)
             {
                Close();
