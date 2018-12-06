@@ -88,7 +88,7 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Administaration control window.
+        ///   Looks up a localized string similar to Administration control window.
         /// </summary>
         internal static string adminWelcome {
             get {
@@ -273,15 +273,6 @@ namespace LMSView.Properties {
         internal static string errorLoginEmpty {
             get {
                 return ResourceManager.GetString("errorLoginEmpty", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Field &quot;Login&quot; should has length between 6 and 15 symbols.
-        /// </summary>
-        internal static string errorLoginUnfulfilledLength {
-            get {
-                return ResourceManager.GetString("errorLoginUnfulfilledLength", resourceCulture);
             }
         }
         
@@ -700,15 +691,6 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choice how you want to log on to system.
-        /// </summary>
-        internal static string tipsAccountType {
-            get {
-                return ResourceManager.GetString("tipsAccountType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Enter your login for log on to library system.
         /// </summary>
         internal static string tipsLogin {
@@ -732,6 +714,15 @@ namespace LMSView.Properties {
         internal static string title {
             get {
                 return ResourceManager.GetString("title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User is not register yet.
+        /// </summary>
+        internal static string userDeleteFailed {
+            get {
+                return ResourceManager.GetString("userDeleteFailed", resourceCulture);
             }
         }
         
