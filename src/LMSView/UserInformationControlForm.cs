@@ -26,7 +26,10 @@ namespace LMSView
          Text = Properties.Resources.adminWelcome;
          buttonSave.Text = Properties.Resources.save;
          buttonDelete.Text = Properties.Resources.delete;
-         comboBoxPosition.Items.AddRange(userInformationRegister.PossiblePositions());
+         if (comboBoxPosition.Items.Count == 0)
+         {
+            comboBoxPosition.Items.AddRange(userInformationRegister.PossiblePositions());
+         }
 
          labelLogin.Text = Properties.Resources.login;
          labelPassword.Text = Properties.Resources.password;
