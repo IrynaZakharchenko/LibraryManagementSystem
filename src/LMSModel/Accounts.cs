@@ -55,6 +55,16 @@ namespace LMSModel
       {
          if (FindByLogin(newAccount.login) == null)
          {
+            IQueryable<Position> query =
+               from position in DBInstance.DataContext.Positions
+               where position.position_enum == newAccount.Position.position_enum
+               select position;
+
+            if (query.Count() > 0)
+            {
+               newAccount.Position = query.First();
+            }
+
             DBInstance.DataContext.Accounts.InsertOnSubmit(newAccount);
          }
       }
@@ -64,20 +74,31 @@ namespace LMSModel
          if (account != null)
          {
             DBInstance.DataContext.Accounts.DeleteOnSubmit(account);
+
+            if ((from reader in DBInstance.DataContext.Readers
+               where reader.id_personal_info == account.id_personal_info
+               select reader).Count() == 0)
+            {
+               DBInstance.DataContext.Persons.DeleteOnSubmit(account.Person);
+            }
          }
       }
       static public void Edit(Account existingAccount)
       {
          Account account = FindById(existingAccount.id_account);
-         if (account != null)
-         {
-            account.login = existingAccount.login;
-            account.password = existingAccount.password;
-            account.Person = existingAccount.Person;
-            account.Position = existingAccount.Position;
+         
+         account.login = existingAccount.login;
+         account.password = existingAccount.password;
+         
+         account.Position =
+            (from position in DBInstance.DataContext.Positions
+             where position.position_enum == existingAccount.Position.position_enum
+             select position).First();
 
-            DBInstance.DataContext.Accounts.InsertOnSubmit(existingAccount);
-         }
+         account.Person.full_name = existingAccount.Person.full_name;
+         account.Person.address = existingAccount.Person.address;
+         account.Person.birthday = existingAccount.Person.birthday;
+         account.Person.phone = existingAccount.Person.phone;
       }
       static public void Save()
       {

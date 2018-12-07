@@ -1,4 +1,5 @@
 ﻿using LMSModel;
+using System;
 
 namespace LMSController
 {
@@ -26,6 +27,8 @@ namespace LMSController
                case PositionEnum.Stockman:
                   OnStockmanLogOn(new StockmanWorkspace());
                   break;
+               default:
+                  throw new InvalidOperationException("Unexpected value PositionEnum = " + account.Position.position_enum);
             }
          }
          else

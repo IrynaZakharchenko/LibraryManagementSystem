@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace LMSView
 {
-   public partial class BookInfoControlForm : Form
+   partial class BookInfoControlForm : Form
    {
       private FormViewMode viewMode;
       private BookInformation currentBook;
