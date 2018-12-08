@@ -49,7 +49,11 @@ namespace LMSView
          {
             Text = Properties.Resources.editBook;
 
-            textBoxInventoryCode.Text = currentBook.InventoryCode.ToString();
+            foreach (var code in currentBook.InventoryCode)
+            {
+               listBoxInventoryCode.Items.Add(code);
+            }
+
             textBoxTitle.Text = currentBook.Title;
 
             AuthorInformation[] authors = currentBook.Authors;
@@ -65,7 +69,7 @@ namespace LMSView
             textBoxSeries.Text = currentBook.BookSeries;
             textBoxSubject.Text = currentBook.Subject.Name;
             textBoxSubjectParent.Text = currentBook.Subject.SubjectParent.Name;
-            textBoxAnnotation.Text = currentBook.Subject.SubjectParent.Name;
+            textBoxAnnotation.Text = currentBook.Annotation;
          }
          if (FormViewMode.Create == viewMode)
          {
@@ -83,7 +87,12 @@ namespace LMSView
 
       private BookInformation PackageBookInformation(BookInformation book)
       {
-         book.InventoryCode = Convert.ToInt32(textBoxInventoryCode.Text);
+         List<int> listInventoryCodes = new List<int>();
+         foreach (var code in listBoxInventoryCode.Items) 
+         {
+            listInventoryCodes.Add(Convert.ToInt32(code));
+         };
+         book.InventoryCode = listInventoryCodes.ToArray();
          book.Title = textBoxTitle.Text;
          book.FullTitle = textBoxFullTitle.Text;
          book.Isbn = Convert.ToInt16(textBoxIsbn.Text);
@@ -110,7 +119,9 @@ namespace LMSView
          buttonSave.Text = Properties.Resources.save;
          buttonDelete.Text = Properties.Resources.delete;
          buttonSearchPublishHouse.Text = Properties.Resources.search;
-         buttonAddBooksExamples.Text = Properties.Resources.bookLibExample;
+         buttonAddInventoryCode.Text = Properties.Resources.add;
+         buttonDeleteInventoryCode.Text = Properties.Resources.delete;
+         buttonEditInventoryCode.Text = Properties.Resources.edit;
 
          labelInventoryCode.Text = Properties.Resources.inventoryCode;
          labelTitle.Text = Properties.Resources.title;
@@ -128,9 +139,10 @@ namespace LMSView
 
       private void ButtonAddBooksExamples_Click(object sender, EventArgs e)
       {
-         using (BookLibraryInfoControlForm examples = new BookLibraryInfoControlForm())
+         using (InventoryCodeControlForm examples = new InventoryCodeControlForm())
          {
             examples.ShowDialog();
+            Activate();
          }
       }
 
@@ -148,6 +160,50 @@ namespace LMSView
                   publishControl.ShowDialog();
                }
             }
+            Activate();
+         }
+      }
+
+      private void RemoveCodeFromList(int lastCode)
+      {
+         listBoxInventoryCode.Items.Remove(lastCode);
+      }
+
+      private void AddNewCodeToList(int code)
+      {
+         listBoxInventoryCode.Items.Add(code);
+      }
+
+      private void ButtonDeleteInventoryCode_Click(object sender, EventArgs e)
+      {
+         if (listBoxInventoryCode.SelectedItem != null)
+         {
+            RemoveCodeFromList(Convert.ToInt32(listBoxInventoryCode.SelectedItem));
+         }
+      }
+
+      private void ButtonEditInventoryCode_Click(object sender, EventArgs e)
+      {
+         if (listBoxInventoryCode.SelectedItem != null)
+         {
+            int currentCode = Convert.ToInt32(listBoxInventoryCode.SelectedItem);
+            using (InventoryCodeControlForm inventoryCodeControl = new InventoryCodeControlForm(currentCode))
+            {
+               inventoryCodeControl.AddNewBookExample += AddNewCodeToList;
+               inventoryCodeControl.EditNewBookExample += RemoveCodeFromList;
+
+               inventoryCodeControl.ShowDialog();
+               Activate();
+            }
+         }
+      }
+
+      private void ButtonAddInventoryCode_Click(object sender, EventArgs e)
+      {
+         using (InventoryCodeControlForm inventoryCodeControl = new InventoryCodeControlForm())
+         {
+            inventoryCodeControl.AddNewBookExample += AddNewCodeToList;
+            inventoryCodeControl.ShowDialog();
             Activate();
          }
       }

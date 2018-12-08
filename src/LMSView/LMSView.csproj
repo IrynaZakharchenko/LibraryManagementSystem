@@ -81,11 +81,11 @@
     <Compile Include="BookInfoSearchForm.Designer.cs">
       <DependentUpon>BookInfoSearchForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookLibraryInfoControlForm.cs">
+    <Compile Include="InventoryCodeControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookLibraryInfoControlForm.Designer.cs">
-      <DependentUpon>BookLibraryInfoControlForm.cs</DependentUpon>
+    <Compile Include="InventoryCodeControlForm.Designer.cs">
+      <DependentUpon>InventoryCodeControlForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientLibraryInfoControlForm.cs">
       <SubType>Form</SubType>
@@ -141,8 +141,8 @@
     <EmbeddedResource Include="BookInfoSearchForm.resx">
       <DependentUpon>BookInfoSearchForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookLibraryInfoControlForm.resx">
-      <DependentUpon>BookLibraryInfoControlForm.cs</DependentUpon>
+    <EmbeddedResource Include="InventoryCodeControlForm.resx">
+      <DependentUpon>InventoryCodeControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientLibraryInfoControlForm.resx">
       <DependentUpon>ClientLibraryInfoControlForm.cs</DependentUpon>

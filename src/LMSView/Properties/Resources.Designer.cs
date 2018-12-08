@@ -340,11 +340,20 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inventore Code.
+        ///   Looks up a localized string similar to Inventory Code.
         /// </summary>
         internal static string inventoryCode {
             get {
                 return ResourceManager.GetString("inventoryCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory code modify window.
+        /// </summary>
+        internal static string inventoryCodeWelcome {
+            get {
+                return ResourceManager.GetString("inventoryCodeWelcome", resourceCulture);
             }
         }
         

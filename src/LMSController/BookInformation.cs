@@ -8,7 +8,7 @@ namespace LMSController
 {
    public class BookInformation
    {
-      public int InventoryCode { get; set; }
+      public int[] InventoryCode { get; set; }
       public string Title { get; set; }
       public string FullTitle { get; set; }
       public int Isbn { get; set; }
@@ -21,7 +21,7 @@ namespace LMSController
       public SubjectInformation Subject { get; set; }
 
       public BookInformation() { }
-      public BookInformation(int inventoryCode, string title, string fullTitle, int isbn,
+      public BookInformation(int[] inventoryCode, string title, string fullTitle, int isbn,
              AuthorInformation[] authors, string annotation, PublishHouseInformation publishHouse,
              DateTime publishDate, string language, string bookSeries, SubjectInformation subject)
       {

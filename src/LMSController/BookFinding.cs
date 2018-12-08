@@ -17,7 +17,7 @@ namespace LMSController
 
       public BookInformation FindBookByInventoryCode(int inventoryCode)
       {
-         return booksList.Find(book => book.InventoryCode == inventoryCode);
+         return new BookInformation();
       }
 
       public BookInformation FindBookByIsbn(int isbn)
