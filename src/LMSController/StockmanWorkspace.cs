@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LMSController
 {
-    public class StockmanWorkspace : IWorkspaceStockman
-    {
-        private List<BookInformation> bookStorage;
-        private BookFinding bookFinder;
-        private LibraryOperations libraryOperations;
+   internal class StockmanWorkspace : IWorkspaceStockman
+   {
+      private static List<BookInformation> bookStorage;
+      private static readonly IBookFinding bookFinding = new BookFinding(ref bookStorage);
+      private static readonly ILibraryOperations libraryOperations = new LibraryOperations(ref bookStorage);
 
       public StockmanWorkspace()
         {
@@ -19,18 +16,9 @@ namespace LMSController
             "Harry Potter is about to start his second year at Hogwarts.",
             new PublishHouseInformation("Bloomsbury", "USA", "fantasy"), new DateTime(1991, 02, 1),
             "english", "Harry Potter", new SubjectInformation("magic", new SubjectInformation("fairy tails", null))) };
-            bookFinder = new BookFinding(ref bookStorage);
-            libraryOperations = new LibraryOperations(ref bookStorage);
         }
 
-        public IBookFinding GetBookFinding()
-        {
-            return bookFinder;
-        }
-
-        public ILibraryOperations GetLibraryOperations()
-        {
-            return libraryOperations;
-        }
-    }
+      public IBookFinding BookFinding => bookFinding;
+      public ILibraryOperations LibraryOperations => libraryOperations;
+   }
 }

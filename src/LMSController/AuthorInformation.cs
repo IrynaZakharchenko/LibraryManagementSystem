@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LMSController
+﻿namespace LMSController
 {
-    public class AuthorInformation 
-    {
-        public string Name { get; set; }
+   public class AuthorInformation
+   {
+      public string Name { get; set; }
 
       public AuthorInformation() { }
-      public AuthorInformation(string name) 
+      public AuthorInformation(string name)
       {
          Name = name;
       }

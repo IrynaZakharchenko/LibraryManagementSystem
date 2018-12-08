@@ -12,23 +12,28 @@ namespace LMSController
 
       public void Authorize(UserCredential userCredential)
       {
-         Account account = Accounts.FindByLoginAndPassword(userCredential.Login, userCredential.Password);
+         if (userCredential == null)
+         {
+            throw new ArgumentNullException(nameof(userCredential));
+         }
+
+         Account account = Accounts.FindByUserNameAndPassword(userCredential.Name, userCredential.Password);
          
          if (null != account)
          {
             switch (account.Position.position_enum)
             {
-               case PositionEnum.Librarian:
+               case UserPosition.Librarian:
                   OnLibrarianLogOn(new LibrarianWorkspace());
                   break;
-               case PositionEnum.Administrator:
+               case UserPosition.Administrator:
                   OnAdminLogOn(new AdminWorkspace());
                   break;
-               case PositionEnum.Stockman:
+               case UserPosition.Stockman:
                   OnStockmanLogOn(new StockmanWorkspace());
                   break;
                default:
-                  throw new InvalidOperationException("Unexpected value PositionEnum = " + account.Position.position_enum);
+                  throw new InvalidOperationException(account.Position.position_enum.ToString());
             }
          }
          else

@@ -19,7 +19,7 @@ namespace LMSView
       public UserInfoSearchForm(IWorkspaceAdmin workspaceAdmin)
       {
          workspace = workspaceAdmin;
-         userInformationRegister = workspaceAdmin.GetUserInformationRegister();
+         userInformationRegister = workspaceAdmin.UserInformationRegister;
 
          InitializeComponent();
       }

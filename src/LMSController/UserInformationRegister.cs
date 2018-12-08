@@ -7,18 +7,23 @@ namespace LMSController
    {
       public string[] PossiblePositions()
       {
-         return Enum.GetNames(typeof(PositionEnum));
+         return Enum.GetNames(typeof(UserPosition));
       }
 
       public void AddUser(UserInformation userInformation)
       {
+         if (userInformation == null)
+         {
+            throw new ArgumentNullException(nameof(userInformation));
+         }
+
          Accounts.Add(new Account
          {
-            login = userInformation.Login,
-            password = userInformation.Password,
+            login = userInformation.Credential.Name,
+            password = userInformation.Credential.Password,
             Position = new Position
             {
-               position_enum = (PositionEnum)Enum.Parse(typeof(PositionEnum), userInformation.Position)
+               position_enum = (UserPosition)Enum.Parse(typeof(UserPosition), userInformation.Position)
             },
             Person = new Person
             {
@@ -33,20 +38,30 @@ namespace LMSController
 
       public void DeleteUser(UserInformation userInformation)
       {
-         Accounts.Delete(userInformation.Login);
+         if (userInformation == null)
+         {
+            throw new ArgumentNullException(nameof(userInformation));
+         }
+
+         Accounts.Delete(userInformation.Credential.Name);
          Accounts.Save();
       }
 
       public void EditUser(UserInformation userInformation)
       {
+         if (userInformation == null)
+         {
+            throw new ArgumentNullException(nameof(userInformation));
+         }
+
          Accounts.Edit(new Account
          {
             id_account = userInformation.UserId,
-            login = userInformation.Login,
-            password = userInformation.Password,
+            login = userInformation.Credential.Name,
+            password = userInformation.Credential.Password,
             Position = new Position
             {
-               position_enum = (PositionEnum)Enum.Parse(typeof(PositionEnum), userInformation.Position)
+               position_enum = (UserPosition)Enum.Parse(typeof(UserPosition), userInformation.Position)
             },
             Person = new Person
             {
@@ -59,9 +74,14 @@ namespace LMSController
          Accounts.Save();
       }
         
-      public UserInformation FindUser(string searhString)
+      public UserInformation FindUser(string userName)
       {
-         Account account = Accounts.FindByLogin(searhString);
+         if (userName == null)
+         {
+            throw new ArgumentNullException(nameof(userName));
+         }
+
+         Account account = Accounts.FindByUserName(userName);
 
          UserInformation result = null;
          if (account != null)

@@ -11,7 +11,7 @@ namespace LMSModel
             CreateDatabase();
 
             List<Position> positions = new List<Position>();
-            foreach (PositionEnum position in Enum.GetValues(typeof(PositionEnum)))
+            foreach (UserPosition position in Enum.GetValues(typeof(UserPosition)))
             {
                positions.Add(new Position() { position_enum = position });
             }
@@ -19,7 +19,7 @@ namespace LMSModel
 
             Account account = new Account
             {
-               Position = positions.Find(position => position.position_enum.Equals(PositionEnum.Administrator)),
+               Position = positions.Find(position => position.position_enum.Equals(UserPosition.Administrator)),
                login = "admin",
                password = "admin",
                Person = new Person

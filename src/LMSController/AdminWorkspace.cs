@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LMSController
+﻿namespace LMSController
 {
-    public class AdminWorkspace : IWorkspaceAdmin
-    {
-        private IUserInformationRegister adminAllowedOperations = new UserInformationRegister();
-
-        public IUserInformationRegister GetUserInformationRegister()
-        {
-            return adminAllowedOperations;
-        }
-    }
+   internal class AdminWorkspace : IWorkspaceAdmin
+   {
+      private static readonly IUserInformationRegister userInformationRegister = new UserInformationRegister();
+      public IUserInformationRegister UserInformationRegister => userInformationRegister;
+   }
 }

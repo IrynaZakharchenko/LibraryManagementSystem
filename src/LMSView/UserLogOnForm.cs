@@ -6,7 +6,7 @@ namespace LMSView
 {
    public partial class UserLogOnForm : Form
    {
-      private AuthenticationProcess authenticationProcess;
+      private IAuthentication authenticationProcess;
 
       public UserLogOnForm()
       {
@@ -42,7 +42,7 @@ namespace LMSView
 
       private void ButtonlogOn_Click(object sender, System.EventArgs e)
       {
-         authenticationProcess.Authorize(new UserCredential(textBoxLogin.Text, textBoxPassword.Text));
+         authenticationProcess.Authorize(new UserCredential() { Name = textBoxLogin.Text, Password = textBoxPassword.Text });
          ClearTextFields();
          Activate();
       }
@@ -70,7 +70,7 @@ namespace LMSView
       public void AuthorizeStockman(IWorkspaceStockman workspaceStockman)
       {
          Hide();
-         using (BookInfoSearchForm mStockmanManageWin = new BookInfoSearchForm())
+         using (BookInfoSearchForm mStockmanManageWin = new BookInfoSearchForm(workspaceStockman))
          {
             mStockmanManageWin.ShowDialog();
          }

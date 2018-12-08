@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LMSController
+﻿namespace LMSController
 {
-    public interface IWorkspaceStockman
-    {
-        IBookFinding GetBookFinding();
-
-        ILibraryOperations GetLibraryOperations();
-    }
+   public interface IWorkspaceStockman
+   {
+      IBookFinding BookFinding { get; }
+      ILibraryOperations LibraryOperations { get; }
+   }
 }

@@ -6,10 +6,11 @@ namespace LMSView
 {
    public partial class BookInfoSearchForm : Form
    {
-      private IWorkspaceStockman workspaceStockman = new StockmanWorkspace();
+      private IWorkspaceStockman WorkspaceStockman;
 
-      public BookInfoSearchForm()
+      public BookInfoSearchForm(IWorkspaceStockman workspaceStockman)
       {
+         WorkspaceStockman = workspaceStockman;
          InitializeComponent();
       }
 
@@ -23,11 +24,11 @@ namespace LMSView
 
       private void ButtonSearch_Click(object sender, EventArgs e)
       {
-         BookInformation book = workspaceStockman.GetBookFinding().FindBookByTitle(textBoxSearch.Text);
+         BookInformation book = WorkspaceStockman.BookFinding.FindBookByTitle(textBoxSearch.Text);
          if(book != null)
          {
             using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Edit, 
-                   workspaceStockman.GetLibraryOperations(), book))
+                   WorkspaceStockman.LibraryOperations, book))
             {
                Hide();
                bookForm.ShowDialog();
@@ -39,7 +40,7 @@ namespace LMSView
       private void ButtonCreate_Click(object sender, EventArgs e)
       {
          using (BookInfoControlForm bookForm = new BookInfoControlForm(NViewHelper.FormViewMode.Create,
-                  workspaceStockman.GetLibraryOperations()))
+                  WorkspaceStockman.LibraryOperations))
          {
             Hide();
             bookForm.ShowDialog();

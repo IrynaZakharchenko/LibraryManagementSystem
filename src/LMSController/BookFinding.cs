@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace LMSController
 {
-   class BookFinding : IBookFinding
+   internal class BookFinding : IBookFinding
    {
       private readonly List<BookInformation> booksList;
+
+      public BookFinding()
+      {
+      }
 
       public BookFinding(ref List<BookInformation> list)
       {
@@ -20,9 +20,9 @@ namespace LMSController
          return new BookInformation();
       }
 
-      public BookInformation FindBookByIsbn(int isbn)
+      public BookInformation FindBookByISBN(int isbn)
       {
-         return booksList.Find(book => book.Isbn == isbn);
+         return booksList.Find(book => book.ISBN == isbn);
       }
 
       public BookInformation FindBookByTitle(string title)
@@ -42,7 +42,7 @@ namespace LMSController
 
       BookInformation[] IBookFinding.FindBookByLanguage(string language)
       {
-          return booksList.FindAll(book => book.Language == language).ToArray();
+         return booksList.FindAll(book => book.Language == language).ToArray();
       }
    }
 }

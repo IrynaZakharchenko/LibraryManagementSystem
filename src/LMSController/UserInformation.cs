@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LMSController
+﻿namespace LMSController
 {
    public class UserInformation
    {
       internal int UserId { get; set; }
-
-      public string Login { get; set; }
-      public string Password { get; set; }
+      
+      public UserCredential Credential { get; set; }
       public string Position { get; set; }
       public PersonalInformation PersonalInformation { get; set; }
 
       public UserInformation() { }
-      public UserInformation(string login, string password, 
+      public UserInformation(string name, string password, 
       string position, PersonalInformation personalInformation)
       {
-         Login = login;
-         Password = password;
+         Credential = new UserCredential { Name = name, Password = password };
          Position = position;
          PersonalInformation = personalInformation;
       }

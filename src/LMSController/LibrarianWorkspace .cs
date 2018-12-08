@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LMSController
 {
-    public class LibrarianWorkspace : IWorkspaceLibrarian
-    {
-        public IBookFinding GetBookFinding()
-        {
-            throw new NotImplementedException();
-        }
+   public class LibrarianWorkspace : IWorkspaceLibrarian
+   {
+      private static readonly IBookFinding bookFinding = new BookFinding();
 
-        public IClientInformationRegister GetClientInformationRegister()
-        {
-            throw new NotImplementedException();
-        }
-    }
+      public IBookFinding BookFinding => bookFinding;
+      public IClientInformationRegister ClientInformationRegister => throw new NotImplementedException();
+   }
 }

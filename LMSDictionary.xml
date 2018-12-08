@@ -1,8 +1,13 @@
 <Dictionary>  
-   <Acronyms>  
+   <Acronyms>
+      <Words>
+         <Recognized>
+            <Word>isbn</Word>   <!-- International Standard Book Number -->
+         </Recognized>
+      </Words>
       <CasingExceptions>  
          <Acronym>LMS</Acronym>   <!-- Library Management System -->  
-         <Acronym>Isbn</Acronym>   <!-- International Standard Book Number -->  
+         <Acronym>ISBN</Acronym>   <!-- International Standard Book Number -->
       </CasingExceptions>  
    </Acronyms>  
 </Dictionary> 
