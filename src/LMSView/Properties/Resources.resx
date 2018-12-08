@@ -349,9 +349,12 @@
     <value>Authors</value>
   </data>
   <data name="inventoryCode" xml:space="preserve">
-    <value>Inventore Code</value>
+    <value>Inventory Code</value>
   </data>
   <data name="searchPublishHouseFailed" xml:space="preserve">
     <value>Publishing house with this name is not exist in library. Do you want to add it?</value>
+  </data>
+  <data name="inventoryCodeWelcome" xml:space="preserve">
+    <value>Inventory code modify window</value>
   </data>
 </root>

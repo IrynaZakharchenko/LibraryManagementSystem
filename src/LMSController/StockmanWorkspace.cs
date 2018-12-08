@@ -14,7 +14,7 @@ namespace LMSController
 
       public StockmanWorkspace()
         {
-            bookStorage = new List<BookInformation>() { new BookInformation(1234, "Harry Potter",
+            bookStorage = new List<BookInformation>() { new BookInformation(new int[]{12343, 67655, 78889 }, "Harry Potter",
             "Harry Potter and chamber os secret", 786, new AuthorInformation[] { new AuthorInformation("J.K. Rowling") },
             "Harry Potter is about to start his second year at Hogwarts.",
             new PublishHouseInformation("Bloomsbury", "USA", "fantasy"), new DateTime(1991, 02, 1),
