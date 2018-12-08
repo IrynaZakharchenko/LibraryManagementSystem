@@ -77,7 +77,7 @@
   <Table Name="dbo.Position" Member="Positions">
     <Type Name="Position">
       <Column Name="id_position" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="position_enum" Type="PositionEnum" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="position_enum" Type="UserPosition" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Position_Account" Member="Accounts" ThisKey="id_position" OtherKey="id_position" Type="Account" />
     </Type>
   </Table>

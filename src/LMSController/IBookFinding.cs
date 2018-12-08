@@ -10,7 +10,7 @@ namespace LMSController
     {
         BookInformation FindBookByInventoryCode(int inventoryCode);
         BookInformation FindBookByTitle(string title);
-        BookInformation FindBookByIsbn(int isbn);
+        BookInformation FindBookByISBN(int isbn);
         BookInformation[] FindBookByAuthors(AuthorInformation[] authors);
         BookInformation[] FindBookByLanguage(string language);
         BookInformation[] FindBookByBookSeries(string bookSeries);

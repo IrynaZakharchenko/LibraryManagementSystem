@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LMSController
 {
@@ -11,7 +7,7 @@ namespace LMSController
       public int[] InventoryCode { get; set; }
       public string Title { get; set; }
       public string FullTitle { get; set; }
-      public int Isbn { get; set; }
+      public int ISBN { get; set; }
       public AuthorInformation[] Authors { get; set; }
       public string Annotation { get; set; }
       public PublishHouseInformation PublishHouse { get; set; }
@@ -28,7 +24,7 @@ namespace LMSController
          InventoryCode = inventoryCode;
          Title = title;
          FullTitle = fullTitle;
-         Isbn = isbn;
+         ISBN = isbn;
          Authors = authors;
          Annotation = annotation;
          PublishHouse = publishHouse;

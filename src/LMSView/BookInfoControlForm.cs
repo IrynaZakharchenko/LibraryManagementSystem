@@ -62,7 +62,7 @@ namespace LMSView
                textBoxAuthors.Text += " " + name.Name;
             }
             textBoxFullTitle.Text = currentBook.FullTitle;
-            textBoxIsbn.Text = currentBook.Isbn.ToString();
+            textBoxIsbn.Text = currentBook.ISBN.ToString();
             textBoxLanguage.Text = currentBook.Language;
             dateTimePickerPublish.Value = currentBook.PublishDate;
             textBoxPublishHouseResult.Text = currentBook.PublishHouse.Name;
@@ -95,7 +95,7 @@ namespace LMSView
          book.InventoryCode = listInventoryCodes.ToArray();
          book.Title = textBoxTitle.Text;
          book.FullTitle = textBoxFullTitle.Text;
-         book.Isbn = Convert.ToInt16(textBoxIsbn.Text);
+         book.ISBN = Convert.ToInt16(textBoxIsbn.Text);
          book.Language = textBoxLanguage.Text;
          book.PublishHouse = publishHouseRegister.FindPublishHouseByName(textBoxPublishHouseResult.Text);
          book.PublishDate = dateTimePickerPublish.Value;

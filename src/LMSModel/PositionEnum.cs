@@ -1,6 +1,6 @@
 ﻿namespace LMSModel
 {
-   public enum PositionEnum
+   public enum UserPosition
    {
       Administrator,
       Librarian,

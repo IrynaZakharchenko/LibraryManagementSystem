@@ -1739,7 +1739,7 @@ namespace LMSModel
 		
 		private int _id_position;
 		
-		private PositionEnum _position_enum;
+		private UserPosition _position_enum;
 		
 		private EntitySet<Account> _Accounts;
 		
@@ -1749,7 +1749,7 @@ namespace LMSModel
     partial void OnCreated();
     partial void Onid_positionChanging(int value);
     partial void Onid_positionChanged();
-    partial void Onposition_enumChanging(PositionEnum value);
+    partial void Onposition_enumChanging(UserPosition value);
     partial void Onposition_enumChanged();
     #endregion
 		
@@ -1780,7 +1780,7 @@ namespace LMSModel
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_position_enum", DbType="Int NOT NULL", CanBeNull=false)]
-		public PositionEnum position_enum
+		public UserPosition position_enum
 		{
 			get
 			{

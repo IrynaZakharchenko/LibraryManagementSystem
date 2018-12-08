@@ -5,26 +5,25 @@ namespace LMSModel
 {
    public static class Accounts
    {
-      static public Account FindByLoginAndPassword(string login, string password)
+      public static Account FindByUserNameAndPassword(string userName, string password)
       {
          IQueryable<Account> query =
             from account in DBInstance.DataContext.Accounts
-            where account.login.Equals(login)
-            where account.password.Equals(password)
+            where account.login.Equals(userName) && account.password.Equals(password)
             select account;
 
          return query.Count() > 0 ? query.First() : null;
       }
-      static public Account FindByLogin(string login)
+      public static Account FindByUserName(string userName)
       {
          IQueryable<Account> query =
             from account in DBInstance.DataContext.Accounts
-            where account.login.Equals(login)
+            where account.login.Equals(userName)
             select account;
 
          return query.Count() > 0 ? query.First() : null;
       }
-      static public Account FindById(int id)
+      public static Account FindById(int id)
       {
          IQueryable<Account> query =
             from account in DBInstance.DataContext.Accounts
@@ -33,7 +32,7 @@ namespace LMSModel
 
          return query.Count() > 0 ? query.First() : null;
       }
-      static public List<Account> FindByName(string name)
+      public static ICollection<Account> FindByName(string name)
       {
          IQueryable<Account> query =
             from account in DBInstance.DataContext.Accounts
@@ -42,7 +41,7 @@ namespace LMSModel
 
          return query.Count() > 0 ? query.ToList() : null;
       }
-      static public List<Account> FindByPosition(PositionEnum @enum)
+      public static ICollection<Account> FindByPosition(UserPosition @enum)
       {
          IQueryable<Account> query =
             from account in DBInstance.DataContext.Accounts
@@ -51,9 +50,14 @@ namespace LMSModel
 
          return query.Count() > 0 ? query.ToList() : null;
       }
-      static public void Add(Account newAccount)
+      public static void Add(Account newAccount)
       {
-         if (FindByLogin(newAccount.login) == null)
+         if (newAccount == null)
+         {
+            throw new System.ArgumentNullException(nameof(newAccount));
+         }
+
+         if (FindByUserName(newAccount.login) == null)
          {
             IQueryable<Position> query =
                from position in DBInstance.DataContext.Positions
@@ -68,9 +72,14 @@ namespace LMSModel
             DBInstance.DataContext.Accounts.InsertOnSubmit(newAccount);
          }
       }
-      static public void Delete(string login)
+      public static void Delete(string userName)
       {
-         Account account = FindByLogin(login);
+         if (userName == null)
+         {
+            throw new System.ArgumentNullException(nameof(userName));
+         }
+
+         Account account = FindByUserName(userName);
          if (account != null)
          {
             DBInstance.DataContext.Accounts.DeleteOnSubmit(account);
@@ -83,8 +92,13 @@ namespace LMSModel
             }
          }
       }
-      static public void Edit(Account existingAccount)
+      public static void Edit(Account existingAccount)
       {
+         if (existingAccount == null)
+         {
+            throw new System.ArgumentNullException(nameof(existingAccount));
+         }
+
          Account account = FindById(existingAccount.id_account);
          
          account.login = existingAccount.login;
@@ -100,7 +114,7 @@ namespace LMSModel
          account.Person.birthday = existingAccount.Person.birthday;
          account.Person.phone = existingAccount.Person.phone;
       }
-      static public void Save()
+      public static void Save()
       {
          DBInstance.SubmitChanges();
       }

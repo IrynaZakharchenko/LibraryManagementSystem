@@ -51,8 +51,8 @@ namespace LMSView
 
       private void ApplyEditViewMode()
       {
-         textBoxLogin.Text = currentUser.Login;
-         textBoxPassword.Text = currentUser.Password;
+         textBoxLogin.Text = currentUser.Credential.Name;
+         textBoxPassword.Text = currentUser.Credential.Password;
          textBoxName.Text = currentUser.PersonalInformation.FullName;
          dateTimeBirth.Value = currentUser.PersonalInformation.Birthday;
          textBoxPhone.Text = currentUser.PersonalInformation.Phone.ToString();
@@ -113,8 +113,8 @@ namespace LMSView
 
       private UserInformation ExtractInputInformation(UserInformation userInformation)
       {
-         userInformation.Login = textBoxLogin.Text;
-         userInformation.Password = textBoxPassword.Text;
+         userInformation.Credential.Name = textBoxLogin.Text;
+         userInformation.Credential.Password = textBoxPassword.Text;
          userInformation.Position = comboBoxPosition.SelectedItem.ToString();
          PersonalInformation personInfo = new PersonalInformation();
          personInfo.FullName = textBoxName.Text;

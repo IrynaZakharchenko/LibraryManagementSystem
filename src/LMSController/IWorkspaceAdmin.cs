@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LMSController
+﻿namespace LMSController
 {
-    public interface IWorkspaceAdmin
-    {
-        IUserInformationRegister GetUserInformationRegister(); 
-    }
+   public interface IWorkspaceAdmin
+   {
+      IUserInformationRegister UserInformationRegister { get; }
+   }
 }

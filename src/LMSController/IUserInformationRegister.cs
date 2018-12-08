@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LMSController
+﻿namespace LMSController
 {
    public interface IUserInformationRegister
    {
-      UserInformation FindUser(string searhString);
+      UserInformation FindUser(string userName);
       string[] PossiblePositions();
       void AddUser(UserInformation userInformation);
       void EditUser(UserInformation userInformation);
