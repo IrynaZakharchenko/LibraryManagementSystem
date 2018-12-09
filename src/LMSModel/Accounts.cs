@@ -14,6 +14,7 @@ namespace LMSModel
 
          return query.Count() > 0 ? query.First() : null;
       }
+
       public static Account FindByUserName(string userName)
       {
          IQueryable<Account> query =
@@ -23,6 +24,7 @@ namespace LMSModel
 
          return query.Count() > 0 ? query.First() : null;
       }
+
       public static Account FindById(int id)
       {
          IQueryable<Account> query =
@@ -32,6 +34,7 @@ namespace LMSModel
 
          return query.Count() > 0 ? query.First() : null;
       }
+
       public static ICollection<Account> FindByName(string name)
       {
          IQueryable<Account> query =
@@ -41,6 +44,7 @@ namespace LMSModel
 
          return query.Count() > 0 ? query.ToList() : null;
       }
+
       public static ICollection<Account> FindByPosition(UserPosition @enum)
       {
          IQueryable<Account> query =
@@ -50,6 +54,7 @@ namespace LMSModel
 
          return query.Count() > 0 ? query.ToList() : null;
       }
+
       public static void Add(Account newAccount)
       {
          if (newAccount == null)
@@ -72,6 +77,7 @@ namespace LMSModel
             DBInstance.DataContext.Accounts.InsertOnSubmit(newAccount);
          }
       }
+
       public static void Delete(string userName)
       {
          if (userName == null)
@@ -85,13 +91,14 @@ namespace LMSModel
             DBInstance.DataContext.Accounts.DeleteOnSubmit(account);
 
             if ((from reader in DBInstance.DataContext.Readers
-               where reader.id_personal_info == account.id_personal_info
-               select reader).Count() == 0)
+                 where reader.id_personal_info == account.id_personal_info
+                 select reader).Count() == 0)
             {
                DBInstance.DataContext.Persons.DeleteOnSubmit(account.Person);
             }
          }
       }
+
       public static void Edit(Account existingAccount)
       {
          if (existingAccount == null)
@@ -100,10 +107,10 @@ namespace LMSModel
          }
 
          Account account = FindById(existingAccount.id_account);
-         
+
          account.login = existingAccount.login;
          account.password = existingAccount.password;
-         
+
          account.Position =
             (from position in DBInstance.DataContext.Positions
              where position.position_enum == existingAccount.Position.position_enum
@@ -114,6 +121,7 @@ namespace LMSModel
          account.Person.birthday = existingAccount.Person.birthday;
          account.Person.phone = existingAccount.Person.phone;
       }
+
       public static void Save()
       {
          DBInstance.SubmitChanges();

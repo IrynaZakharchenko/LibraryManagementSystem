@@ -1,33 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LMSModel;
+using System;
 
 namespace LMSController
 {
-    class LibraryOperations : ILibraryOperations
-    {
-        private List<BookInformation> booksList;
-        
-        public LibraryOperations(ref List<BookInformation> books)
-        {
-            booksList = books;
-        }
+   internal class LibraryOperations : ILibraryOperations
+   {
+      public void AddBook(BookInformation bookInformation)
+      {
+         if (bookInformation == null)
+         {
+            throw new ArgumentNullException(nameof(bookInformation));
+         }
 
-        public void AddBook(BookInformation bookInformation)
-        {
-            booksList.Add(bookInformation);
-        }
+         Book book = new Book();
 
-        public void DeleteBook(BookInformation bookInformation)
-        {
-            booksList.Remove(bookInformation);
-        }
+         Library.AddBook(book);
+      }
 
-        public void EditBook(BookInformation bookInformation)
-        {
-            booksList.Add(bookInformation);
-        }
-    }
+      public void DeleteBook(BookInformation bookInformation)
+      {
+         if (bookInformation == null)
+         {
+            throw new ArgumentNullException(nameof(bookInformation));
+         }
+
+         Book book = new Book();
+
+         Library.DeleteBook(book);
+      }
+
+      public void EditBook(BookInformation bookInformation)
+      {
+         if (bookInformation == null)
+         {
+            throw new ArgumentNullException(nameof(bookInformation));
+         }
+
+         Book book = new Book();
+
+         Library.EditBook(book);
+      }
+   }
 }

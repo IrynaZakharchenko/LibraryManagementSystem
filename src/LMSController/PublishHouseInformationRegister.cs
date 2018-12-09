@@ -1,41 +1,81 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LMSModel;
 
 namespace LMSController
 {
-    public delegate void OperationEventHandler(bool result);
+   public delegate void OperationEventHandler(bool result);
 
-    public class PublishHouseInformationRegister : IPublishHouseInformationRegister
-    {
-        private List<PublishHouseInformation> publishHousesList = new List<PublishHouseInformation>()
-        { new PublishHouseInformation("Piter", "St. Peterburg", "Science") };
+   public class PublishHouseInformationRegister : IPublishHouseInformationRegister
+   {
+      public event OperationEventHandler OnOperationExecute;
 
-        public event OperationEventHandler OnOperationExecute;
+      public void Add(PublishHouseInformation publishHouse)
+      {
+         if (publishHouse == null)
+         {
+            throw new System.ArgumentNullException(nameof(publishHouse));
+         }
 
-        public void AddPublishHouse(PublishHouseInformation publishHouse)
-        {
-            publishHousesList.Add(publishHouse);
+         try
+         {
+            PublishingHouses.Add(new PublishingHouse()
+            {
+               category = publishHouse.Category,
+               location = publishHouse.Location,
+               name = publishHouse.Name
+            });
+
             OnOperationExecute(true);
-        }
+         }
+         catch
+         {
+            OnOperationExecute(false);
+         }
+      }
 
-        public void DeletePublishHouse(PublishHouseInformation publishHouse)
-        {
-            publishHousesList.Remove(publishHouse);
+      public void Delete(PublishHouseInformation publishHouse)
+      {
+         if (publishHouse == null)
+         {
+            throw new System.ArgumentNullException(nameof(publishHouse));
+         }
+
+         try
+         {
+            PublishingHouses.Delete(new PublishingHouse()
+            {
+               category = publishHouse.Category,
+               location = publishHouse.Location,
+               name = publishHouse.Name
+            });
+
             OnOperationExecute(true);
-        }
+         }
+         catch
+         {
+            OnOperationExecute(false);
+         }
+      }
 
-        public void EditPublishHouse(PublishHouseInformation publishHouse)
-        {
-            publishHousesList.Add(publishHouse);
-            OnOperationExecute(true);
-        }
+      public PublishHouseInformation FindByName(string name)
+      {
+         if (name == null)
+         {
+            throw new System.ArgumentNullException(nameof(name));
+         }
 
-        public PublishHouseInformation FindPublishHouseByName(string name)
-        {
-            return publishHousesList.Find(publishHouse => publishHouse.Name == name);
-        }
-    }
+         PublishHouseInformation publishHouseInformation = null;
+         PublishingHouse publishingHouse = PublishingHouses.FindByName(name);
+         if (publishingHouse != null)
+         {
+            publishHouseInformation = new PublishHouseInformation()
+            {
+               Category = publishingHouse.category,
+               Location = publishingHouse.location,
+               Name = publishingHouse.name
+            };
+         }
+
+         return publishHouseInformation;
+      }
+   }
 }
