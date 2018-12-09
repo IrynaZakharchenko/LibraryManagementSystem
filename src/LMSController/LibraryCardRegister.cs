@@ -8,12 +8,17 @@ namespace LMSController
 {
    public class LibraryCardRegister : ILibraryCardRegister
    {
-      public LibraryCard GetLibrarCardByInventoryCode(int inventoryCode)
+      public LibraryCard GetLibraryCardByBookTitle(string title)
       {
          throw new NotImplementedException();
       }
 
-      public ICollection<LibraryCard> GetLibrarCardsByTicketNum(int clientTicketNum)
+      public LibraryCard GetLibraryCardByInventoryCode(int inventoryCode)
+      {
+         throw new NotImplementedException();
+      }
+
+      public ICollection<LibraryCard> GetLibraryCardsByTicketNum(int clientTicketNum)
       {
          throw new NotImplementedException();
       }

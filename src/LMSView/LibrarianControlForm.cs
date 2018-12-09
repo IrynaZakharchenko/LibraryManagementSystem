@@ -21,7 +21,6 @@ namespace LMSView
          labelSearchClient.Text = Properties.Resources.manageClient;
          labelSearchBook.Text = Properties.Resources.manageBook;
 
-         buttonRentBook.Text = Properties.Resources.rentBook;
          buttonSearchClient.Text = Properties.Resources.search;
          buttonCreateClient.Text = Properties.Resources.createClient;
          buttonSearchBook.Text = Properties.Resources.search;
@@ -51,8 +50,9 @@ namespace LMSView
             ClientInformation client = workspaceLibrarian.ClientInformationRegister.FindClientByName(clientName);
             if (client != null)
             {
-               using (ClientLibraryInfoControlForm clientLibraryInfo = new ClientLibraryInfoControlForm(NViewHelper.FormViewMode.Edit,
+               using (ClientLibraryInfoControlForm clientLibraryInfo = new ClientLibraryInfoControlForm(workspaceLibrarian.LibraryCardRegister,
                                                                                                         workspaceLibrarian.ClientInformationRegister,
+                                                                                                        workspaceLibrarian.BookFinding,
                                                                                                         client))
                {
                   clientLibraryInfo.ShowDialog();
@@ -72,9 +72,5 @@ namespace LMSView
          Activate();
       }
 
-      private void ButtonRentBook_Click(object sender, EventArgs e)
-      {
-
-      }
    }
 }

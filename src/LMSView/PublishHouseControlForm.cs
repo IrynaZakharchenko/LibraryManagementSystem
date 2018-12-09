@@ -18,12 +18,16 @@ namespace LMSView
       private PublishHouseInformation publishHouseInformation;
 
       public PublishHouseControlForm(NViewHelper.FormViewMode mode,
-             IPublishHouseInformationRegister publishHouseRegister, 
+             IPublishHouseInformationRegister publishHouseRegister,
              PublishHouseInformation publishHouseInfo = null)
       {
          viewModeForm = mode;
          publishHouseInformationRegister = publishHouseRegister;
-         publishHouseInformationRegister.OnOperationExecute += PrintMessageForUser;
+         if (publishHouseInformationRegister != null)
+         {
+            publishHouseInformationRegister.OnOperationExecute += PrintMessageForUser;
+         }
+
          publishHouseInformation = publishHouseInfo;
 
          InitializeComponent();
@@ -57,7 +61,7 @@ namespace LMSView
          {
             publishHouseInformationRegister.DeletePublishHouse(publishHouseInformation);
          }
-         
+
       }
 
       private void ButtonSave_Click(object sender, EventArgs e)
