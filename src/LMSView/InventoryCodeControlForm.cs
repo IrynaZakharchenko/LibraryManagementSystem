@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace LMSView
@@ -33,7 +34,7 @@ namespace LMSView
 
          if (NViewHelper.FormViewMode.Edit == viewMode)
          {
-            textBoxInventoryCode.Text = inventoryCode.ToString();
+            textBoxInventoryCode.Text = inventoryCode.ToString(CultureInfo.CurrentCulture);
          }
       }
 
@@ -41,7 +42,7 @@ namespace LMSView
       {
          if (false == String.IsNullOrEmpty(textBoxInventoryCode.Text))
          {
-            int newCode = Convert.ToInt32(textBoxInventoryCode.Text);
+            int newCode = Convert.ToInt32(textBoxInventoryCode.Text, CultureInfo.CurrentCulture);
             if (NViewHelper.FormViewMode.Edit == viewMode)
             {
                EditNewBookExample(inventoryCode);

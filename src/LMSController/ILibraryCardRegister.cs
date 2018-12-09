@@ -4,8 +4,8 @@ namespace LMSController
 {
    public interface ILibraryCardRegister
    {
-      ICollection<LibraryCard> GetLibrarCardsByTicketNum(int clientTicketNum);
-      LibraryCard GetLibrarCardByInventoryCode(int inventoryCode);
-
+      ICollection<LibraryCard> GetLibraryCardsByTicketNum(int clientTicketNum);
+      LibraryCard GetLibraryCardByInventoryCode(int inventoryCode);
+      LibraryCard GetLibraryCardByBookTitle(string title);
    }
 }
