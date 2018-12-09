@@ -45,7 +45,7 @@ namespace LMSView
       private void ClientLibraryInfoControlForm_Load(object sender, EventArgs e)
       {
          labelClientTicketNum.Text = Properties.Resources.libraryNumTicket;
-         labelBookNum.Text = Properties.Resources.bookNum;
+         labelClientName.Text = Properties.Resources.bookNum;
          labelBooksList.Text = Properties.Resources.bookList;
          buttonReturnBook.Text = Properties.Resources.returnBook;
          buttonClientPersonal.Text = Properties.Resources.personalInfo;

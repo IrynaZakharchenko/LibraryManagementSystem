@@ -50,7 +50,7 @@ namespace LMSView
       public void AuthorizeLibrarian(IWorkspaceLibrarian workspaceLibrarian)
       {
          Hide();
-         using (LibrarianControlForm mLibraryManageWin = new LibrarianControlForm())
+         using (LibrarianControlForm mLibraryManageWin = new LibrarianControlForm(workspaceLibrarian))
          {
             mLibraryManageWin.ShowDialog();
          }

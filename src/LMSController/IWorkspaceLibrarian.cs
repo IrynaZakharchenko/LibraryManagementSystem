@@ -4,5 +4,6 @@
    {
       IBookFinding BookFinding { get; }
       IClientInformationRegister ClientInformationRegister { get; }
+      ILibraryCardRegister LibraryCardRegister { get; }
    }
 }

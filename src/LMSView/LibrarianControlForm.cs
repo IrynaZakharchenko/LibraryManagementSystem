@@ -6,11 +6,11 @@ namespace LMSView
 {
    public partial class LibrarianControlForm : Form
    {
-      private readonly IWorkspaceLibrarian workspace;
+      private readonly IWorkspaceLibrarian workspaceLibrarian;
 
-      public LibrarianControlForm()
+      public LibrarianControlForm(IWorkspaceLibrarian workspace)
       {
-         workspace = new LibrarianWorkspace();
+         workspaceLibrarian = workspace;
          InitializeComponent();
       }
 
@@ -35,7 +35,7 @@ namespace LMSView
       private void ButtonCreateClient_Click(object sender, EventArgs e)
       {
          using (ClientPersonalInfoControlForm client = new ClientPersonalInfoControlForm(NViewHelper.FormViewMode.Create,
-                                                                                         workspace.GetClientInformationRegister()))
+                                                                                         workspaceLibrarian.ClientInformationRegister))
          {
             client.ShowDialog();
             Activate();
@@ -48,11 +48,11 @@ namespace LMSView
 
          if (false == String.IsNullOrEmpty(clientName))
          {
-            ClientInformation client = workspace.GetClientInformationRegister().FindClientByName(clientName);
+            ClientInformation client = workspaceLibrarian.ClientInformationRegister.FindClientByName(clientName);
             if (client != null)
             {
                using (ClientLibraryInfoControlForm clientLibraryInfo = new ClientLibraryInfoControlForm(NViewHelper.FormViewMode.Edit,
-                                                                                                        workspace.GetClientInformationRegister(),
+                                                                                                        workspaceLibrarian.ClientInformationRegister,
                                                                                                         client))
                {
                   clientLibraryInfo.ShowDialog();
