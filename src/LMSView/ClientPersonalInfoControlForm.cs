@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 using LMSController;
 
@@ -59,13 +60,13 @@ namespace LMSView
 
       private ClientInformation PackageNewClientInfo(ClientInformation client)
       {
-         client.LibraryTicketNumberCode = Convert.ToInt32(textBoxLibTicketNum.Text);
+         client.LibraryTicketNumberCode = Convert.ToInt32(textBoxLibTicketNum.Text, CultureInfo.CurrentCulture);
 
          PersonalInformation personInfo = new PersonalInformation()
          {
             FullName = textBoxName.Text,
             Birthday = dateTimePickerBirth.Value,
-            Phone = Convert.ToDecimal(textBoxPhone.Text)
+            Phone = Convert.ToDecimal(textBoxPhone.Text, CultureInfo.CurrentCulture)
          };
          client.PersonalInformation = personInfo;
 

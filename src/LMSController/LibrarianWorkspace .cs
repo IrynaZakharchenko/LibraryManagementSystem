@@ -8,5 +8,6 @@ namespace LMSController
 
       public IBookFinding BookFinding => bookFinding;
       public IClientInformationRegister ClientInformationRegister => throw new NotImplementedException();
+      public ILibraryCardRegister LibraryCardRegister => throw new NotImplementedException();
    }
 }
