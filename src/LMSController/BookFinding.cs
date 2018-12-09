@@ -25,11 +25,6 @@ namespace LMSController
          return booksList.Find(book => book.ISBN == isbn);
       }
 
-      public BookInformation FindBookByTitle(string title)
-      {
-         return booksList.Find(book => book.Title == title);
-      }
-
       BookInformation[] IBookFinding.FindBookByAuthors(AuthorInformation[] authors)
       {
          return booksList.FindAll(book => book.Authors == authors).ToArray();
@@ -43,6 +38,11 @@ namespace LMSController
       BookInformation[] IBookFinding.FindBookByLanguage(string language)
       {
          return booksList.FindAll(book => book.Language == language).ToArray();
+      }
+
+      BookInformation IBookFinding.FindBookByTitle(string title)
+      {
+         return booksList.Find(book => book.Title == title);
       }
    }
 }

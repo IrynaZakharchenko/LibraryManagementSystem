@@ -60,9 +60,12 @@ namespace LMSView
       public void AuthorizeAdmin(IWorkspaceAdmin workspaceAdmin)
       {
          Hide();
-         using (UserInfoSearchForm mAdminManageWin = new UserInfoSearchForm(workspaceAdmin))
+         if (workspaceAdmin != null)
          {
-            mAdminManageWin.ShowDialog();
+            using (UserInfoSearchForm mAdminManageWin = new UserInfoSearchForm(workspaceAdmin.UserInformationRegister))
+            {
+               mAdminManageWin.ShowDialog();
+            }
          }
          Show();
       }

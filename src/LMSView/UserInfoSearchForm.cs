@@ -13,13 +13,11 @@ namespace LMSView
 {
    public partial class UserInfoSearchForm : Form
    {
-      private readonly IWorkspaceAdmin workspace;
       private readonly IUserInformationRegister userInformationRegister;
 
-      public UserInfoSearchForm(IWorkspaceAdmin workspaceAdmin)
+      public UserInfoSearchForm(IUserInformationRegister userRegister)
       {
-         workspace = workspaceAdmin;
-         userInformationRegister = workspaceAdmin.UserInformationRegister;
+         userInformationRegister = userRegister;
 
          InitializeComponent();
       }

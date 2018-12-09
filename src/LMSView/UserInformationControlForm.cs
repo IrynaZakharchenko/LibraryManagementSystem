@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Windows.Forms;
 using LMSController;
 using LMSView.NViewHelper;
@@ -55,7 +56,7 @@ namespace LMSView
          textBoxPassword.Text = currentUser.Credential.Password;
          textBoxName.Text = currentUser.PersonalInformation.FullName;
          dateTimeBirth.Value = currentUser.PersonalInformation.Birthday;
-         textBoxPhone.Text = currentUser.PersonalInformation.Phone.ToString();
+         textBoxPhone.Text = currentUser.PersonalInformation.Phone.ToString(CultureInfo.CurrentCulture);
          textBoxAddress.Text = currentUser.PersonalInformation.Address;
          comboBoxPosition.Text = currentUser.Position;
       }
@@ -89,7 +90,6 @@ namespace LMSView
 
       private void ButtonSave_Click(object sender, EventArgs e)
       {
-         DialogResult result;
          try
          {
             if (NViewHelper.FormViewMode.Edit == viewMode)
@@ -98,7 +98,8 @@ namespace LMSView
             }
             if (NViewHelper.FormViewMode.Create == viewMode)
             {
-               userInformationRegister.AddUser(ExtractInputInformation(new UserInformation()));
+               currentUser = new UserInformation() { Credential = new UserCredential(), PersonalInformation = new PersonalInformation()};
+               userInformationRegister.AddUser(ExtractInputInformation(currentUser));
             }
             MessageBox.Show(Properties.Resources.successfull, Properties.Resources.save,
                      MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
@@ -106,7 +107,7 @@ namespace LMSView
          }
          catch (Exception ex)
          {
-            result = MessageBox.Show(ex.Message, Properties.Resources.failed,
+            MessageBox.Show(ex.Message, Properties.Resources.failed,
             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
          }
       }
@@ -116,10 +117,12 @@ namespace LMSView
          userInformation.Credential.Name = textBoxLogin.Text;
          userInformation.Credential.Password = textBoxPassword.Text;
          userInformation.Position = comboBoxPosition.SelectedItem.ToString();
-         PersonalInformation personInfo = new PersonalInformation();
-         personInfo.FullName = textBoxName.Text;
-         personInfo.Birthday = dateTimeBirth.Value;
-         personInfo.Phone = Convert.ToDecimal(textBoxPhone.Text);
+         PersonalInformation personInfo = new PersonalInformation
+         {
+            FullName = textBoxName.Text,
+            Birthday = dateTimeBirth.Value
+         };
+         personInfo.Phone = Convert.ToDecimal(textBoxPhone.Text, CultureInfo.CurrentCulture);
          personInfo.Address = textBoxAddress.Text;
          userInformation.PersonalInformation = personInfo;
 
