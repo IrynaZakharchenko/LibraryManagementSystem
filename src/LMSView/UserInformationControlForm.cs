@@ -98,8 +98,7 @@ namespace LMSView
             }
             if (NViewHelper.FormViewMode.Create == viewMode)
             {
-               currentUser = new UserInformation() { Credential = new UserCredential(), PersonalInformation = new PersonalInformation()};
-               userInformationRegister.AddUser(ExtractInputInformation(currentUser));
+               userInformationRegister.AddUser(ExtractInputInformation(new UserInformation()));
             }
             MessageBox.Show(Properties.Resources.successfull, Properties.Resources.save,
                      MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
@@ -114,17 +113,19 @@ namespace LMSView
 
       private UserInformation ExtractInputInformation(UserInformation userInformation)
       {
-         userInformation.Credential.Name = textBoxLogin.Text;
-         userInformation.Credential.Password = textBoxPassword.Text;
+         userInformation.Credential = new UserCredential()
+         {
+            Name = textBoxLogin.Text,
+            Password = textBoxPassword.Text
+         };
          userInformation.Position = comboBoxPosition.SelectedItem.ToString();
-         PersonalInformation personInfo = new PersonalInformation
+         userInformation.PersonalInformation = new PersonalInformation
          {
             FullName = textBoxName.Text,
-            Birthday = dateTimeBirth.Value
+            Birthday = dateTimeBirth.Value,
+            Phone = Convert.ToDecimal(textBoxPhone.Text, CultureInfo.CurrentCulture),
+            Address = textBoxAddress.Text
          };
-         personInfo.Phone = Convert.ToDecimal(textBoxPhone.Text, CultureInfo.CurrentCulture);
-         personInfo.Address = textBoxAddress.Text;
-         userInformation.PersonalInformation = personInfo;
 
          return userInformation;
       }

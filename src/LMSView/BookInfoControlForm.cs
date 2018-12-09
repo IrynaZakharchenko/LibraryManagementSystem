@@ -118,9 +118,7 @@ namespace LMSView
             authors.Add(new AuthorInformation(){Name = name});
          }
          book.Authors = authors.ToArray();
-         book.Subject = subjectFinding.FindByName(textBoxSubject.Text);
-         book.Subject.SubjectParent = subjectFinding.FindByName(textBoxSubjectParent.Text);
-
+         book.Subject = new SubjectInformation() { Name = textBoxSubject.Text };
          return book;
       }
 
@@ -166,6 +164,7 @@ namespace LMSView
             }
             Activate();
          }
+         textBoxPublishHouseResult.Text = publishHouse.Name;
       }
 
       private void RemoveCodeFromList(int lastCode)

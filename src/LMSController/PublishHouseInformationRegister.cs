@@ -23,6 +23,7 @@ namespace LMSController
                location = publishHouse.Location,
                name = publishHouse.Name
             });
+            PublishingHouses.Save();
 
             OnOperationExecute(true);
          }
