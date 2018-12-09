@@ -58,11 +58,13 @@
          this.labelAuthors = new System.Windows.Forms.Label();
          this.splitContainer1 = new System.Windows.Forms.SplitContainer();
          this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-         this.listBoxInventoryCode = new System.Windows.Forms.ListBox();
-         this.labelInventoryCode = new System.Windows.Forms.Label();
+         this.listBoxInventoryCodeNotAvailable = new System.Windows.Forms.ListBox();
+         this.labelInventoryCodeNotAvailable = new System.Windows.Forms.Label();
          this.buttonDeleteInventoryCode = new System.Windows.Forms.Button();
          this.buttonAddInventoryCode = new System.Windows.Forms.Button();
          this.buttonEditInventoryCode = new System.Windows.Forms.Button();
+         this.listBoxInventoryCodeAvailable = new System.Windows.Forms.ListBox();
+         this.labelInventoryCodeAvailable = new System.Windows.Forms.Label();
          this.tableLayoutPanel1.SuspendLayout();
          this.tableLayoutPanel2.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -266,7 +268,7 @@
          this.tableLayoutPanel2.ColumnCount = 3;
          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.30813F));
          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.69187F));
-         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
          this.tableLayoutPanel2.Controls.Add(this.textBoxPublishHouseResult, 0, 0);
          this.tableLayoutPanel2.Controls.Add(this.buttonSearchPublishHouse, 2, 0);
          this.tableLayoutPanel2.Controls.Add(this.textBoxPublishHouseSearch, 1, 0);
@@ -285,15 +287,15 @@
          this.textBoxPublishHouseResult.Multiline = true;
          this.textBoxPublishHouseResult.Name = "textBoxPublishHouseResult";
          this.textBoxPublishHouseResult.ReadOnly = true;
-         this.textBoxPublishHouseResult.Size = new System.Drawing.Size(159, 25);
+         this.textBoxPublishHouseResult.Size = new System.Drawing.Size(157, 25);
          this.textBoxPublishHouseResult.TabIndex = 2;
          // 
          // buttonSearchPublishHouse
          // 
          this.buttonSearchPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.buttonSearchPublishHouse.Location = new System.Drawing.Point(313, 3);
+         this.buttonSearchPublishHouse.Location = new System.Drawing.Point(309, 3);
          this.buttonSearchPublishHouse.Name = "buttonSearchPublishHouse";
-         this.buttonSearchPublishHouse.Size = new System.Drawing.Size(95, 25);
+         this.buttonSearchPublishHouse.Size = new System.Drawing.Size(99, 25);
          this.buttonSearchPublishHouse.TabIndex = 3;
          this.buttonSearchPublishHouse.UseVisualStyleBackColor = true;
          this.buttonSearchPublishHouse.Click += new System.EventHandler(this.ButtonSearchPublishHouse_Click);
@@ -301,10 +303,10 @@
          // textBoxPublishHouseSearch
          // 
          this.textBoxPublishHouseSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.textBoxPublishHouseSearch.Location = new System.Drawing.Point(168, 3);
+         this.textBoxPublishHouseSearch.Location = new System.Drawing.Point(166, 3);
          this.textBoxPublishHouseSearch.Multiline = true;
          this.textBoxPublishHouseSearch.Name = "textBoxPublishHouseSearch";
-         this.textBoxPublishHouseSearch.Size = new System.Drawing.Size(139, 25);
+         this.textBoxPublishHouseSearch.Size = new System.Drawing.Size(137, 25);
          this.textBoxPublishHouseSearch.TabIndex = 4;
          // 
          // textBoxSeries
@@ -428,54 +430,59 @@
          this.tableLayoutPanel3.ColumnCount = 2;
          this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
          this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-         this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-         this.tableLayoutPanel3.Controls.Add(this.listBoxInventoryCode, 0, 3);
-         this.tableLayoutPanel3.Controls.Add(this.labelInventoryCode, 0, 1);
-         this.tableLayoutPanel3.Controls.Add(this.buttonDeleteInventoryCode, 0, 5);
-         this.tableLayoutPanel3.Controls.Add(this.buttonAddInventoryCode, 0, 7);
-         this.tableLayoutPanel3.Controls.Add(this.buttonEditInventoryCode, 0, 6);
+         this.tableLayoutPanel3.Controls.Add(this.listBoxInventoryCodeNotAvailable, 0, 3);
+         this.tableLayoutPanel3.Controls.Add(this.labelInventoryCodeNotAvailable, 0, 1);
+         this.tableLayoutPanel3.Controls.Add(this.buttonDeleteInventoryCode, 0, 8);
+         this.tableLayoutPanel3.Controls.Add(this.buttonAddInventoryCode, 0, 10);
+         this.tableLayoutPanel3.Controls.Add(this.buttonEditInventoryCode, 0, 9);
+         this.tableLayoutPanel3.Controls.Add(this.listBoxInventoryCodeAvailable, 0, 7);
+         this.tableLayoutPanel3.Controls.Add(this.labelInventoryCodeAvailable, 0, 5);
          this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
          this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
          this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-         this.tableLayoutPanel3.RowCount = 9;
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+         this.tableLayoutPanel3.RowCount = 12;
          this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.20155F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.79845F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 224F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+         this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
          this.tableLayoutPanel3.Size = new System.Drawing.Size(241, 559);
          this.tableLayoutPanel3.TabIndex = 0;
          // 
-         // listBoxInventoryCode
+         // listBoxInventoryCodeNotAvailable
          // 
-         this.listBoxInventoryCode.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.listBoxInventoryCode.FormattingEnabled = true;
-         this.listBoxInventoryCode.Location = new System.Drawing.Point(3, 86);
-         this.listBoxInventoryCode.Name = "listBoxInventoryCode";
-         this.listBoxInventoryCode.Size = new System.Drawing.Size(219, 236);
-         this.listBoxInventoryCode.TabIndex = 0;
+         this.listBoxInventoryCodeNotAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.listBoxInventoryCodeNotAvailable.FormattingEnabled = true;
+         this.listBoxInventoryCodeNotAvailable.Location = new System.Drawing.Point(3, 59);
+         this.listBoxInventoryCodeNotAvailable.Name = "listBoxInventoryCodeNotAvailable";
+         this.listBoxInventoryCodeNotAvailable.Size = new System.Drawing.Size(219, 97);
+         this.listBoxInventoryCodeNotAvailable.TabIndex = 0;
+         this.listBoxInventoryCodeNotAvailable.SelectedIndexChanged += new System.EventHandler(this.ListBoxInventoryCodeNotAvailable_SelectedIndexChanged);
          // 
-         // labelInventoryCode
+         // labelInventoryCodeNotAvailable
          // 
-         this.labelInventoryCode.AutoSize = true;
-         this.labelInventoryCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-         this.labelInventoryCode.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.labelInventoryCode.Location = new System.Drawing.Point(3, 31);
-         this.labelInventoryCode.Name = "labelInventoryCode";
-         this.labelInventoryCode.Size = new System.Drawing.Size(219, 26);
-         this.labelInventoryCode.TabIndex = 1;
-         this.labelInventoryCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+         this.labelInventoryCodeNotAvailable.AutoSize = true;
+         this.labelInventoryCodeNotAvailable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+         this.labelInventoryCodeNotAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.labelInventoryCodeNotAvailable.Location = new System.Drawing.Point(3, 27);
+         this.labelInventoryCodeNotAvailable.Name = "labelInventoryCodeNotAvailable";
+         this.labelInventoryCodeNotAvailable.Size = new System.Drawing.Size(219, 23);
+         this.labelInventoryCodeNotAvailable.TabIndex = 1;
+         this.labelInventoryCodeNotAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // buttonDeleteInventoryCode
          // 
          this.buttonDeleteInventoryCode.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.buttonDeleteInventoryCode.Location = new System.Drawing.Point(3, 355);
+         this.buttonDeleteInventoryCode.Location = new System.Drawing.Point(3, 427);
          this.buttonDeleteInventoryCode.Name = "buttonDeleteInventoryCode";
-         this.buttonDeleteInventoryCode.Size = new System.Drawing.Size(219, 22);
+         this.buttonDeleteInventoryCode.Size = new System.Drawing.Size(219, 24);
          this.buttonDeleteInventoryCode.TabIndex = 2;
          this.buttonDeleteInventoryCode.UseVisualStyleBackColor = true;
          this.buttonDeleteInventoryCode.Click += new System.EventHandler(this.ButtonDeleteInventoryCode_Click);
@@ -483,9 +490,9 @@
          // buttonAddInventoryCode
          // 
          this.buttonAddInventoryCode.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.buttonAddInventoryCode.Location = new System.Drawing.Point(3, 411);
+         this.buttonAddInventoryCode.Location = new System.Drawing.Point(3, 487);
          this.buttonAddInventoryCode.Name = "buttonAddInventoryCode";
-         this.buttonAddInventoryCode.Size = new System.Drawing.Size(219, 22);
+         this.buttonAddInventoryCode.Size = new System.Drawing.Size(219, 23);
          this.buttonAddInventoryCode.TabIndex = 4;
          this.buttonAddInventoryCode.UseVisualStyleBackColor = true;
          this.buttonAddInventoryCode.Click += new System.EventHandler(this.ButtonAddInventoryCode_Click);
@@ -493,12 +500,32 @@
          // buttonEditInventoryCode
          // 
          this.buttonEditInventoryCode.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.buttonEditInventoryCode.Location = new System.Drawing.Point(3, 383);
+         this.buttonEditInventoryCode.Location = new System.Drawing.Point(3, 457);
          this.buttonEditInventoryCode.Name = "buttonEditInventoryCode";
-         this.buttonEditInventoryCode.Size = new System.Drawing.Size(219, 22);
+         this.buttonEditInventoryCode.Size = new System.Drawing.Size(219, 24);
          this.buttonEditInventoryCode.TabIndex = 5;
          this.buttonEditInventoryCode.UseVisualStyleBackColor = true;
          this.buttonEditInventoryCode.Click += new System.EventHandler(this.ButtonEditInventoryCode_Click);
+         // 
+         // listBoxInventoryCodeAvailable
+         // 
+         this.listBoxInventoryCodeAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.listBoxInventoryCodeAvailable.FormattingEnabled = true;
+         this.listBoxInventoryCodeAvailable.Location = new System.Drawing.Point(3, 203);
+         this.listBoxInventoryCodeAvailable.Name = "listBoxInventoryCodeAvailable";
+         this.listBoxInventoryCodeAvailable.Size = new System.Drawing.Size(219, 218);
+         this.listBoxInventoryCodeAvailable.TabIndex = 6;
+         // 
+         // labelInventoryCodeAvailable
+         // 
+         this.labelInventoryCodeAvailable.AutoSize = true;
+         this.labelInventoryCodeAvailable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+         this.labelInventoryCodeAvailable.Dock = System.Windows.Forms.DockStyle.Fill;
+         this.labelInventoryCodeAvailable.Location = new System.Drawing.Point(3, 168);
+         this.labelInventoryCodeAvailable.Name = "labelInventoryCodeAvailable";
+         this.labelInventoryCodeAvailable.Size = new System.Drawing.Size(219, 24);
+         this.labelInventoryCodeAvailable.TabIndex = 7;
+         this.labelInventoryCodeAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
          // 
          // BookInfoControlForm
          // 
@@ -555,10 +582,12 @@
       private System.Windows.Forms.TextBox textBoxPublishHouseSearch;
       private System.Windows.Forms.SplitContainer splitContainer1;
       private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-      private System.Windows.Forms.ListBox listBoxInventoryCode;
-      private System.Windows.Forms.Label labelInventoryCode;
+      private System.Windows.Forms.ListBox listBoxInventoryCodeNotAvailable;
+      private System.Windows.Forms.Label labelInventoryCodeNotAvailable;
       private System.Windows.Forms.Button buttonDeleteInventoryCode;
       private System.Windows.Forms.Button buttonAddInventoryCode;
       private System.Windows.Forms.Button buttonEditInventoryCode;
+      private System.Windows.Forms.ListBox listBoxInventoryCodeAvailable;
+      private System.Windows.Forms.Label labelInventoryCodeAvailable;
    }
 }

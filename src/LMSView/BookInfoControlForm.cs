@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using LMSView.NViewHelper;
 using LMSController;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace LMSView
 {
@@ -13,7 +14,7 @@ namespace LMSView
       private ILibraryOperations libraryManagment;
 
       PublishHouseInformationRegister publishHouseRegister = new PublishHouseInformationRegister();
-      SubjectInformationFinding SubjectFinding = new SubjectInformationFinding();
+      SubjectInformationFinding subjectFinding = new SubjectInformationFinding();
 
       public BookInfoControlForm(FormViewMode mode, ILibraryOperations libraryOperations, BookInformation book = null)
       {
@@ -51,18 +52,24 @@ namespace LMSView
 
             foreach (var code in currentBook.InventoryCode)
             {
-               listBoxInventoryCode.Items.Add(code);
+               if (code.Value == true)
+               {
+                  listBoxInventoryCodeAvailable.Items.Add(code.Key);
+               }
+               else
+               {
+                  listBoxInventoryCodeNotAvailable.Items.Add(code.Key);
+               }
             }
-
             textBoxTitle.Text = currentBook.Title;
 
             AuthorInformation[] authors = currentBook.Authors;
             foreach (var name in authors)
             {
-               textBoxAuthors.Text += " " + name.Name;
+               textBoxAuthors.Text += Properties.Resources.separator + name.Name;
             }
             textBoxFullTitle.Text = currentBook.FullTitle;
-            textBoxIsbn.Text = currentBook.ISBN.ToString();
+            textBoxIsbn.Text = currentBook.ISBN.ToString(CultureInfo.CurrentCulture);
             textBoxLanguage.Text = currentBook.Language;
             dateTimePickerPublish.Value = currentBook.PublishDate;
             textBoxPublishHouseResult.Text = currentBook.PublishHouse.Name;
@@ -76,7 +83,7 @@ namespace LMSView
             Text = Properties.Resources.createBook;
 
             labelTitle.Text = ViewHelper.MarkFieldAsImportant(labelTitle.Text);
-            labelInventoryCode.Text = ViewHelper.MarkFieldAsImportant(labelInventoryCode.Text);
+            labelInventoryCodeNotAvailable.Text = ViewHelper.MarkFieldAsImportant(labelInventoryCodeNotAvailable.Text);
             labelAuthors.Text = ViewHelper.MarkFieldAsImportant(labelAuthors.Text);
             labelIsbn.Text = ViewHelper.MarkFieldAsImportant(labelIsbn.Text);
             labelLanguage.Text = ViewHelper.MarkFieldAsImportant(labelLanguage.Text);
@@ -87,15 +94,19 @@ namespace LMSView
 
       private BookInformation PackageBookInformation(BookInformation book)
       {
-         List<int> listInventoryCodes = new List<int>();
-         foreach (var code in listBoxInventoryCode.Items) 
+         Dictionary<int, bool> mapInventoryCodes = new Dictionary<int, bool>();
+         foreach (var code in listBoxInventoryCodeAvailable.Items)
          {
-            listInventoryCodes.Add(Convert.ToInt32(code));
+            mapInventoryCodes.Add(Convert.ToInt32(code, CultureInfo.CurrentCulture), true);
          };
-         book.InventoryCode = listInventoryCodes.ToArray();
+         foreach (var code in listBoxInventoryCodeNotAvailable.Items)
+         {
+            mapInventoryCodes.Add(Convert.ToInt32(code, CultureInfo.CurrentCulture), false);
+         };
+         book.InventoryCode = mapInventoryCodes;
          book.Title = textBoxTitle.Text;
          book.FullTitle = textBoxFullTitle.Text;
-         book.ISBN = Convert.ToInt16(textBoxIsbn.Text);
+         book.ISBN = Convert.ToInt16(textBoxIsbn.Text, CultureInfo.CurrentCulture);
          book.Language = textBoxLanguage.Text;
          book.PublishHouse = publishHouseRegister.FindPublishHouseByName(textBoxPublishHouseResult.Text);
          book.PublishDate = dateTimePickerPublish.Value;
@@ -107,7 +118,6 @@ namespace LMSView
             authors.Add(new AuthorInformation(name));
          }
          book.Authors = authors.ToArray();
-         SubjectInformationFinding subjectFinding = new SubjectInformationFinding();
          book.Subject = subjectFinding.FindByName(textBoxSubject.Text);
          book.Subject.SubjectParent = subjectFinding.FindByName(textBoxSubjectParent.Text);
 
@@ -116,6 +126,8 @@ namespace LMSView
 
       private void PrintForm()
       {
+         listBoxInventoryCodeNotAvailable.Enabled = false;
+
          buttonSave.Text = Properties.Resources.save;
          buttonDelete.Text = Properties.Resources.delete;
          buttonSearchPublishHouse.Text = Properties.Resources.search;
@@ -123,7 +135,8 @@ namespace LMSView
          buttonDeleteInventoryCode.Text = Properties.Resources.delete;
          buttonEditInventoryCode.Text = Properties.Resources.edit;
 
-         labelInventoryCode.Text = Properties.Resources.inventoryCode;
+         labelInventoryCodeAvailable.Text = Properties.Resources.inventoryCodeAvailable;
+         labelInventoryCodeNotAvailable.Text = Properties.Resources.inventoryCodeNotAvailable;
          labelTitle.Text = Properties.Resources.title;
          labelFullTitle.Text = Properties.Resources.fullTitle;
          labelAuthors.Text = Properties.Resources.author;
@@ -135,15 +148,6 @@ namespace LMSView
          labelSubject.Text = Properties.Resources.subject;
          labelParentSubject.Text = Properties.Resources.parentSubject;
          labelAnnotation.Text = Properties.Resources.annotation;
-      }
-
-      private void ButtonAddBooksExamples_Click(object sender, EventArgs e)
-      {
-         using (InventoryCodeControlForm examples = new InventoryCodeControlForm())
-         {
-            examples.ShowDialog();
-            Activate();
-         }
       }
 
       private void ButtonSearchPublishHouse_Click(object sender, EventArgs e)
@@ -166,27 +170,27 @@ namespace LMSView
 
       private void RemoveCodeFromList(int lastCode)
       {
-         listBoxInventoryCode.Items.Remove(lastCode);
+         listBoxInventoryCodeAvailable.Items.Remove(lastCode);
       }
 
       private void AddNewCodeToList(int code)
       {
-         listBoxInventoryCode.Items.Add(code);
+         listBoxInventoryCodeAvailable.Items.Add(code);
       }
 
       private void ButtonDeleteInventoryCode_Click(object sender, EventArgs e)
       {
-         if (listBoxInventoryCode.SelectedItem != null)
+         if (listBoxInventoryCodeNotAvailable.SelectedItem != null)
          {
-            RemoveCodeFromList(Convert.ToInt32(listBoxInventoryCode.SelectedItem));
+            RemoveCodeFromList(Convert.ToInt32(listBoxInventoryCodeNotAvailable.SelectedItem, CultureInfo.CurrentCulture));
          }
       }
 
       private void ButtonEditInventoryCode_Click(object sender, EventArgs e)
       {
-         if (listBoxInventoryCode.SelectedItem != null)
+         if (listBoxInventoryCodeNotAvailable.SelectedItem != null)
          {
-            int currentCode = Convert.ToInt32(listBoxInventoryCode.SelectedItem);
+            int currentCode = Convert.ToInt32(listBoxInventoryCodeNotAvailable.SelectedItem, CultureInfo.CurrentCulture);
             using (InventoryCodeControlForm inventoryCodeControl = new InventoryCodeControlForm(currentCode))
             {
                inventoryCodeControl.AddNewBookExample += AddNewCodeToList;
@@ -206,6 +210,12 @@ namespace LMSView
             inventoryCodeControl.ShowDialog();
             Activate();
          }
+      }
+
+      private void ListBoxInventoryCodeNotAvailable_SelectedIndexChanged(object sender, EventArgs e)
+      {
+         
+         
       }
    }
 }

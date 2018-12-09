@@ -348,22 +348,28 @@
   <data name="author" xml:space="preserve">
     <value>Authors</value>
   </data>
-  <data name="inventoryCode" xml:space="preserve">
-    <value>Inventory Code</value>
+  <data name="inventoryCodeAvailable" xml:space="preserve">
+    <value>Inventory code of book that is in library</value>
   </data>
   <data name="searchPublishHouseFailed" xml:space="preserve">
     <value>Publishing house with this name is not exist in library. Do you want to add it?</value>
   </data>
   <data name="inventoryCodeWelcome" xml:space="preserve">
-    <value>Inventory code modify window</value>
+    <value>Inventory code manage window</value>
   </data>
-    <data name="clientSearchEmpty" xml:space="preserve">
+  <data name="clientSearchEmpty" xml:space="preserve">
     <value>Field "Client" should not be empty</value>
   </data>
   <data name="uncheckedBook" xml:space="preserve">
     <value>Choice one book from list to return</value>
   </data>
-  <data name="uncheckedBook" xml:space="preserve">
-    <value>Choice one book from list to return</value>
+  <data name="userSearchFailed" xml:space="preserve">
+    <value> is not exist. Do you want to create it?</value>
+  </data>
+  <data name="inventoryCodeNotAvailable" xml:space="preserve">
+    <value>Inventory code of book that is out library</value>
+  </data>
+  <data name="separator" xml:space="preserve">
+    <value>, </value>
   </data>
 </root>

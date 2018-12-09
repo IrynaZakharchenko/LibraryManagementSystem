@@ -349,16 +349,25 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inventory Code.
+        ///   Looks up a localized string similar to Inventory code of book that is in library.
         /// </summary>
-        internal static string inventoryCode {
+        internal static string inventoryCodeAvailable {
             get {
-                return ResourceManager.GetString("inventoryCode", resourceCulture);
+                return ResourceManager.GetString("inventoryCodeAvailable", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inventory code modify window.
+        ///   Looks up a localized string similar to Inventory code of book that is out library.
+        /// </summary>
+        internal static string inventoryCodeNotAvailable {
+            get {
+                return ResourceManager.GetString("inventoryCodeNotAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inventory code manage window.
         /// </summary>
         internal static string inventoryCodeWelcome {
             get {
@@ -619,6 +628,15 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to , .
+        /// </summary>
+        internal static string separator {
+            get {
+                return ResourceManager.GetString("separator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Series.
         /// </summary>
         internal static string series {
@@ -745,20 +763,20 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User is not register yet.
-        /// </summary>
-        internal static string userDeleteFailed {
-            get {
-                return ResourceManager.GetString("userDeleteFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Choice one book from list to return.
         /// </summary>
         internal static string uncheckedBook {
             get {
                 return ResourceManager.GetString("uncheckedBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User is not register yet.
+        /// </summary>
+        internal static string userDeleteFailed {
+            get {
+                return ResourceManager.GetString("userDeleteFailed", resourceCulture);
             }
         }
         
@@ -777,6 +795,15 @@ namespace LMSView.Properties {
         internal static string userSearchEmpty {
             get {
                 return ResourceManager.GetString("userSearchEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  is not exist. Do you want to create it?.
+        /// </summary>
+        internal static string userSearchFailed {
+            get {
+                return ResourceManager.GetString("userSearchFailed", resourceCulture);
             }
         }
         
