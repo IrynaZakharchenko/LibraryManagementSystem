@@ -11,7 +11,7 @@ namespace LMSModel
             throw new ArgumentNullException(nameof(book));
          }
 
-         throw new NotImplementedException();
+         DBInstance.DataContext.Books.InsertOnSubmit(book);
       }
 
       public static void EditBook(Book book)
@@ -20,8 +20,6 @@ namespace LMSModel
          {
             throw new ArgumentNullException(nameof(book));
          }
-
-         throw new NotImplementedException();
       }
 
       public static void DeleteBook(Book book)
@@ -31,7 +29,7 @@ namespace LMSModel
             throw new ArgumentNullException(nameof(book));
          }
 
-         throw new NotImplementedException();
+         DBInstance.DataContext.Books.DeleteOnSubmit(book);
       }
 
       public static void Save()

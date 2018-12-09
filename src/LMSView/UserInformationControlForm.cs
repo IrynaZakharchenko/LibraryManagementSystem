@@ -113,15 +113,19 @@ namespace LMSView
 
       private UserInformation ExtractInputInformation(UserInformation userInformation)
       {
-         userInformation.Credential.Name = textBoxLogin.Text;
-         userInformation.Credential.Password = textBoxPassword.Text;
+         userInformation.Credential = new UserCredential()
+         {
+            Name = textBoxLogin.Text,
+            Password = textBoxPassword.Text
+         };
          userInformation.Position = comboBoxPosition.SelectedItem.ToString();
-         PersonalInformation personInfo = new PersonalInformation();
-         personInfo.FullName = textBoxName.Text;
-         personInfo.Birthday = dateTimeBirth.Value;
-         personInfo.Phone = Convert.ToDecimal(textBoxPhone.Text);
-         personInfo.Address = textBoxAddress.Text;
-         userInformation.PersonalInformation = personInfo;
+         userInformation.PersonalInformation = new PersonalInformation
+         {
+            FullName = textBoxName.Text,
+            Birthday = dateTimeBirth.Value,
+            Phone = Convert.ToDecimal(textBoxPhone.Text),
+            Address = textBoxAddress.Text
+         };
 
          return userInformation;
       }

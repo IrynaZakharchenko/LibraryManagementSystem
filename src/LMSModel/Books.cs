@@ -5,14 +5,27 @@ namespace LMSModel
 {
    public static class Books
    { 
-      public static int[] FindInventoryCodesByISBN(int isbn)
+      public static IDictionary<int, bool> FindInventoryCodesByISBN(int isbn)
       {
-         IEnumerable<int> query =
+         IEnumerable<IGrouping<bool, int>> query =
             from instance in DBInstance.DataContext.Instances
             where instance.id_book_isbn == isbn
-            select instance.id_book_inventory_num;
+            group instance.id_book_inventory_num by instance.Bibliographies.Count() > 0;
          
-         return query.ToArray();
+         IDictionary<int, bool> inventoryCodes = null;
+
+         if (query.Count() > 0)
+         {
+            inventoryCodes = new Dictionary<int, bool>();
+            foreach (var inventoryCode in query)
+            {
+               foreach (int code in inventoryCode)
+               {
+                  inventoryCodes.Add(code, inventoryCode.Key);
+               }
+            }
+         }
+         return inventoryCodes;
       }
 
       public static string[] FindAutorsByISBN(int isbn)
