@@ -59,14 +59,14 @@ namespace LMSView
       {
          if (NViewHelper.FormViewMode.Edit == viewModeForm)
          {
-            publishHouseInformationRegister.DeletePublishHouse(publishHouseInformation);
+            publishHouseInformationRegister.Delete(publishHouseInformation);
          }
 
       }
 
       private void ButtonSave_Click(object sender, EventArgs e)
       {
-         publishHouseInformationRegister.AddPublishHouse(PackagePublishHouse(new PublishHouseInformation()));
+         publishHouseInformationRegister.Add(PackagePublishHouse(new PublishHouseInformation()));
       }
 
       private void PublishHouseControlPanel_Paint(object sender, PaintEventArgs e)

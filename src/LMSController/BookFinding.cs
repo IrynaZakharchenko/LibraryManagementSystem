@@ -1,48 +1,71 @@
-﻿using System.Collections.Generic;
+﻿using LMSModel;
 
 namespace LMSController
 {
    internal class BookFinding : IBookFinding
    {
-      private readonly List<BookInformation> booksList;
-
-      public BookFinding()
+      private static BookInformation[] Convert(Book[] books)
       {
+         if (books == null)
+         {
+            return null;
+         }
+
+         BookInformation[] bookInformations = new BookInformation[books.Length];
+         for (int i = 0; i < books.Length; ++i)
+         {
+            bookInformations[i] = Convert(books[i]);
+         }
+
+         return bookInformations;
       }
 
-      public BookFinding(ref List<BookInformation> list)
+      private static BookInformation Convert(Book book)
       {
-         booksList = list;
+         BookInformation bookInformation = null;
+
+         if (book != null)
+         {
+            bookInformation = new BookInformation()
+            {
+               BookSeries = book.book_series,
+               Annotation = book.annotation,
+               FullTitle = book.full_title,
+               ISBN = book.id_book_isbn,
+               Language = book.language,
+               PublishDate = book.date_publish,
+               PublishHouse = new PublishHouseInformation()
+               {
+                  Category = book.PublishingHouse.category,
+                  Location = book.PublishingHouse.location,
+                  Name = book.PublishingHouse.name
+               },
+               Subject = new SubjectInformation()
+               {
+                  Name = book.Subject.name,
+               },
+               Title = book.title,
+               InventoryCode = Books.FindInventoryCodesByISBN(book.id_book_isbn),
+               Authors = Convert(Books.FindAutorsByISBN(book.id_book_isbn))
+            };
+         }
+         return bookInformation;
       }
 
-      public BookInformation FindBookByInventoryCode(int inventoryCode)
+      private static AuthorInformation[] Convert(string[] names)
       {
-         return new BookInformation();
+         AuthorInformation[] authorInformations = new AuthorInformation[names.Length];
+         for( int i = 0; i < authorInformations.Length; ++i)
+         {
+            authorInformations[i] = new AuthorInformation() { Name = names[i] };
+         }
+         return authorInformations;
       }
 
-      public BookInformation FindBookByISBN(int isbn)
-      {
-         return booksList.Find(book => book.ISBN == isbn);
-      }
-
-      BookInformation[] IBookFinding.FindBookByAuthors(AuthorInformation[] authors)
-      {
-         return booksList.FindAll(book => book.Authors == authors).ToArray();
-      }
-
-      BookInformation[] IBookFinding.FindBookByBookSeries(string bookSeries)
-      {
-         return booksList.FindAll(book => book.BookSeries == bookSeries).ToArray();
-      }
-
-      BookInformation[] IBookFinding.FindBookByLanguage(string language)
-      {
-         return booksList.FindAll(book => book.Language == language).ToArray();
-      }
-
-      BookInformation IBookFinding.FindBookByTitle(string title)
-      {
-         return booksList.Find(book => book.Title == title);
-      }
+      public BookInformation FindBookByInventoryCode(int inventoryCode) => Convert(Books.FindByInventoryCode(inventoryCode));
+      public BookInformation FindBookByISBN(int isbn) => Convert(Books.FindByISBN(isbn));
+      public BookInformation FindBookByTitle(string title) => Convert(Books.FindByTitle(title));
+      BookInformation[] IBookFinding.FindBookByBookSeries(string bookSeries) => Convert(Books.FindByBookSeries(bookSeries));
+      BookInformation[] IBookFinding.FindBookByLanguage(string language) => Convert(Books.FindByLanguage(language));
    }
 }
