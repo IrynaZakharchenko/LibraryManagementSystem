@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LMSController;
 
@@ -33,12 +26,13 @@ namespace LMSView
          InitializeComponent();
       }
 
-      private static void PrintMessageForUser(bool result)
+      private void PrintMessageForUser(bool result)
       {
          if (result == true)
          {
             MessageBox.Show(Properties.Resources.operationOK, Properties.Resources.successfull,
             MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+            Close();
          }
          else
          {
@@ -59,14 +53,14 @@ namespace LMSView
       {
          if (NViewHelper.FormViewMode.Edit == viewModeForm)
          {
-            publishHouseInformationRegister.DeletePublishHouse(publishHouseInformation);
+            publishHouseInformationRegister.Delete(publishHouseInformation);
          }
-
+         
       }
 
       private void ButtonSave_Click(object sender, EventArgs e)
       {
-         publishHouseInformationRegister.AddPublishHouse(PackagePublishHouse(new PublishHouseInformation()));
+         publishHouseInformationRegister.Add(PackagePublishHouse(new PublishHouseInformation()));
       }
 
       private void PublishHouseControlPanel_Paint(object sender, PaintEventArgs e)

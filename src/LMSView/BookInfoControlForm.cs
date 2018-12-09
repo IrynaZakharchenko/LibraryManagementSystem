@@ -108,19 +108,17 @@ namespace LMSView
          book.FullTitle = textBoxFullTitle.Text;
          book.ISBN = Convert.ToInt16(textBoxIsbn.Text, CultureInfo.CurrentCulture);
          book.Language = textBoxLanguage.Text;
-         book.PublishHouse = publishHouseRegister.FindPublishHouseByName(textBoxPublishHouseResult.Text);
+         book.PublishHouse = publishHouseRegister.FindByName(textBoxPublishHouseResult.Text);
          book.PublishDate = dateTimePickerPublish.Value;
          book.Annotation = textBoxAnnotation.Text;
          string[] authorsNames = textBoxAuthors.Text.Split(new char[] { ',', ' ' });
          List<AuthorInformation> authors = new List<AuthorInformation>();
          foreach (string name in authorsNames)
          {
-            authors.Add(new AuthorInformation(name));
+            authors.Add(new AuthorInformation(){Name = name});
          }
          book.Authors = authors.ToArray();
-         book.Subject = subjectFinding.FindByName(textBoxSubject.Text);
-         book.Subject.SubjectParent = subjectFinding.FindByName(textBoxSubjectParent.Text);
-
+         book.Subject = new SubjectInformation() { Name = textBoxSubject.Text };
          return book;
       }
 
@@ -152,7 +150,7 @@ namespace LMSView
 
       private void ButtonSearchPublishHouse_Click(object sender, EventArgs e)
       {
-         PublishHouseInformation publishHouse = publishHouseRegister.FindPublishHouseByName(textBoxPublishHouseSearch.Text);
+         PublishHouseInformation publishHouse = publishHouseRegister.FindByName(textBoxPublishHouseSearch.Text);
          if (null == publishHouse)
          {
             DialogResult userChoice = MessageBox.Show(Properties.Resources.searchPublishHouseFailed, Properties.Resources.failed,
@@ -166,6 +164,7 @@ namespace LMSView
             }
             Activate();
          }
+         textBoxPublishHouseResult.Text = publishHouse.Name;
       }
 
       private void RemoveCodeFromList(int lastCode)
