@@ -38,7 +38,7 @@ namespace LMSView
       {
          if (FormViewMode.Edit == viewMode)
          {
-            libraryManagment.DeleteBook(currentBook);
+            libraryManagment.DeleteBookByISBN(currentBook.ISBN);
          }
       }
 
@@ -106,11 +106,12 @@ namespace LMSView
          book.InventoryCode = mapInventoryCodes;
          book.Title = textBoxTitle.Text;
          book.FullTitle = textBoxFullTitle.Text;
-         book.ISBN = Convert.ToInt16(textBoxIsbn.Text, CultureInfo.CurrentCulture);
+         book.ISBN = Convert.ToInt32(textBoxIsbn.Text, CultureInfo.CurrentCulture);
          book.Language = textBoxLanguage.Text;
          book.PublishHouse = publishHouseRegister.FindByName(textBoxPublishHouseResult.Text);
          book.PublishDate = dateTimePickerPublish.Value;
          book.Annotation = textBoxAnnotation.Text;
+         book.BookSeries = textBoxSeries.Text;
          string[] authorsNames = textBoxAuthors.Text.Split(new char[] { ',', ' ' });
          List<AuthorInformation> authors = new List<AuthorInformation>();
          foreach (string name in authorsNames)
@@ -170,6 +171,7 @@ namespace LMSView
       private void RemoveCodeFromList(int lastCode)
       {
          listBoxInventoryCodeAvailable.Items.Remove(lastCode);
+         libraryManagment.DeleteBookByInventoryCode(lastCode);
       }
 
       private void AddNewCodeToList(int code)

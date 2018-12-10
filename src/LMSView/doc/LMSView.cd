@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LMSView.BookInfoSearchForm" Collapsed="true">
+    <Position X="2.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEQEAACAAQAAACACAAAICAIAAAAAAAAACAAAgAAE=</HashCode>
+      <FileName>BookInfoSearchForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMSView.LibrarianControlForm" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgQAAAhgCAAAAAAEACAAAgCAAAEAAAIAECAEAAAAAA=</HashCode>
+      <FileName>LibrarianControlForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMSView.LMS" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>LMS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMSView.UserInfoSearchForm" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAQAACAAQAgACACAAAICCIAABAAAAQACAAAAAAA=</HashCode>
+      <FileName>UserInfoSearchForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LMSView.UserLogOnForm" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CEEAAAABACAAQAAACACgQAQCEAMAIAgQQQAAAAAAAAQ=</HashCode>
+      <FileName>UserLogOnForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="authenticationProcess" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="LMSController.IAuthentication" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

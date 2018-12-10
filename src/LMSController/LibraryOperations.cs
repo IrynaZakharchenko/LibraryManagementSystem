@@ -1,5 +1,6 @@
 ﻿using LMSModel;
 using System;
+using System.Collections.Generic;
 
 namespace LMSController
 {
@@ -32,21 +33,27 @@ namespace LMSController
                name = bookInformation.Subject.Name
             }
          };
-         
 
-         Library.AddBook(book);
+         List<Author> authors = new List<Author>();
+         foreach (var author in bookInformation.Authors)
+         {
+            authors.Add(new Author() { Name = author.Name });
+         }
+         
+         Library.AddBook(book, authors, bookInformation.InventoryCode.Keys);
+         Library.Save();
       }
 
-      public void DeleteBook(BookInformation bookInformation)
+      public void DeleteBookByISBN(int isbn)
       {
-         if (bookInformation == null)
-         {
-            throw new ArgumentNullException(nameof(bookInformation));
-         }
+         Library.DeleteBookByISBN(isbn);
+         Library.Save();
+      }
 
-         Book book = new Book();
-
-         Library.DeleteBook(book);
+      public void DeleteBookByInventoryCode(int inventoryCode)
+      {
+         Library.DeleteBookByInventoryCode(inventoryCode);
+         Library.Save();
       }
 
       public void EditBook(BookInformation bookInformation)
@@ -59,6 +66,7 @@ namespace LMSController
          Book book = new Book();
 
          Library.EditBook(book);
+         Library.Save();
       }
    }
 }
