@@ -94,7 +94,11 @@
     </CodeAnalysisDictionary>
   </ItemGroup>
   <ItemGroup>
+    <None Include="doc\LMSControllerAdministrator.cd" />
+    <None Include="doc\LMSControllerInterfaces.cd" />
     <None Include="LMSController.snk" />
+    <None Include="doc\LMSControllerStockman.cd" />
+    <None Include="doc\LMSControllerLibrarian.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LMSModel\LMSModel.csproj">

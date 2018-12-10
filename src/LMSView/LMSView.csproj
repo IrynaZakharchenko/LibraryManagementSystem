@@ -178,6 +178,10 @@
     <EmbeddedResource Include="UserLogOnForm.resx">
       <DependentUpon>UserLogOnForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="doc\LMSView.cd" />
+    <None Include="doc\LMSViewAdministrator.cd" />
+    <None Include="doc\LMSViewLibrarian.cd" />
+    <None Include="doc\LMSViewStockman.cd" />
     <None Include="LMSView.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

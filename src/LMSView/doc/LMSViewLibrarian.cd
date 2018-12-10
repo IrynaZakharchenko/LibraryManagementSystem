@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LMSView.ClientLibraryInfoControlForm" Collapsed="true">
+    <Position X="6.75" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAwAAAGEIAgIAgACCQAACABGAAgAAAIAQAQQEACQ=</HashCode>
+      <FileName>ClientLibraryInfoControlForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="libraryCardRegister" />
+      <Field Name="clientInformationRegister" />
+      <Field Name="bookFinding" />
+      <Field Name="currentClient" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LMSView.ClientPersonalInfoControlForm" Collapsed="true">
+    <Position X="3.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAECQAAAACAAAAAEAAGEEAACABAAFgRAIQAAAAAAECA=</HashCode>
+      <FileName>ClientPersonalInfoControlForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mViewMode" />
+      <Field Name="clientInformationRegister" />
+      <Field Name="currentClient" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LMSView.LibrarianControlForm" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgQAAAhgCAAAAAAEACAAAgCAAAEAAAIAECAEAAAAAA=</HashCode>
+      <FileName>LibrarianControlForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="workspaceLibrarian" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LMSController.ClientInformation" Collapsed="true">
+    <Position X="5.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="LMSController.IWorkspaceLibrarian" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="LMSController.IBookFinding" Collapsed="true">
+    <Position X="8.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="LMSController.IClientInformationRegister" Collapsed="true">
+    <Position X="5" Y="4.5" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="LMSController.ILibraryCardRegister" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="LMSView.NViewHelper.FormViewMode" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>NViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

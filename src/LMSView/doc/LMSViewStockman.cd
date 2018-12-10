@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LMSView.BookInfoControlForm" Collapsed="true">
+    <Position X="5.5" Y="3" Width="1.75" />
+    <AssociationLine Name="currentBook" Type="LMSController.BookInformation" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.812" Y="3.691" />
+        <Point X="5.812" Y="5.031" />
+        <Point X="2.5" Y="5.031" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="publishHouseRegister" Type="LMSController.PublishHouseInformationRegister" FixedFromPoint="true">
+      <Path>
+        <Point X="6.875" Y="3.691" />
+        <Point X="6.875" Y="7.031" />
+        <Point X="6" Y="7.031" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="subjectFinding" Type="LMSController.SubjectInformationFinding" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.438" Y="3.691" />
+        <Point X="6.438" Y="6.031" />
+        <Point X="4.25" Y="6.031" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQeAAAERACKBgNAAFAjQAiQCAAQATQBBrCKoCyAJACg=</HashCode>
+      <FileName>BookInfoControlForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="viewMode" />
+      <Field Name="currentBook" />
+      <Field Name="libraryManagment" />
+      <Field Name="publishHouseRegister" />
+      <Field Name="subjectFinding" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LMSView.BookInfoSearchForm" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEQEAACAAQAAACACAAAICAIAAAAAAAAACAAAgAAE=</HashCode>
+      <FileName>BookInfoSearchForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="WorkspaceStockman" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LMSView.InventoryCodeControlForm" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQECAAAAAAAACQBAACAAEgBAgAIAAAAAAAAAg=</HashCode>
+      <FileName>InventoryCodeControlForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="viewMode" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LMSView.PublishHouseControlForm" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="2" />
+    <AssociationLine Name="publishHouseInformationRegister" Type="LMSController.IPublishHouseInformationRegister" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.625" Y="5.191" />
+        <Point X="11.625" Y="6.281" />
+        <Point X="12.5" Y="6.281" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="publishHouseInformation" Type="LMSController.PublishHouseInformation" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.188" Y="5.191" />
+        <Point X="11.188" Y="6.844" />
+        <Point X="12.5" Y="6.844" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAUQAAAAACAAAAAEIACEAAkSICAADAAAIAAAAAACACA=</HashCode>
+      <FileName>PublishHouseControlForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="viewModeForm" />
+      <Field Name="publishHouseInformationRegister" />
+      <Field Name="publishHouseInformation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LMSController.BookInformation" Collapsed="true">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LMSController.PublishHouseInformationRegister" Collapsed="true">
+    <Position X="3.5" Y="6.75" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LMSController.SubjectInformationFinding" Collapsed="true">
+    <Position X="2" Y="5.75" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LMSController.PublishHouseInformation" Collapsed="true">
+    <Position X="12.5" Y="6.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="LMSController.IWorkspaceStockman" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="LMSController.ILibraryOperations" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="LMSController.IPublishHouseInformationRegister" Collapsed="true">
+    <Position X="12.5" Y="6" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="LMSView.NViewHelper.FormViewMode" Collapsed="true">
+    <Position X="8.75" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>NViewHelper.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
