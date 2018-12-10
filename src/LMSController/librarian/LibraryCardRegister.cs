@@ -1,23 +1,44 @@
-﻿using System;
+﻿using LMSModel;
+using System;
 using System.Collections.Generic;
 
 namespace LMSController
 {
    internal class LibraryCardRegister : ILibraryCardRegister
    {
-      public LibraryCard GetLibraryCardByBookTitle(string title)
+      public ICollection<LibraryCard> GetLibraryCardsByTicketNum(int ticketNumber) => Convert(Bibliographies.FindByTicketNumber(ticketNumber));
+      public LibraryCard GetLibraryCardByInventoryCode(int inventoryCode) => Convert(Bibliographies.FindByInventoryCode(inventoryCode));
+
+      private static LibraryCard Convert(Bibliography bibliography)
       {
-         throw new NotImplementedException();
+         if (bibliography == null)
+         {
+            throw new ArgumentNullException(nameof(bibliography));
+         }
+
+         return new LibraryCard()
+         {
+            DateRentBook = bibliography.give_date,
+            DateReturnBook = bibliography.get_date.Value,
+            CodeRentedBook = bibliography.id_book_instance,
+            Client = ClientInformation.Convert(bibliography.Reader)
+         };
       }
 
-      public LibraryCard GetLibraryCardByInventoryCode(int inventoryCode)
+      private static ICollection<LibraryCard> Convert(ICollection<Bibliography> bibliographies)
       {
-         throw new NotImplementedException();
-      }
+         if (bibliographies == null)
+         {
+            throw new ArgumentNullException(nameof(bibliographies));
+         }
 
-      public ICollection<LibraryCard> GetLibraryCardsByTicketNum(int clientTicketNum)
-      {
-         throw new NotImplementedException();
+         List<LibraryCard> libraryCards = new List<LibraryCard>();
+         foreach (var bibliography in bibliographies)
+         {
+            libraryCards.Add(Convert(bibliography));
+         }
+
+         return libraryCards;
       }
    }
 }

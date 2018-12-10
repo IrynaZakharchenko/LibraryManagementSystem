@@ -55,7 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bibliographies.cs" />
     <Compile Include="Books.cs" />
+    <Compile Include="Readers.cs" />
     <Compile Include="DBInstance.cs" />
     <Compile Include="Library.cs" />
     <Compile Include="LMSDB.designer.cs">
