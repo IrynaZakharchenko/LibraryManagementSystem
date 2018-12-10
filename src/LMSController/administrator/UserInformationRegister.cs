@@ -33,13 +33,7 @@ namespace LMSController
                   Name = account.login,
                   Password = account.password,
                },
-               PersonalInformation = new PersonalInformation()
-               {
-                  FullName = account.Person.full_name,
-                  Birthday = account.Person.birthday,
-                  Phone = account.Person.phone,
-                  Address = account.Person.address
-               }
+               PersonalInformation = PersonalInformation.Convert(account.Person)
             };
          }
          return result;
@@ -64,6 +58,11 @@ namespace LMSController
             throw new ArgumentNullException(nameof(userInformation));
          }
 
+         if (userInformation.Credential == null)
+         {
+            throw new ArgumentNullException(nameof(userInformation.Credential));
+         }
+
          Accounts.Delete(userInformation.Credential.Name);
          Accounts.Save();
       }
@@ -84,13 +83,7 @@ namespace LMSController
             {
                position_enum = (UserPosition)Enum.Parse(typeof(UserPosition), userInformation.Position)
             },
-            Person = new Person
-            {
-               address = userInformation.PersonalInformation.Address,
-               birthday = userInformation.PersonalInformation.Birthday,
-               phone = userInformation.PersonalInformation.Phone,
-               full_name = userInformation.PersonalInformation.FullName,
-            }
+            Person = PersonalInformation.Convert(userInformation.PersonalInformation)
          };
       }
    }

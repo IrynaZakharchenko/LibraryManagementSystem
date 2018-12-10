@@ -1,42 +1,46 @@
-﻿using System;
+﻿using LMSModel;
+using System;
 
 namespace LMSController
 {
    internal class ClientInformationRegister : IClientInformationRegister
    {
+      public ClientInformation FindByLibraryTicket(int ticketNumber) => ClientInformation.Convert(Readers.FindByLibraryTicket(ticketNumber));
+      public ClientInformation FindByName(string name) => ClientInformation.Convert(Readers.FindByName(name));
+
       public void Add(ClientInformation client)
       {
-         throw new NotImplementedException();
-      }
-
-      public void Delete(ClientInformation client)
-      {
-         throw new NotImplementedException();
+         Readers.Add(ClientInformation.Convert(client));
+         Readers.Save();
       }
 
       public void Edit(ClientInformation client)
       {
-         throw new NotImplementedException();
+         Readers.Edit(ClientInformation.Convert(client));
+         Readers.Save();
       }
 
-      public ClientInformation FindByLibraryTicket(int ticketNumber)
+      public void Delete(ClientInformation client)
       {
-         throw new NotImplementedException();
-      }
+         if (client == null)
+         {
+            throw new ArgumentNullException(nameof(client));
+         }
 
-      public ClientInformation FindByName(string name)
-      {
-         throw new NotImplementedException();
+         Readers.Delete(client.LibraryTicketNumberCode);
+         Readers.Save();
       }
-
+      
       public void RentBook(ClientInformation client, BookInformation book)
       {
-         throw new NotImplementedException();
+         Readers.RentBook(ClientInformation.Convert(client), 0);
+         Readers.Save();
       }
 
       public void ReturnBook(ClientInformation client, BookInformation book)
       {
-         throw new NotImplementedException();
+         Readers.ReturnBook(0);
+         Readers.Save();
       }
    }
 }
