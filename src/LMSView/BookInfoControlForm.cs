@@ -52,7 +52,7 @@ namespace LMSView
 
             foreach (var code in currentBook.InventoryCode)
             {
-               if (code.Value == true)
+               if (code.Value == false)
                {
                   listBoxInventoryCodeAvailable.Items.Add(code.Key);
                }
@@ -75,7 +75,10 @@ namespace LMSView
             textBoxPublishHouseResult.Text = currentBook.PublishHouse.Name;
             textBoxSeries.Text = currentBook.BookSeries;
             textBoxSubject.Text = currentBook.Subject.Name;
-            textBoxSubjectParent.Text = currentBook.Subject.SubjectParent.Name;
+            if (currentBook.Subject.SubjectParent != null)
+            {
+               textBoxSubjectParent.Text = currentBook.Subject.SubjectParent.Name;
+            }
             textBoxAnnotation.Text = currentBook.Annotation;
          }
          if (FormViewMode.Create == viewMode)
@@ -97,11 +100,11 @@ namespace LMSView
          Dictionary<int, bool> mapInventoryCodes = new Dictionary<int, bool>();
          foreach (var code in listBoxInventoryCodeAvailable.Items)
          {
-            mapInventoryCodes.Add(Convert.ToInt32(code, CultureInfo.CurrentCulture), true);
+            mapInventoryCodes.Add(Convert.ToInt32(code, CultureInfo.CurrentCulture), false);
          };
          foreach (var code in listBoxInventoryCodeNotAvailable.Items)
          {
-            mapInventoryCodes.Add(Convert.ToInt32(code, CultureInfo.CurrentCulture), false);
+            mapInventoryCodes.Add(Convert.ToInt32(code, CultureInfo.CurrentCulture), true);
          };
          book.InventoryCode = mapInventoryCodes;
          book.Title = textBoxTitle.Text;
@@ -116,7 +119,7 @@ namespace LMSView
          List<AuthorInformation> authors = new List<AuthorInformation>();
          foreach (string name in authorsNames)
          {
-            authors.Add(new AuthorInformation(){Name = name});
+            authors.Add(new AuthorInformation() { Name = name });
          }
          book.Authors = authors.ToArray();
          book.Subject = new SubjectInformation() { Name = textBoxSubject.Text };
@@ -165,7 +168,10 @@ namespace LMSView
             }
             Activate();
          }
-         textBoxPublishHouseResult.Text = publishHouse.Name;
+         else
+         {
+            textBoxPublishHouseResult.Text = publishHouse.Name;
+         }
       }
 
       private void RemoveCodeFromList(int lastCode)
@@ -211,12 +217,6 @@ namespace LMSView
             inventoryCodeControl.ShowDialog();
             Activate();
          }
-      }
-
-      private void ListBoxInventoryCodeNotAvailable_SelectedIndexChanged(object sender, EventArgs e)
-      {
-         
-         
       }
    }
 }
