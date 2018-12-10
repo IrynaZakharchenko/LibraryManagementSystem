@@ -148,6 +148,7 @@
          this.buttonDelete.Size = new System.Drawing.Size(111, 40);
          this.buttonDelete.TabIndex = 12;
          this.buttonDelete.UseVisualStyleBackColor = true;
+         this.buttonDelete.Click += new System.EventHandler(this.ButtonDelete_Click);
          // 
          // textBoxLibTicketNum
          // 

@@ -8,19 +8,13 @@ namespace LMSView
 {
    public partial class ClientLibraryInfoControlForm : Form
    {
-      private readonly ILibraryCardRegister libraryCardRegister;
-      private readonly IClientInformationRegister clientInformationRegister;
-      private readonly IBookFinding bookFinding;
+      private readonly IWorkspaceLibrarian workspaceLibrarian;
       private ClientInformation currentClient;
 
-      public ClientLibraryInfoControlForm(ILibraryCardRegister libraryRegister,
-                                          IClientInformationRegister clientRegister,
-                                          IBookFinding finding,
-                                          ClientInformation client)
+      public ClientLibraryInfoControlForm(IWorkspaceLibrarian workspace,
+                                          ref ClientInformation client)
       {
-         libraryCardRegister = libraryRegister;
-         clientInformationRegister = clientRegister;
-         bookFinding = finding;
+         workspaceLibrarian = workspace;
          currentClient = client;
 
          InitializeComponent();
@@ -39,21 +33,21 @@ namespace LMSView
          dateTimePickerReturn.Visible = false;
          dateTimePickerGiveBook.Visible = false;
 
-         ICollection<LibraryCard> libraryCards = libraryCardRegister.GetLibraryCardsByTicketNum(currentClient.LibraryTicketNumberCode);
+         ICollection<LibraryCard> libraryCards = workspaceLibrarian.LibraryCardRegister.GetLibraryCardsByTicketNum(currentClient.LibraryTicketNumberCode);
          foreach (var card in libraryCards)
          {
-            BookInformation book = bookFinding.FindByInventoryCode(card.CodeRentedBook);
-            listBoxClientBookCollection.Items.Add(book.Title);
+            listBoxClientBookCollection.Items.Add(card.CodeRentedBook);
          }
-         listBoxClientBookCollection.SelectedIndex = 0;
       }
 
       private void ButtonReturnBook_Click(object sender, EventArgs e)
       {
          if (listBoxClientBookCollection.SelectedItem != null)
          {
-            BookInformation selectedBook = (BookInformation)listBoxClientBookCollection.SelectedItem;
-            clientInformationRegister.ReturnBook(currentClient, selectedBook);
+            int selectedBookCode = Convert.ToInt32(listBoxClientBookCollection.SelectedItem, CultureInfo.CurrentCulture);
+            listBoxClientBookCollection.Items.Remove(listBoxClientBookCollection.SelectedItem);
+
+            workspaceLibrarian.ClientInformationRegister.ReturnBook(currentClient, selectedBookCode);
          }
          else
          {
@@ -65,7 +59,7 @@ namespace LMSView
       private void ButtonClientPersonal_Click(object sender, EventArgs e)
       {
          using (ClientPersonalInfoControlForm info = new ClientPersonalInfoControlForm(NViewHelper.FormViewMode.Edit,
-                                                         clientInformationRegister, currentClient))
+                                                         workspaceLibrarian.ClientInformationRegister, ref currentClient))
          {
             info.ShowDialog();
             Activate();
@@ -75,10 +69,11 @@ namespace LMSView
       private void ListBoxClientBookCollection_SelectedValueChanged(object sender, EventArgs e)
       {
          string title = listBoxClientBookCollection.SelectedValue as string;
-         BookInformation book = bookFinding.FindByTitle(title);
-         
+         BookInformation book = workspaceLibrarian.BookFinding.FindByTitle(title);
+         LibraryCard currentCard = workspaceLibrarian.LibraryCardRegister.GetLibraryCardByBookTitle(book.Title);
+
          dateTimePickerGiveBook.Visible = true;
-         dateTimePickerGiveBook.Value = System.DateTime.Now;
+         dateTimePickerGiveBook.Value = currentCard.DateRentBook;
       }
    }
 }

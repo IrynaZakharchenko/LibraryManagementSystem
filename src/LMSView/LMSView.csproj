@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LibrarianBookInfoSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibrarianBookInfoSearchForm.Designer.cs">
+      <DependentUpon>LibrarianBookInfoSearchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BookInfoSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </Compile>
     <Compile Include="LMS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LibrarianBookInfoSearchForm.resx">
+      <DependentUpon>LibrarianBookInfoSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BookInfoSearchForm.resx">
       <DependentUpon>BookInfoSearchForm.cs</DependentUpon>
     </EmbeddedResource>

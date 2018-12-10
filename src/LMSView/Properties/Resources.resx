@@ -207,11 +207,11 @@
   <data name="logonFailed" xml:space="preserve">
     <value>Log on failed</value>
   </data>
-  <data name="manageBook" xml:space="preserve">
-    <value>Book information</value>
+  <data name="searchBook" xml:space="preserve">
+    <value>Search book information for client</value>
   </data>
-  <data name="manageClient" xml:space="preserve">
-    <value>Client information</value>
+  <data name="searchClient" xml:space="preserve">
+    <value>Search client by ticket number</value>
   </data>
   <data name="parentSubject" xml:space="preserve">
     <value>Parent Subject</value>
@@ -361,7 +361,7 @@
     <value>Field "Client" should not be empty</value>
   </data>
   <data name="uncheckedBook" xml:space="preserve">
-    <value>Choice one book from list to return</value>
+    <value>Choice one book from list to return it</value>
   </data>
   <data name="userSearchFailed" xml:space="preserve">
     <value> is not exist. Do you want to create it?</value>
@@ -371,5 +371,17 @@
   </data>
   <data name="separator" xml:space="preserve">
     <value>, </value>
+  </data>
+  <data name="rentBookWelcome" xml:space="preserve">
+    <value>Rent book for selected user</value>
+  </data>
+  <data name="selectedInventoryCode" xml:space="preserve">
+    <value>Select inventory code from available list!</value>
+  </data>
+  <data name="clientNotSpecified" xml:space="preserve">
+    <value>For rent book need search or create client!</value>
+  </data>
+  <data name="clientInformation" xml:space="preserve">
+    <value>Information about client</value>
   </data>
 </root>

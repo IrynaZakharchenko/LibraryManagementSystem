@@ -9,7 +9,7 @@
       void Edit(ClientInformation client);
       void Delete(ClientInformation client);
 
-      void RentBook(ClientInformation client, BookInformation book);
-      void ReturnBook(ClientInformation client, BookInformation book);
+      void RentBook(ClientInformation client, int bookInventoryCode);
+      void ReturnBook(ClientInformation client, int bookInventoryCode);
    }
 }

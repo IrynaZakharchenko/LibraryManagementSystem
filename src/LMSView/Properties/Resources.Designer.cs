@@ -187,6 +187,24 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Information about client.
+        /// </summary>
+        internal static string clientInformation {
+            get {
+                return ResourceManager.GetString("clientInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For rent book need search or create client!.
+        /// </summary>
+        internal static string clientNotSpecified {
+            get {
+                return ResourceManager.GetString("clientNotSpecified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Field &quot;Client&quot; should not be empty.
         /// </summary>
         internal static string clientSearchEmpty {
@@ -466,24 +484,6 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Book information.
-        /// </summary>
-        internal static string manageBook {
-            get {
-                return ResourceManager.GetString("manageBook", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Client information.
-        /// </summary>
-        internal static string manageClient {
-            get {
-                return ResourceManager.GetString("manageClient", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to During processing your operation something went wrong.
         /// </summary>
         internal static string operationNOK {
@@ -583,6 +583,15 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rent book for selected user.
+        /// </summary>
+        internal static string rentBookWelcome {
+            get {
+                return ResourceManager.GetString("rentBookWelcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Return book.
         /// </summary>
         internal static string returnBook {
@@ -610,6 +619,24 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search book information for client.
+        /// </summary>
+        internal static string searchBook {
+            get {
+                return ResourceManager.GetString("searchBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search client by ticket number.
+        /// </summary>
+        internal static string searchClient {
+            get {
+                return ResourceManager.GetString("searchClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  is not exist in system. You can create it!.
         /// </summary>
         internal static string searchFailed {
@@ -624,6 +651,15 @@ namespace LMSView.Properties {
         internal static string searchPublishHouseFailed {
             get {
                 return ResourceManager.GetString("searchPublishHouseFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select inventory code from available list!.
+        /// </summary>
+        internal static string selectedInventoryCode {
+            get {
+                return ResourceManager.GetString("selectedInventoryCode", resourceCulture);
             }
         }
         
@@ -763,7 +799,7 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choice one book from list to return.
+        ///   Looks up a localized string similar to Choice one book from list to return it.
         /// </summary>
         internal static string uncheckedBook {
             get {
