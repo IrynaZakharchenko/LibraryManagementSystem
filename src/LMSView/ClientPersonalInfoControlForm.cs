@@ -13,7 +13,7 @@ namespace LMSView
 
       public ClientPersonalInfoControlForm(NViewHelper.FormViewMode mode,
                                            IClientInformationRegister register,
-                                           ClientInformation client = null)
+                                           ref ClientInformation client)
       {
          mViewMode = mode;
          clientInformationRegister = register;
@@ -35,11 +35,16 @@ namespace LMSView
          if (NViewHelper.FormViewMode.Edit == mViewMode)
          {
             Text = Properties.Resources.clientEdit;
+            textBoxLibTicketNum.Text = currentClient.LibraryTicketNumberCode.ToString(CultureInfo.CurrentCulture);
+            textBoxName.Text = currentClient.PersonalInformation.FullName;
+            textBoxPhone.Text = currentClient.PersonalInformation.Phone.ToString(CultureInfo.CurrentCulture);
+            textBoxAddress.Text = currentClient.PersonalInformation.Address;
+            dateTimePickerBirth.Value = currentClient.PersonalInformation.Birthday;
          }
          if (NViewHelper.FormViewMode.Create == mViewMode)
          {
             Text = Properties.Resources.clientCreate;
-            labelLibTicketNum.Text = NViewHelper.ViewHelper.MarkFieldAsImportant(labelLibTicketNum.Text); 
+            labelLibTicketNum.Text = NViewHelper.ViewHelper.MarkFieldAsImportant(labelLibTicketNum.Text);
             labelName.Text = NViewHelper.ViewHelper.MarkFieldAsImportant(labelName.Text);
             labelBirth.Text = NViewHelper.ViewHelper.MarkFieldAsImportant(labelBirth.Text);
             labelPhone.Text = NViewHelper.ViewHelper.MarkFieldAsImportant(labelPhone.Text);
@@ -48,19 +53,23 @@ namespace LMSView
 
       private void ButtonSave_Click(object sender, EventArgs e)
       {
-         if (NViewHelper.FormViewMode.Edit == mViewMode)
+         if (NViewHelper.FormViewMode.Create == mViewMode)
          {
-            clientInformationRegister.Edit(PackageNewClientInfo(currentClient));
+            currentClient = new ClientInformation();
+            clientInformationRegister.Add(PackageNewClientInfo());
          }
          if (NViewHelper.FormViewMode.Create == mViewMode)
          {
-            clientInformationRegister.Add(PackageNewClientInfo(new ClientInformation()));
+            clientInformationRegister.Edit(PackageNewClientInfo());
          }
+         MessageBox.Show(Properties.Resources.successfull, Properties.Resources.save,
+                         MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+         Close();
       }
 
-      private ClientInformation PackageNewClientInfo(ClientInformation client)
+      private ClientInformation PackageNewClientInfo()
       {
-         client.LibraryTicketNumberCode = Convert.ToInt32(textBoxLibTicketNum.Text, CultureInfo.CurrentCulture);
+         currentClient.LibraryTicketNumberCode = Convert.ToInt32(textBoxLibTicketNum.Text, CultureInfo.CurrentCulture);
 
          PersonalInformation personInfo = new PersonalInformation()
          {
@@ -68,9 +77,26 @@ namespace LMSView
             Birthday = dateTimePickerBirth.Value,
             Phone = Convert.ToDecimal(textBoxPhone.Text, CultureInfo.CurrentCulture)
          };
-         client.PersonalInformation = personInfo;
+         currentClient.PersonalInformation = personInfo;
 
-         return client;
+         return currentClient;
+      }
+
+      private void ButtonDelete_Click(object sender, EventArgs e)
+      {
+         if (currentClient != null)
+         {
+            clientInformationRegister.Delete(currentClient);
+            MessageBox.Show(Properties.Resources.successfull, Properties.Resources.delete,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+            Close();
+         }
+         else
+         {
+            MessageBox.Show(Properties.Resources.failed, Properties.Resources.delete,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+         }
+
       }
    }
 }
