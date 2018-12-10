@@ -76,10 +76,9 @@ namespace LMSView
       {
          string title = listBoxClientBookCollection.SelectedValue as string;
          BookInformation book = bookFinding.FindByTitle(title);
-         LibraryCard currentCard = libraryCardRegister.GetLibraryCardByBookTitle(book.Title);
-
+         
          dateTimePickerGiveBook.Visible = true;
-         dateTimePickerGiveBook.Value = currentCard.DateRentBook;
+         dateTimePickerGiveBook.Value = System.DateTime.Now;
       }
    }
 }
