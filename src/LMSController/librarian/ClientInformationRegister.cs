@@ -1,38 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LMSController
 {
-   public class ClientInformationRegister : IClientInformationRegister
+   internal class ClientInformationRegister : IClientInformationRegister
    {
-      public void AddClient(ClientInformation clientInformation)
+      public void Add(ClientInformation client)
       {
          throw new NotImplementedException();
       }
 
-      public void DeleteClient(ClientInformation clientInformation)
+      public void Delete(ClientInformation client)
       {
          throw new NotImplementedException();
       }
 
-      public void EditClient(ClientInformation clientInformation)
+      public void Edit(ClientInformation client)
       {
          throw new NotImplementedException();
       }
 
-      public ClientInformation FindClientByLibraryTicket(int numberLibraryTicket)
+      public ClientInformation FindByLibraryTicket(int ticketNumber)
       {
          throw new NotImplementedException();
       }
 
-      public ClientInformation FindClientByName(string name)
+      public ClientInformation FindByName(string name)
       {
          throw new NotImplementedException();
       }
-     
+
       public void RentBook(ClientInformation client, BookInformation book)
       {
          throw new NotImplementedException();

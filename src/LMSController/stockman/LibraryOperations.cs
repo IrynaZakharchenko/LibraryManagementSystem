@@ -39,20 +39,8 @@ namespace LMSController
          {
             authors.Add(new Author() { Name = author.Name });
          }
-         
+
          Library.AddBook(book, authors, bookInformation.InventoryCode.Keys);
-         Library.Save();
-      }
-
-      public void DeleteBookByISBN(int isbn)
-      {
-         Library.DeleteBookByISBN(isbn);
-         Library.Save();
-      }
-
-      public void DeleteBookByInventoryCode(int inventoryCode)
-      {
-         Library.DeleteBookByInventoryCode(inventoryCode);
          Library.Save();
       }
 
@@ -66,6 +54,18 @@ namespace LMSController
          Book book = new Book();
 
          Library.EditBook(book);
+         Library.Save();
+      }
+
+      public void DeleteBookByISBN(int isbn)
+      {
+         Library.DeleteBookByISBN(isbn);
+         Library.Save();
+      }
+
+      public void DeleteBookByInventoryCode(int inventoryCode)
+      {
+         Library.DeleteBookByInventoryCode(inventoryCode);
          Library.Save();
       }
    }

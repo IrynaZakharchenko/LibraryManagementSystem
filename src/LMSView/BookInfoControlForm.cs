@@ -12,15 +12,14 @@ namespace LMSView
       private FormViewMode viewMode;
       private BookInformation currentBook;
       private ILibraryOperations libraryManagment;
+      private IPublishHouseInformationRegister publishHouseRegister;
 
-      PublishHouseInformationRegister publishHouseRegister = new PublishHouseInformationRegister();
-      SubjectInformationFinding subjectFinding = new SubjectInformationFinding();
-
-      public BookInfoControlForm(FormViewMode mode, ILibraryOperations libraryOperations, BookInformation book = null)
+      public BookInfoControlForm(FormViewMode mode, IWorkspaceStockman workspaceStockman, BookInformation book = null)
       {
          viewMode = mode;
          currentBook = book;
-         libraryManagment = libraryOperations;
+         libraryManagment = workspaceStockman.LibraryOperations;
+         publishHouseRegister = workspaceStockman.PublishHouseInformationRegister;
 
          InitializeComponent();
       }

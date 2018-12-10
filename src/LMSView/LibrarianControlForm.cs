@@ -47,7 +47,7 @@ namespace LMSView
 
          if (false == String.IsNullOrEmpty(clientName))
          {
-            ClientInformation client = workspaceLibrarian.ClientInformationRegister.FindClientByName(clientName);
+            ClientInformation client = workspaceLibrarian.ClientInformationRegister.FindByName(clientName);
             if (client != null)
             {
                using (ClientLibraryInfoControlForm clientLibraryInfo = new ClientLibraryInfoControlForm(workspaceLibrarian.LibraryCardRegister,

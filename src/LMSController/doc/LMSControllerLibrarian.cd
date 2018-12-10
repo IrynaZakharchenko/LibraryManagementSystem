@@ -1,51 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="LMSController.ClientInformation">
-    <Position X="8.75" Y="7" Width="2" />
-    <AssociationLine Name="PersonalInformation" Type="LMSController.PersonalInformation" FixedToPoint="true">
-      <Path>
-        <Point X="9.438" Y="8.103" />
-        <Point X="9.438" Y="8.5" />
-      </Path>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>ClientInformation.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="PersonalInformation" />
-    </ShowAsAssociation>
-  </Class>
   <Class Name="LMSController.ClientInformationRegister" BaseTypeListCollapsed="true">
-    <Position X="11.5" Y="3.25" Width="2" />
+    <Position X="11.5" Y="2.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAQABAAAAAAAAAAAAAAAAAAAAADAKAAAAA=</HashCode>
-      <FileName>ClientInformationRegister.cs</FileName>
+      <HashCode>AAIAAAAAAAAQAAAAAAAAAAAAAAEAEAACAAAAAIACAAA=</HashCode>
+      <FileName>librarian\ClientInformationRegister.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LMSController.LibrarianWorkspace" BaseTypeListCollapsed="true">
-    <Position X="8.5" Y="0.5" Width="1.75" />
+    <Position X="8.75" Y="0.5" Width="1.75" />
     <Members>
-      <Field Name="bookFinding" Hidden="true" />
+      <Property Name="BookFinding" Hidden="true" />
+      <Property Name="ClientInformationRegister" Hidden="true" />
+      <Property Name="LibraryCardRegister" Hidden="true" />
     </Members>
+    <AssociationLine Name="bookFinding" Type="LMSController.BookFinding">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.06" Y="0.344" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="clientInformationRegister" Type="LMSController.ClientInformationRegister">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.074" Y="0.358" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="libraryCardRegister" Type="LMSController.LibraryCardRegister">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.082" Y="0.363" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAIAAACAAAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>LibrarianWorkspace .cs</FileName>
+      <HashCode>AAAAAAAAAAAAAgIAAAIAAACAAAAAAgAAAAAAAAAAgAA=</HashCode>
+      <FileName>librarian\LibrarianWorkspace .cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="bookFinding" />
-      <Property Name="ClientInformationRegister" />
-      <Property Name="LibraryCardRegister" />
-      <Property Name="BookFinding" />
+      <Field Name="clientInformationRegister" />
+      <Field Name="libraryCardRegister" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LMSController.LibraryCard">
-    <Position X="8.75" Y="5" Width="1.75" />
+    <Position X="8.75" Y="4.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAEAAAAECAAAAAAAAAQ=</HashCode>
-      <FileName>LibraryCard.cs</FileName>
+      <FileName>types\LibraryCard.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Client" />
@@ -53,97 +53,76 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="LMSController.LibraryCardRegister" BaseTypeListCollapsed="true">
-    <Position X="8.75" Y="3.25" Width="2.5" />
+    <Position X="8.75" Y="2.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>LibraryCardRegister.cs</FileName>
+      <FileName>librarian\LibraryCardRegister.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="LMSController.PersonalInformation" Collapsed="true">
-    <Position X="8.75" Y="8.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAIAAACAAAAIAAAAAA=</HashCode>
-      <FileName>PersonalInformation.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="LMSController.AuthorInformation">
-    <Position X="6.5" Y="9.25" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>AuthorInformation.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="LMSController.BookFinding" BaseTypeListCollapsed="true">
-    <Position X="4.75" Y="3.25" Width="2.75" />
+    <Position X="4.75" Y="2.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAQAAAAIAAAAAAAAAAAAQAAAAAAAAAQAA=</HashCode>
-      <FileName>BookFinding.cs</FileName>
+      <HashCode>AAIAAAAAAgAAAACEAIAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>finders\BookFinding.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="LMSController.BookInformation">
-    <Position X="4.75" Y="5.75" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAACQAAAEAACIAAgAgABABAAAAgAAAAAAAAAAE=</HashCode>
-      <FileName>BookInformation.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="PublishHouse" />
-      <Property Name="Subject" />
-    </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Property Name="Authors" />
-    </ShowAsCollectionAssociation>
-  </Class>
-  <Class Name="LMSController.PublishHouseInformation">
-    <Position X="2.5" Y="9.25" Width="3" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>PublishHouseInformation.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="LMSController.SubjectInformation">
-    <Position X="1.25" Y="5.75" Width="2.5" />
+    <Position X="1.25" Y="5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAQAAAAAAAAAAAAAA=</HashCode>
-      <FileName>SubjectInformation.cs</FileName>
+      <FileName>types\SubjectInformation.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="SubjectParent" />
     </ShowAsAssociation>
   </Class>
   <Class Name="LMSController.SubjectInformationFinding" BaseTypeListCollapsed="true">
-    <Position X="1.25" Y="3.25" Width="2.25" />
+    <Position X="1.25" Y="2.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
-      <FileName>SubjectInformationFinding.cs</FileName>
+      <FileName>stockman\SubjectInformationFinding.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Field Name="subjectStorage" />
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="LMSController.IClientInformationRegister" Collapsed="true">
-    <Position X="11.5" Y="2.25" Width="2.25" />
+  <Class Name="LMSController.PublishHouseInformation">
+    <Position X="2.5" Y="8.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAQABAAAAAAAAAAAAAAAAAAAAADAKAAAAA=</HashCode>
-      <FileName>IClientInformationRegister.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>types\PublishHouseInformation.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="LMSController.ILibraryCardRegister" Collapsed="true">
-    <Position X="8.75" Y="2.25" Width="1.75" />
+  </Class>
+  <Class Name="LMSController.BookInformation">
+    <Position X="4.75" Y="5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ILibraryCardRegister.cs</FileName>
+      <HashCode>AAAAAAAACQAAAEAACIAAgAgABABAAAAgAAAAAAAAAAE=</HashCode>
+      <FileName>types\BookInformation.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="LMSController.IBookFinding" Collapsed="true">
-    <Position X="5.25" Y="2.25" Width="1.5" />
+    <ShowAsAssociation>
+      <Property Name="PublishHouse" />
+      <Property Name="Subject" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LMSController.ClientInformation">
+    <Position X="11.5" Y="5.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAgAAAIAQAA=</HashCode>
-      <FileName>IBookFinding.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>types\ClientInformation.cs</FileName>
     </TypeIdentifier>
-  </Interface>
+    <ShowAsAssociation>
+      <Property Name="PersonalInformation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LMSController.PersonalInformation">
+    <Position X="15.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAIAAACAAAAIAAAAAA=</HashCode>
+      <FileName>types\PersonalInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

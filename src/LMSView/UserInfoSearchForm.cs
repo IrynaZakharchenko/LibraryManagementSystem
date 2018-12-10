@@ -29,7 +29,7 @@ namespace LMSView
             string search = textBoxSearch.Text;
             if (false == String.IsNullOrEmpty(search))
             {
-               UserInformation user = userInformationRegister.FindUser(search);
+               UserInformation user = userInformationRegister.FindByName(search);
                if (user != null)
                {
                   using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Edit, userInformationRegister, user))

@@ -4,9 +4,31 @@ namespace LMSController
 {
    public delegate void OperationEventHandler(bool result);
 
-   public class PublishHouseInformationRegister : IPublishHouseInformationRegister
+   internal class PublishHouseInformationRegister : IPublishHouseInformationRegister
    {
       public event OperationEventHandler OnOperationExecute;
+
+      public PublishHouseInformation FindByName(string name)
+      {
+         if (name == null)
+         {
+            throw new System.ArgumentNullException(nameof(name));
+         }
+
+         PublishHouseInformation publishHouseInformation = null;
+         PublishingHouse publishingHouse = PublishingHouses.FindByName(name);
+         if (publishingHouse != null)
+         {
+            publishHouseInformation = new PublishHouseInformation()
+            {
+               Category = publishingHouse.category,
+               Location = publishingHouse.location,
+               Name = publishingHouse.name
+            };
+         }
+
+         return publishHouseInformation;
+      }
 
       public void Add(PublishHouseInformation publishHouse)
       {
@@ -55,28 +77,6 @@ namespace LMSController
          {
             OnOperationExecute(false);
          }
-      }
-
-      public PublishHouseInformation FindByName(string name)
-      {
-         if (name == null)
-         {
-            throw new System.ArgumentNullException(nameof(name));
-         }
-
-         PublishHouseInformation publishHouseInformation = null;
-         PublishingHouse publishingHouse = PublishingHouses.FindByName(name);
-         if (publishingHouse != null)
-         {
-            publishHouseInformation = new PublishHouseInformation()
-            {
-               Category = publishingHouse.category,
-               Location = publishingHouse.location,
-               Name = publishingHouse.name
-            };
-         }
-
-         return publishHouseInformation;
       }
    }
 }

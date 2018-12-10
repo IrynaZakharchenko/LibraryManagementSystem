@@ -4,49 +4,49 @@
     <Position X="7" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAEABAAAAAAAEAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IAuthentication.cs</FileName>
+      <FileName>authentication\IAuthentication.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="LMSController.IBookFinding">
     <Position X="3.5" Y="7" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAgAAAIAQAA=</HashCode>
-      <FileName>IBookFinding.cs</FileName>
+      <HashCode>AAIAAAAAAgAAAACEAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>finders\IBookFinding.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="LMSController.IClientInformationRegister">
     <Position X="6.5" Y="7" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAQABAAAAAAAAAAAAAAAAAAAAADAKAAAAA=</HashCode>
-      <FileName>IClientInformationRegister.cs</FileName>
+      <HashCode>AAIAAAAAAAAQAAAAAAAAAAAAAAEAEAACAAAAAIACAAA=</HashCode>
+      <FileName>librarian\IClientInformationRegister.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="LMSController.ILibraryOperations">
     <Position X="0.5" Y="7" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQACAAIBAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ILibrararyOperations.cs</FileName>
+      <FileName>stockman\ILibrararyOperations.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="LMSController.ILibraryCardRegister">
     <Position X="9.5" Y="7" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ILibraryCardRegister.cs</FileName>
+      <FileName>librarian\ILibraryCardRegister.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="LMSController.IUserInformationRegister">
     <Position X="12.75" Y="7" Width="2" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAgAAAAAAAAAgA=</HashCode>
-      <FileName>IUserInformationRegister.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAAAAQAAAAAAAEAAAACAAAAAAACAAA=</HashCode>
+      <FileName>administrator\IUserInformationRegister.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="LMSController.IWorkspaceAdmin">
     <Position X="12.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IWorkspaceAdmin.cs</FileName>
+      <FileName>administrator\IWorkspaceAdmin.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="UserInformationRegister" />
@@ -63,7 +63,7 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAACAAAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>IWorkspaceLibrarian.cs</FileName>
+      <FileName>librarian\IWorkspaceLibrarian.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="BookFinding" />
@@ -75,14 +75,14 @@
     <Position X="0.5" Y="5" Width="1.75" />
     <AssociationLine Name="BookFinding" Type="LMSController.IBookFinding" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.25" Y="5.434" />
-        <Point X="3.781" Y="5.434" />
+        <Point X="2.25" Y="5.648" />
+        <Point X="3.781" Y="5.648" />
         <Point X="3.781" Y="7" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAICAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IWorkspaceStockman.cs</FileName>
+      <HashCode>IAAAAAAAAAABAAAAAAICAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>stockman\IWorkspaceStockman.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="BookFinding" />
@@ -93,28 +93,28 @@
     <Position X="6.75" Y="3.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IAuthentication.cs</FileName>
+      <FileName>authentication\IAuthentication.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Delegate Name="LMSController.AdminLogOnEventHandler">
     <Position X="12.25" Y="3.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IAuthentication.cs</FileName>
+      <FileName>authentication\IAuthentication.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Delegate Name="LMSController.StockmanLogOnEventHandler">
     <Position X="0.5" Y="3.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IAuthentication.cs</FileName>
+      <FileName>authentication\IAuthentication.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Delegate Name="LMSController.FailedLogOnEventHandler">
     <Position X="9.75" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IAuthentication.cs</FileName>
+      <FileName>authentication\IAuthentication.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Font Name="Segoe UI" Size="9" />

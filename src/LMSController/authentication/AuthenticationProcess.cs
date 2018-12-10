@@ -18,7 +18,7 @@ namespace LMSController
          }
 
          Account account = Accounts.FindByUserNameAndPassword(userCredential.Name, userCredential.Password);
-         
+
          if (null != account)
          {
             switch (account.Position.position_enum)
