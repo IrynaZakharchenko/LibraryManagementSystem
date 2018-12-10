@@ -2,7 +2,7 @@
 
 namespace LMSController
 {
-   public class ClientInformationRegister : IClientInformationRegister
+   internal class ClientInformationRegister : IClientInformationRegister
    {
       public void Add(ClientInformation client)
       {

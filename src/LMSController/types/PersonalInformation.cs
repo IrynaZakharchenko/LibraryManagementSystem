@@ -2,7 +2,7 @@
 
 namespace LMSController
 {
-   public struct PersonalInformation
+   public class PersonalInformation
    {
       public string FullName { get; set; }
       public DateTime Birthday { get; set; }

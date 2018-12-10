@@ -29,7 +29,7 @@ namespace LMSView
          buttonDelete.Text = Properties.Resources.delete;
          if (comboBoxPosition.Items.Count == 0)
          {
-            comboBoxPosition.Items.AddRange(userInformationRegister.PossiblePositions());
+            comboBoxPosition.Items.AddRange(userInformationRegister.GetPossiblePositions());
          }
 
          labelLogin.Text = Properties.Resources.login;
@@ -71,7 +71,7 @@ namespace LMSView
          DialogResult result;
          if (NViewHelper.FormViewMode.Edit == viewMode)
          {
-            userInformationRegister.DeleteUser(currentUser);
+            userInformationRegister.Delete(currentUser);
 
             result = MessageBox.Show(Properties.Resources.successfull, Properties.Resources.delete,
                      MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
@@ -94,11 +94,11 @@ namespace LMSView
          {
             if (NViewHelper.FormViewMode.Edit == viewMode)
             {
-               userInformationRegister.EditUser(ExtractInputInformation(currentUser));
+               userInformationRegister.Edit(ExtractInputInformation(currentUser));
             }
             if (NViewHelper.FormViewMode.Create == viewMode)
             {
-               userInformationRegister.AddUser(ExtractInputInformation(new UserInformation()));
+               userInformationRegister.Add(ExtractInputInformation(new UserInformation()));
             }
             MessageBox.Show(Properties.Resources.successfull, Properties.Resources.save,
                      MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);

@@ -1,6 +1,6 @@
 ﻿namespace LMSController
 {
-   public class LibrarianWorkspace : IWorkspaceLibrarian
+   internal class LibrarianWorkspace : IWorkspaceLibrarian
    {
       private static readonly BookFinding bookFinding = new BookFinding();
       private static readonly ClientInformationRegister clientInformationRegister = new ClientInformationRegister();

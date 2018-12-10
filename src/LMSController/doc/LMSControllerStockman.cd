@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="LMSController.BookFinding" BaseTypeListCollapsed="true">
-    <Position X="3.25" Y="2.25" Width="2.75" />
+    <Position X="3.75" Y="2.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAAAgAAAIAQAA=</HashCode>
+      <HashCode>AAIAAAAAAgAAAACEAIAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>finders\BookFinding.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LMSController.LibraryOperations" BaseTypeListCollapsed="true">
-    <Position X="6.25" Y="2.25" Width="2.25" />
+    <Position X="6.75" Y="2.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQACAAIBAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>stockman\LibraryOperations.cs</FileName>
@@ -17,7 +17,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LMSController.PublishHouseInformationRegister" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="2.25" Width="2.5" />
+    <Position X="1" Y="2.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAIAAABAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAACAAA=</HashCode>
       <FileName>stockman\PublishHouseInformationRegister.cs</FileName>
@@ -25,10 +25,12 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LMSController.StockmanWorkspace" BaseTypeListCollapsed="true">
-    <Position X="5" Y="0.5" Width="1.75" />
+    <Position X="5.5" Y="0.5" Width="1.75" />
     <Members>
       <Property Name="BookFinding" Hidden="true" />
       <Property Name="LibraryOperations" Hidden="true" />
+      <Property Name="PublishHouseInformationRegister" Hidden="true" />
+      <Property Name="SubjectInformationFinding" Hidden="true" />
     </Members>
     <AssociationLine Name="bookFinding" Type="LMSController.BookFinding">
       <MemberNameLabel ManuallyPlaced="true">
@@ -40,20 +42,32 @@
         <Position X="-1.348" Y="0.466" />
       </MemberNameLabel>
     </AssociationLine>
+    <AssociationLine Name="subjectInformationFinding" Type="LMSController.SubjectInformationFinding">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.014" Y="0.431" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="publishHouseInformationRegister" Type="LMSController.PublishHouseInformationRegister">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.038" Y="0.611" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAICAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAABAgAAIAICAAAAAAAAgAAAAAAAAAEAAAA=</HashCode>
       <FileName>stockman\StockmanWorkspace.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="bookFinding" />
       <Field Name="libraryOperations" />
+      <Field Name="subjectInformationFinding" />
+      <Field Name="publishHouseInformationRegister" />
       <Property Name="BookFinding" />
       <Property Name="LibraryOperations" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LMSController.SubjectInformation">
-    <Position X="8.5" Y="4.75" Width="2.5" />
+    <Position X="9" Y="4.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>types\SubjectInformation.cs</FileName>
@@ -63,7 +77,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="LMSController.SubjectInformationFinding" BaseTypeListCollapsed="true">
-    <Position X="8.75" Y="2.25" Width="2.25" />
+    <Position X="9.25" Y="2.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>stockman\SubjectInformationFinding.cs</FileName>
@@ -74,14 +88,20 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="LMSController.PublishHouseInformation">
-    <Position X="0.5" Y="4.75" Width="3" />
+    <Position X="1" Y="4.75" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>types\PublishHouseInformation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LMSController.BookInformation">
-    <Position X="4.75" Y="4.75" Width="2.5" />
+    <Position X="5.25" Y="4.75" Width="2.5" />
+    <AssociationLine Name="Authors" Type="LMSController.AuthorInformation" FixedToPoint="true">
+      <Path>
+        <Point X="6.321" Y="7.2" />
+        <Point X="6.321" Y="7.75" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAACQAAAEAACIAAgAgABABAAAAgAAAAAAAAAAE=</HashCode>
       <FileName>types\BookInformation.cs</FileName>
@@ -94,12 +114,12 @@
       <Property Name="Authors" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Struct Name="LMSController.AuthorInformation">
-    <Position X="5.25" Y="7.75" Width="1.75" />
+  <Class Name="LMSController.AuthorInformation">
+    <Position X="5.25" Y="7.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>types\AuthorInformation.cs</FileName>
     </TypeIdentifier>
-  </Struct>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

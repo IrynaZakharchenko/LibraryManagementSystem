@@ -42,7 +42,7 @@ namespace LMSView
          ICollection<LibraryCard> libraryCards = libraryCardRegister.GetLibraryCardsByTicketNum(currentClient.LibraryTicketNumberCode);
          foreach (var card in libraryCards)
          {
-            BookInformation book = bookFinding.FindBookByInventoryCode(card.CodeRentedBook);
+            BookInformation book = bookFinding.FindByInventoryCode(card.CodeRentedBook);
             listBoxClientBookCollection.Items.Add(book.Title);
          }
          listBoxClientBookCollection.SelectedIndex = 0;
@@ -75,7 +75,7 @@ namespace LMSView
       private void ListBoxClientBookCollection_SelectedValueChanged(object sender, EventArgs e)
       {
          string title = listBoxClientBookCollection.SelectedValue as string;
-         BookInformation book = bookFinding.FindBookByTitle(title);
+         BookInformation book = bookFinding.FindByTitle(title);
          LibraryCard currentCard = libraryCardRegister.GetLibraryCardByBookTitle(book.Title);
 
          dateTimePickerGiveBook.Visible = true;

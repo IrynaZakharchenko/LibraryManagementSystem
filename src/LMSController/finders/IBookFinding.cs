@@ -1,11 +1,11 @@
 ﻿namespace LMSController
 {
-    public interface IBookFinding
-    {
-        BookInformation FindBookByInventoryCode(int inventoryCode);
-        BookInformation FindBookByTitle(string title);
-        BookInformation FindBookByISBN(int isbn);
-        BookInformation[] FindBookByLanguage(string language);
-        BookInformation[] FindBookByBookSeries(string bookSeries);
-    }
+   public interface IBookFinding
+   {
+      BookInformation FindByInventoryCode(int inventoryCode);
+      BookInformation FindByTitle(string title);
+      BookInformation FindByISBN(int isbn);
+      BookInformation[] FindByLanguage(string language);
+      BookInformation[] FindByBookSeries(string bookSeries);
+   }
 }

@@ -5,14 +5,14 @@ using System.Windows.Forms;
 namespace LMSView
 {
 
-   public delegate void SetInventoryCode(int code);
+   public delegate void SetInventoryCodeEventHandler(int code);
 
    public partial class InventoryCodeControlForm : Form
    {
       private NViewHelper.FormViewMode viewMode;
       private int inventoryCode;
-      public event SetInventoryCode AddNewBookExample;
-      public event SetInventoryCode EditNewBookExample;
+      public event SetInventoryCodeEventHandler AddNewBookExample;
+      public event SetInventoryCodeEventHandler EditNewBookExample;
 
       public InventoryCodeControlForm(int selectedCode) : this(NViewHelper.FormViewMode.Edit, selectedCode)
       { }

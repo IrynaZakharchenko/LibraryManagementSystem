@@ -4,6 +4,12 @@ namespace LMSController
 {
    internal class BookFinding : IBookFinding
    {
+      public BookInformation FindByInventoryCode(int inventoryCode) => Convert(Books.FindByInventoryCode(inventoryCode));
+      public BookInformation FindByTitle(string title) => Convert(Books.FindByTitle(title));
+      public BookInformation FindByISBN(int isbn) => Convert(Books.FindByISBN(isbn));
+      public BookInformation[] FindByLanguage(string language) => Convert(Books.FindByLanguage(language));
+      public BookInformation[] FindByBookSeries(string bookSeries) => Convert(Books.FindByBookSeries(bookSeries));
+
       private static BookInformation[] Convert(Book[] books)
       {
          if (books == null)
@@ -61,11 +67,5 @@ namespace LMSController
          }
          return authorInformations;
       }
-
-      public BookInformation FindBookByInventoryCode(int inventoryCode) => Convert(Books.FindByInventoryCode(inventoryCode));
-      public BookInformation FindBookByISBN(int isbn) => Convert(Books.FindByISBN(isbn));
-      public BookInformation FindBookByTitle(string title) => Convert(Books.FindByTitle(title));
-      public BookInformation[] FindBookByBookSeries(string bookSeries) => Convert(Books.FindByBookSeries(bookSeries));
-      public BookInformation[] FindBookByLanguage(string language) => Convert(Books.FindByLanguage(language));
    }
 }

@@ -2,10 +2,12 @@
 {
    public interface IUserInformationRegister
    {
-      UserInformation FindUser(string userName);
-      string[] PossiblePositions();
-      void AddUser(UserInformation userInformation);
-      void EditUser(UserInformation userInformation);
-      void DeleteUser(UserInformation userInformation);
+      string[] GetPossiblePositions();
+
+      UserInformation FindByName(string userName);
+
+      void Add(UserInformation userInformation);
+      void Edit(UserInformation userInformation);
+      void Delete(UserInformation userInformation);
    }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LMSController
 {
-   public class LibraryCardRegister : ILibraryCardRegister
+   internal class LibraryCardRegister : ILibraryCardRegister
    {
       public LibraryCard GetLibraryCardByBookTitle(string title)
       {

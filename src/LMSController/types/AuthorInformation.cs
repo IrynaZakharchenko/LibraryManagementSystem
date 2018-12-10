@@ -1,6 +1,6 @@
 ﻿namespace LMSController
 {
-   public struct AuthorInformation
+   public class AuthorInformation
    {
       public string Name { get; set; }
    }

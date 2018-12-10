@@ -2,7 +2,7 @@
 
 namespace LMSController
 {
-   public class SubjectInformationFinding : ISubjectInformationFinding
+   internal class SubjectInformationFinding : ISubjectInformationFinding
    {
       private List<SubjectInformation> subjectStorage = new List<SubjectInformation>() { new SubjectInformation() { Name = "Potions", SubjectParent = null } };
 
