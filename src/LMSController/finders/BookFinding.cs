@@ -65,7 +65,7 @@ namespace LMSController
       public BookInformation FindBookByInventoryCode(int inventoryCode) => Convert(Books.FindByInventoryCode(inventoryCode));
       public BookInformation FindBookByISBN(int isbn) => Convert(Books.FindByISBN(isbn));
       public BookInformation FindBookByTitle(string title) => Convert(Books.FindByTitle(title));
-      BookInformation[] IBookFinding.FindBookByBookSeries(string bookSeries) => Convert(Books.FindByBookSeries(bookSeries));
-      BookInformation[] IBookFinding.FindBookByLanguage(string language) => Convert(Books.FindByLanguage(language));
+      public BookInformation[] FindBookByBookSeries(string bookSeries) => Convert(Books.FindByBookSeries(bookSeries));
+      public BookInformation[] FindBookByLanguage(string language) => Convert(Books.FindByLanguage(language));
    }
 }

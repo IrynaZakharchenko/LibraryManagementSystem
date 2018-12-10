@@ -54,38 +54,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminWorkspace.cs" />
-    <Compile Include="AuthenticationProcess.cs" />
-    <Compile Include="AuthorInformation.cs" />
-    <Compile Include="LibraryCard.cs" />
-    <Compile Include="BookFinding.cs" />
-    <Compile Include="BookInformation.cs" />
-    <Compile Include="ClientInformation.cs" />
-    <Compile Include="ClientInformationRegister.cs" />
-    <Compile Include="ILibraryCardRegister.cs" />
-    <Compile Include="IPublishHouseInformationRegister.cs" />
-    <Compile Include="ISubjectInformationFinding.cs" />
-    <Compile Include="LibrarianWorkspace .cs" />
-    <Compile Include="LibraryCardRegister.cs" />
-    <Compile Include="LibraryOperations.cs" />
-    <Compile Include="PersonalInformation.cs" />
-    <Compile Include="PublishHouseInformation.cs" />
-    <Compile Include="PublishHouseInformationRegister.cs" />
-    <Compile Include="StockmanWorkspace.cs" />
-    <Compile Include="SubjectInformation.cs" />
-    <Compile Include="SubjectInformationFinding.cs" />
-    <Compile Include="UserCredential.cs" />
-    <Compile Include="UserInformation.cs" />
-    <Compile Include="IAuthentication.cs" />
-    <Compile Include="IBookFinding.cs" />
-    <Compile Include="IClientInformationRegister.cs" />
-    <Compile Include="ILibrararyOperations.cs" />
-    <Compile Include="IUserInformationRegister.cs" />
-    <Compile Include="IWorkspaceAdmin.cs" />
-    <Compile Include="IWorkspaceLibrarian.cs" />
-    <Compile Include="IWorkspaceStockman.cs" />
+    <Compile Include="administrator\AdminWorkspace.cs" />
+    <Compile Include="authentication\AuthenticationProcess.cs" />
+    <Compile Include="types\AuthorInformation.cs" />
+    <Compile Include="types\LibraryCard.cs" />
+    <Compile Include="finders\BookFinding.cs" />
+    <Compile Include="types\BookInformation.cs" />
+    <Compile Include="types\ClientInformation.cs" />
+    <Compile Include="librarian\ClientInformationRegister.cs" />
+    <Compile Include="librarian\ILibraryCardRegister.cs" />
+    <Compile Include="stockman\IPublishHouseInformationRegister.cs" />
+    <Compile Include="stockman\ISubjectInformationFinding.cs" />
+    <Compile Include="librarian\LibrarianWorkspace .cs" />
+    <Compile Include="librarian\LibraryCardRegister.cs" />
+    <Compile Include="stockman\LibraryOperations.cs" />
+    <Compile Include="types\PersonalInformation.cs" />
+    <Compile Include="types\PublishHouseInformation.cs" />
+    <Compile Include="stockman\PublishHouseInformationRegister.cs" />
+    <Compile Include="stockman\StockmanWorkspace.cs" />
+    <Compile Include="types\SubjectInformation.cs" />
+    <Compile Include="stockman\SubjectInformationFinding.cs" />
+    <Compile Include="types\UserCredential.cs" />
+    <Compile Include="types\UserInformation.cs" />
+    <Compile Include="authentication\IAuthentication.cs" />
+    <Compile Include="finders\IBookFinding.cs" />
+    <Compile Include="librarian\IClientInformationRegister.cs" />
+    <Compile Include="stockman\ILibrararyOperations.cs" />
+    <Compile Include="administrator\IUserInformationRegister.cs" />
+    <Compile Include="administrator\IWorkspaceAdmin.cs" />
+    <Compile Include="librarian\IWorkspaceLibrarian.cs" />
+    <Compile Include="stockman\IWorkspaceStockman.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInformationRegister.cs" />
+    <Compile Include="administrator\UserInformationRegister.cs" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="..\..\LMSDictionary.xml">
@@ -106,5 +106,6 @@
       <Name>LMSModel</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

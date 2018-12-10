@@ -3,7 +3,7 @@ using System;
 
 namespace LMSController
 {
-   class UserInformationRegister : IUserInformationRegister
+   internal class UserInformationRegister : IUserInformationRegister
    {
       public string[] PossiblePositions()
       {
@@ -73,7 +73,7 @@ namespace LMSController
          });
          Accounts.Save();
       }
-        
+
       public UserInformation FindUser(string userName)
       {
          if (userName == null)
@@ -86,11 +86,23 @@ namespace LMSController
          UserInformation result = null;
          if (account != null)
          {
-            result = new UserInformation(account.login, account.password, account.Position.position_enum.ToString(), new PersonalInformation(account.Person.full_name,
-               account.Person.birthday, account.Person.phone, account.Person.address))
+            result = new UserInformation()
+            {
+               UserId = account.id_account,
+               Position = account.Position.position_enum.ToString(),
+               Credential = new UserCredential()
                {
-                  UserId = account.id_account
-               };
+                  Name = account.login,
+                  Password = account.password,
+               },
+               PersonalInformation = new PersonalInformation()
+               {
+                  FullName = account.Person.full_name,
+                  Birthday = account.Person.birthday,
+                  Phone = account.Person.phone,
+                  Address = account.Person.address
+               }
+            };
          }
          return result;
       }

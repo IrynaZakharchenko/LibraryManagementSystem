@@ -50,11 +50,11 @@ namespace LMSView
       {
          if (NViewHelper.FormViewMode.Edit == mViewMode)
          {
-            clientInformationRegister.EditClient(PackageNewClientInfo(currentClient));
+            clientInformationRegister.Edit(PackageNewClientInfo(currentClient));
          }
          if (NViewHelper.FormViewMode.Create == mViewMode)
          {
-            clientInformationRegister.AddClient(PackageNewClientInfo(new ClientInformation()));
+            clientInformationRegister.Add(PackageNewClientInfo(new ClientInformation()));
          }
       }
 

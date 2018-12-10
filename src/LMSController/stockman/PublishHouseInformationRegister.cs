@@ -35,11 +35,6 @@ namespace LMSController
 
       public void Delete(PublishHouseInformation publishHouse)
       {
-         if (publishHouse == null)
-         {
-            throw new System.ArgumentNullException(nameof(publishHouse));
-         }
-
          try
          {
             PublishingHouses.Delete(new PublishingHouse()

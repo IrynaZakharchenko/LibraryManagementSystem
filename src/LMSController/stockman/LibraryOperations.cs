@@ -39,7 +39,7 @@ namespace LMSController
          {
             authors.Add(new Author() { Name = author.Name });
          }
-         
+
          Library.AddBook(book, authors, bookInformation.InventoryCode.Keys);
          Library.Save();
       }
