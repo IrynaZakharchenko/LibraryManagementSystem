@@ -1,4 +1,4 @@
-﻿using LMSModel;
+using LMSModel;
 
 namespace LMSController
 {
