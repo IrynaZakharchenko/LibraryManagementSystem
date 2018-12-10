@@ -4,6 +4,7 @@
    {
       void AddBook(BookInformation bookInformation);
       void EditBook(BookInformation bookInformation);
-      void DeleteBook(BookInformation bookInformation);
+      void DeleteBookByISBN(int isbn);
+      void DeleteBookByInventoryCode(int inventoryCode);
    }
 }

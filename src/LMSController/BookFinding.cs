@@ -55,7 +55,7 @@ namespace LMSController
       private static AuthorInformation[] Convert(string[] names)
       {
          AuthorInformation[] authorInformations = new AuthorInformation[names.Length];
-         for( int i = 0; i < authorInformations.Length; ++i)
+         for (int i = 0; i < authorInformations.Length; ++i)
          {
             authorInformations[i] = new AuthorInformation() { Name = names[i] };
          }
