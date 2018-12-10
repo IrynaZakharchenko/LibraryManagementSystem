@@ -268,7 +268,7 @@
          this.tableLayoutPanel2.ColumnCount = 3;
          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.30813F));
          this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.69187F));
-         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+         this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
          this.tableLayoutPanel2.Controls.Add(this.textBoxPublishHouseResult, 0, 0);
          this.tableLayoutPanel2.Controls.Add(this.buttonSearchPublishHouse, 2, 0);
          this.tableLayoutPanel2.Controls.Add(this.textBoxPublishHouseSearch, 1, 0);
@@ -293,9 +293,9 @@
          // buttonSearchPublishHouse
          // 
          this.buttonSearchPublishHouse.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.buttonSearchPublishHouse.Location = new System.Drawing.Point(309, 3);
+         this.buttonSearchPublishHouse.Location = new System.Drawing.Point(308, 3);
          this.buttonSearchPublishHouse.Name = "buttonSearchPublishHouse";
-         this.buttonSearchPublishHouse.Size = new System.Drawing.Size(99, 25);
+         this.buttonSearchPublishHouse.Size = new System.Drawing.Size(100, 25);
          this.buttonSearchPublishHouse.TabIndex = 3;
          this.buttonSearchPublishHouse.UseVisualStyleBackColor = true;
          this.buttonSearchPublishHouse.Click += new System.EventHandler(this.ButtonSearchPublishHouse_Click);
@@ -306,7 +306,7 @@
          this.textBoxPublishHouseSearch.Location = new System.Drawing.Point(166, 3);
          this.textBoxPublishHouseSearch.Multiline = true;
          this.textBoxPublishHouseSearch.Name = "textBoxPublishHouseSearch";
-         this.textBoxPublishHouseSearch.Size = new System.Drawing.Size(137, 25);
+         this.textBoxPublishHouseSearch.Size = new System.Drawing.Size(136, 25);
          this.textBoxPublishHouseSearch.TabIndex = 4;
          // 
          // textBoxSeries
@@ -464,7 +464,6 @@
          this.listBoxInventoryCodeNotAvailable.Name = "listBoxInventoryCodeNotAvailable";
          this.listBoxInventoryCodeNotAvailable.Size = new System.Drawing.Size(219, 97);
          this.listBoxInventoryCodeNotAvailable.TabIndex = 0;
-         this.listBoxInventoryCodeNotAvailable.SelectedIndexChanged += new System.EventHandler(this.ListBoxInventoryCodeNotAvailable_SelectedIndexChanged);
          // 
          // labelInventoryCodeNotAvailable
          // 
