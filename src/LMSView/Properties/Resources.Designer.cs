@@ -241,6 +241,24 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get book date.
+        /// </summary>
+        internal static string dateGetBook {
+            get {
+                return ResourceManager.GetString("dateGetBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Give book date.
+        /// </summary>
+        internal static string dateGiveBook {
+            get {
+                return ResourceManager.GetString("dateGiveBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         internal static string delete {

@@ -384,4 +384,10 @@
   <data name="clientInformation" xml:space="preserve">
     <value>Information about client</value>
   </data>
+  <data name="dateGetBook" xml:space="preserve">
+    <value>Get book date</value>
+  </data>
+  <data name="dateGiveBook" xml:space="preserve">
+    <value>Give book date</value>
+  </data>
 </root>

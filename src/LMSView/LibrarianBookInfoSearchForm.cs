@@ -10,13 +10,14 @@ namespace LMSView
       private IClientInformationRegister clientInformationRegister;
       private ClientInformation currentClient;
       private BookInformation currentBook;
+      private readonly ILibraryCardRegister libraryCardRegister;
 
-      public LibrarianBookInfoSearchForm(IClientInformationRegister register, ClientInformation client, BookInformation book)
+      public LibrarianBookInfoSearchForm(IClientInformationRegister register, ILibraryCardRegister libraryCardRegister, ClientInformation client, BookInformation book)
       {
          clientInformationRegister = register;
          currentClient = client;
          currentBook = book;
-
+         this.libraryCardRegister = libraryCardRegister;
          InitializeComponent();
       }
 
@@ -44,13 +45,22 @@ namespace LMSView
 
          foreach (var code in currentBook.InventoryCode)
          {
+            
             if (code.Value == false)
             {
                listBoxInventoryCodeAvailable.Items.Add(code.Key);
             }
             else
             {
-               listBoxInventoryCodeNotAvailable.Items.Add(code.Key);
+               LibraryCard card = libraryCardRegister.GetLibraryCardByInventoryCode(code.Key);
+               if (card.DateReturnBook.HasValue)
+               {
+                  listBoxInventoryCodeAvailable.Items.Add(code.Key);
+               }
+               else
+               {  
+                  listBoxInventoryCodeNotAvailable.Items.Add(code.Key);
+               }
             }
          }
          textBoxTitle.Text = currentBook.Title;
@@ -73,8 +83,8 @@ namespace LMSView
          }
          textBoxAnnotation.Text = currentBook.Annotation;
 
-         //textBoxTicketNum.Text = currentClient.LibraryTicketNumberCode.ToString();
-         //textBoxClientName.Text = currentClient.PersonalInformation.FullName;
+         textBoxTicketNum.Text = currentClient.LibraryTicketNumberCode.ToString();
+         textBoxClientName.Text = currentClient.PersonalInformation.FullName;
          labelClientInfo.Text = Properties.Resources.clientInformation;
       }
 

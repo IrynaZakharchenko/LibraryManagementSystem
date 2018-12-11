@@ -52,7 +52,7 @@
          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.58621F));
          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.4138F));
          this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 402F));
-         this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+         this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
          this.tableLayoutPanel1.Controls.Add(this.labelDateGiveBook, 1, 5);
          this.tableLayoutPanel1.Controls.Add(this.labelDateGetBook, 1, 4);
          this.tableLayoutPanel1.Controls.Add(this.labelClientTicketNum, 1, 1);
@@ -88,7 +88,7 @@
          this.labelDateGiveBook.Dock = System.Windows.Forms.DockStyle.Fill;
          this.labelDateGiveBook.Location = new System.Drawing.Point(59, 249);
          this.labelDateGiveBook.Name = "labelDateGiveBook";
-         this.labelDateGiveBook.Size = new System.Drawing.Size(142, 27);
+         this.labelDateGiveBook.Size = new System.Drawing.Size(141, 27);
          this.labelDateGiveBook.TabIndex = 21;
          this.labelDateGiveBook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
          // 
@@ -99,7 +99,7 @@
          this.labelDateGetBook.Dock = System.Windows.Forms.DockStyle.Fill;
          this.labelDateGetBook.Location = new System.Drawing.Point(59, 223);
          this.labelDateGetBook.Name = "labelDateGetBook";
-         this.labelDateGetBook.Size = new System.Drawing.Size(142, 26);
+         this.labelDateGetBook.Size = new System.Drawing.Size(141, 26);
          this.labelDateGetBook.TabIndex = 17;
          this.labelDateGetBook.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
          // 
@@ -110,7 +110,7 @@
          this.labelClientTicketNum.Dock = System.Windows.Forms.DockStyle.Fill;
          this.labelClientTicketNum.Location = new System.Drawing.Point(59, 48);
          this.labelClientTicketNum.Name = "labelClientTicketNum";
-         this.labelClientTicketNum.Size = new System.Drawing.Size(142, 26);
+         this.labelClientTicketNum.Size = new System.Drawing.Size(141, 26);
          this.labelClientTicketNum.TabIndex = 6;
          this.labelClientTicketNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
          // 
@@ -121,14 +121,14 @@
          this.labelClientName.Dock = System.Windows.Forms.DockStyle.Fill;
          this.labelClientName.Location = new System.Drawing.Point(59, 74);
          this.labelClientName.Name = "labelClientName";
-         this.labelClientName.Size = new System.Drawing.Size(142, 26);
+         this.labelClientName.Size = new System.Drawing.Size(141, 26);
          this.labelClientName.TabIndex = 0;
          this.labelClientName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
          // 
          // textBoxTicketNum
          // 
          this.textBoxTicketNum.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.textBoxTicketNum.Location = new System.Drawing.Point(207, 51);
+         this.textBoxTicketNum.Location = new System.Drawing.Point(206, 51);
          this.textBoxTicketNum.Name = "textBoxTicketNum";
          this.textBoxTicketNum.ReadOnly = true;
          this.textBoxTicketNum.Size = new System.Drawing.Size(396, 20);
@@ -137,7 +137,7 @@
          // dateTimePickerReturn
          // 
          this.dateTimePickerReturn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-         this.dateTimePickerReturn.Location = new System.Drawing.Point(207, 226);
+         this.dateTimePickerReturn.Location = new System.Drawing.Point(206, 226);
          this.dateTimePickerReturn.Name = "dateTimePickerReturn";
          this.dateTimePickerReturn.Size = new System.Drawing.Size(200, 20);
          this.dateTimePickerReturn.TabIndex = 24;
@@ -145,7 +145,7 @@
          // textBoxClientName
          // 
          this.textBoxClientName.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.textBoxClientName.Location = new System.Drawing.Point(207, 77);
+         this.textBoxClientName.Location = new System.Drawing.Point(206, 77);
          this.textBoxClientName.Name = "textBoxClientName";
          this.textBoxClientName.ReadOnly = true;
          this.textBoxClientName.Size = new System.Drawing.Size(396, 20);
@@ -154,7 +154,7 @@
          // dateTimePickerGiveBook
          // 
          this.dateTimePickerGiveBook.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-         this.dateTimePickerGiveBook.Location = new System.Drawing.Point(207, 252);
+         this.dateTimePickerGiveBook.Location = new System.Drawing.Point(206, 252);
          this.dateTimePickerGiveBook.Name = "dateTimePickerGiveBook";
          this.dateTimePickerGiveBook.Size = new System.Drawing.Size(200, 20);
          this.dateTimePickerGiveBook.TabIndex = 23;
@@ -165,7 +165,7 @@
          this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
          this.panel1.Location = new System.Drawing.Point(59, 103);
          this.panel1.Name = "panel1";
-         this.panel1.Size = new System.Drawing.Size(142, 117);
+         this.panel1.Size = new System.Drawing.Size(141, 117);
          this.panel1.TabIndex = 26;
          // 
          // labelBooksList
@@ -183,7 +183,7 @@
          // 
          this.listBoxClientBookCollection.Dock = System.Windows.Forms.DockStyle.Fill;
          this.listBoxClientBookCollection.FormattingEnabled = true;
-         this.listBoxClientBookCollection.Location = new System.Drawing.Point(207, 103);
+         this.listBoxClientBookCollection.Location = new System.Drawing.Point(206, 103);
          this.listBoxClientBookCollection.Name = "listBoxClientBookCollection";
          this.listBoxClientBookCollection.Size = new System.Drawing.Size(396, 117);
          this.listBoxClientBookCollection.TabIndex = 27;
@@ -192,7 +192,7 @@
          // buttonReturnBook
          // 
          this.buttonReturnBook.Dock = System.Windows.Forms.DockStyle.Fill;
-         this.buttonReturnBook.Location = new System.Drawing.Point(207, 313);
+         this.buttonReturnBook.Location = new System.Drawing.Point(206, 313);
          this.buttonReturnBook.Name = "buttonReturnBook";
          this.buttonReturnBook.Size = new System.Drawing.Size(396, 40);
          this.buttonReturnBook.TabIndex = 28;
@@ -204,7 +204,7 @@
          this.buttonClientPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
          this.buttonClientPersonal.Location = new System.Drawing.Point(59, 313);
          this.buttonClientPersonal.Name = "buttonClientPersonal";
-         this.buttonClientPersonal.Size = new System.Drawing.Size(142, 40);
+         this.buttonClientPersonal.Size = new System.Drawing.Size(141, 40);
          this.buttonClientPersonal.TabIndex = 29;
          this.buttonClientPersonal.UseVisualStyleBackColor = true;
          this.buttonClientPersonal.Click += new System.EventHandler(this.ButtonClientPersonal_Click);

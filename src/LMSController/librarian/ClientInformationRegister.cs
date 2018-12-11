@@ -31,15 +31,15 @@ namespace LMSController
          Readers.Save();
       }
       
-      public void RentBook(ClientInformation client, BookInformation book)
+      public void RentBook(ClientInformation client, int bookInventoryCode)
       {
-         Readers.RentBook(ClientInformation.Convert(client), 0);
+         Readers.RentBook(ClientInformation.Convert(client), bookInventoryCode);
          Readers.Save();
       }
 
-      public void ReturnBook(ClientInformation client, BookInformation book)
+      public void ReturnBook(int bookInventoryCode)
       {
-         Readers.ReturnBook(0);
+         Readers.ReturnBook(bookInventoryCode);
          Readers.Save();
       }
    }

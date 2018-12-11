@@ -19,7 +19,7 @@ namespace LMSController
          return new LibraryCard()
          {
             DateRentBook = bibliography.give_date,
-            DateReturnBook = bibliography.get_date.Value,
+            DateReturnBook = bibliography.get_date,
             CodeRentedBook = bibliography.id_book_instance,
             Client = ClientInformation.Convert(bibliography.Reader)
          };
@@ -29,7 +29,7 @@ namespace LMSController
       {
          if (bibliographies == null)
          {
-            throw new ArgumentNullException(nameof(bibliographies));
+            return null;
          }
 
          List<LibraryCard> libraryCards = new List<LibraryCard>();

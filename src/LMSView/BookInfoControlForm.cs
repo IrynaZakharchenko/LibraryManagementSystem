@@ -29,8 +29,12 @@ namespace LMSView
          if (FormViewMode.Create == viewMode)
          {
             currentBook = new BookInformation();
+            libraryManagment.AddBook(PackageBookInformation(currentBook));
          }
-         libraryManagment.AddBook(PackageBookInformation(currentBook));
+         else
+         {
+            libraryManagment.EditBook(PackageBookInformation(currentBook));
+         }
       }
 
       private void ButtonDelete_Click(object sender, EventArgs e)

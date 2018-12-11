@@ -24,19 +24,23 @@ namespace LMSView
       {
          labelClientTicketNum.Text = Properties.Resources.libraryNumTicket;
          textBoxTicketNum.Text = currentClient.LibraryTicketNumberCode.ToString(CultureInfo.CurrentCulture);
-         labelClientName.Text = Properties.Resources.bookNum;
+         labelClientName.Text = Properties.Resources.client;
          textBoxClientName.Text = currentClient.PersonalInformation.FullName;
          labelBooksList.Text = Properties.Resources.bookList;
          buttonClientPersonal.Text = Properties.Resources.personalInfo;
-
+         labelDateGetBook.Text = Properties.Resources.dateGetBook;
+         labelDateGiveBook.Text = Properties.Resources.dateGiveBook;
          buttonReturnBook.Text = Properties.Resources.returnBook;
          dateTimePickerReturn.Visible = false;
          dateTimePickerGiveBook.Visible = false;
 
          ICollection<LibraryCard> libraryCards = workspaceLibrarian.LibraryCardRegister.GetLibraryCardsByTicketNum(currentClient.LibraryTicketNumberCode);
-         foreach (var card in libraryCards)
+         if (libraryCards != null)
          {
-            listBoxClientBookCollection.Items.Add(card.CodeRentedBook);
+            foreach (var card in libraryCards)
+            {
+               listBoxClientBookCollection.Items.Add(card.CodeRentedBook);
+            }
          }
       }
 
@@ -45,9 +49,9 @@ namespace LMSView
          if (listBoxClientBookCollection.SelectedItem != null)
          {
             int selectedBookCode = Convert.ToInt32(listBoxClientBookCollection.SelectedItem, CultureInfo.CurrentCulture);
-            listBoxClientBookCollection.Items.Remove(listBoxClientBookCollection.SelectedItem);
 
-            workspaceLibrarian.ClientInformationRegister.ReturnBook(currentClient, selectedBookCode);
+            workspaceLibrarian.ClientInformationRegister.ReturnBook(selectedBookCode);
+            listBoxClientBookCollection.Items.Remove(listBoxClientBookCollection.SelectedItem);
          }
          else
          {
@@ -68,12 +72,24 @@ namespace LMSView
 
       private void ListBoxClientBookCollection_SelectedValueChanged(object sender, EventArgs e)
       {
-         string title = listBoxClientBookCollection.SelectedValue as string;
-         BookInformation book = workspaceLibrarian.BookFinding.FindByTitle(title);
-         LibraryCard currentCard = workspaceLibrarian.LibraryCardRegister.GetLibraryCardByBookTitle(book.Title);
+         if (listBoxClientBookCollection.SelectedItem != null)
+         {
+            int inventoryCode = Convert.ToInt32(listBoxClientBookCollection.SelectedItem);
+            LibraryCard currentCard = workspaceLibrarian.LibraryCardRegister.GetLibraryCardByInventoryCode(inventoryCode);
 
-         dateTimePickerGiveBook.Visible = true;
-         dateTimePickerGiveBook.Value = currentCard.DateRentBook;
+            dateTimePickerGiveBook.Visible = true;
+            dateTimePickerGiveBook.Value = currentCard.DateRentBook;
+            if (currentCard.DateReturnBook.HasValue)
+            {
+               dateTimePickerReturn.Visible = true;
+               dateTimePickerReturn.Value = currentCard.DateReturnBook.Value;
+            }
+            else
+            {
+               dateTimePickerReturn.Visible = false;
+            }
+         }
+
       }
    }
 }

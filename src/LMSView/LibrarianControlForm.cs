@@ -34,8 +34,9 @@ namespace LMSView
             BookInformation book = workspaceLibrarian.BookFinding.FindByTitle(textBoxManageBook.Text);
             if (book != null)
             {
-               using (LibrarianBookInfoSearchForm bookForm = new LibrarianBookInfoSearchForm(workspaceLibrarian.ClientInformationRegister, 
-                                                                                             selectedClient, 
+               using (LibrarianBookInfoSearchForm bookForm = new LibrarianBookInfoSearchForm(workspaceLibrarian.ClientInformationRegister,
+                                                                                             workspaceLibrarian.LibraryCardRegister,
+                                                                                             selectedClient,
                                                                                              book))
                {
                   Hide();
@@ -43,13 +44,13 @@ namespace LMSView
                   Show();
                }
             }
-      }
+         }
          else
          {
             MessageBox.Show(Properties.Resources.clientNotSpecified, Properties.Resources.failed,
                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
          }
-}
+      }
 
       private void CreateNewClient()
       {
@@ -69,31 +70,23 @@ namespace LMSView
 
       private void ButtonSearchClient_Click(object sender, EventArgs e)
       {
-         string clientName = textBoxManageClient.Text;
-         if (!String.IsNullOrEmpty(clientName))
+         selectedClient = workspaceLibrarian.ClientInformationRegister.FindByLibraryTicket(Convert.ToInt32(textBoxManageClient.Text));
+
+         if (selectedClient != null)
          {
-            selectedClient = workspaceLibrarian.ClientInformationRegister.FindByName(clientName);
-            if (selectedClient != null)
+            using (ClientLibraryInfoControlForm clientLibraryInfo = new ClientLibraryInfoControlForm(workspaceLibrarian, ref selectedClient))
             {
-               using (ClientLibraryInfoControlForm clientLibraryInfo = new ClientLibraryInfoControlForm(workspaceLibrarian, ref selectedClient))
-               {
-                  clientLibraryInfo.ShowDialog();
-               }
-            }
-            else
-            {
-               DialogResult result = MessageBox.Show(Properties.Resources.searchFailed, Properties.Resources.failed,
-                                     MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
-               if (DialogResult.OK == result)
-               {
-                  CreateNewClient();
-               }
+               clientLibraryInfo.ShowDialog();
             }
          }
          else
          {
-            MessageBox.Show(Properties.Resources.clientSearchEmpty, Properties.Resources.failed,
-            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+            DialogResult result = MessageBox.Show(Properties.Resources.searchFailed, Properties.Resources.failed,
+                                     MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+            if (DialogResult.OK == result)
+            {
+               CreateNewClient();
+            }
          }
          Activate();
       }
