@@ -54,7 +54,10 @@ namespace LMSModel
          Reader existingReader = FindByLibraryTicket(reader.id_reader_ticket);
          if (existingReader != null)
          {
-            existingReader.Person = reader.Person;
+            existingReader.Person.address = reader.Person.address;
+            existingReader.Person.phone = reader.Person.phone;
+            existingReader.Person.full_name = reader.Person.full_name;
+            existingReader.Person.birthday = reader.Person.birthday;
          }
       }
 

@@ -8,6 +8,6 @@ namespace LMSController
       public int CodeRentedBook { get; set; }
       public BookInformation BookInformation { get; set; }
       public DateTime DateRentBook { get; set; }
-      public DateTime DateReturnBook { get; set; }
+      public DateTime? DateReturnBook { get; set; }
    }
 }

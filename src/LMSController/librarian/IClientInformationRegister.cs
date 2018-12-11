@@ -10,6 +10,6 @@
       void Delete(ClientInformation client);
 
       void RentBook(ClientInformation client, int bookInventoryCode);
-      void ReturnBook(ClientInformation client, int bookInventoryCode);
+      void ReturnBook(int bookInventoryCode);
    }
 }
