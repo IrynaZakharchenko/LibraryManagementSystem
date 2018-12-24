@@ -50,6 +50,7 @@ namespace LMSView
             MessageBox.Show(Properties.Resources.clientNotSpecified, Properties.Resources.failed,
                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
          }
+         Activate();
       }
 
       private void CreateNewClient()
@@ -59,14 +60,15 @@ namespace LMSView
                                                                                          ref selectedClient))
          {
             client.ShowDialog();
-            Activate();
-         }
-      }
+			}
+
+			Activate();
+		}
 
       private void ButtonCreateClient_Click(object sender, EventArgs e)
       {
          CreateNewClient();
-      }
+		}
 
       private void ButtonSearchClient_Click(object sender, EventArgs e)
       {

@@ -86,9 +86,10 @@ namespace LMSView
             result = MessageBox.Show(Properties.Resources.userDeleteFailed, Properties.Resources.delete,
                      MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
          }
-      }
+			Activate();
+		}
 
-      private void ButtonSave_Click(object sender, EventArgs e)
+		private void ButtonSave_Click(object sender, EventArgs e)
       {
          try
          {
@@ -108,8 +109,9 @@ namespace LMSView
          {
             MessageBox.Show(ex.Message, Properties.Resources.failed,
             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
-         }
-      }
+				Activate();
+			}
+		}
 
       private UserInformation ExtractInputInformation(UserInformation userInformation)
       {

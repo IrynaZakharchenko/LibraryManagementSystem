@@ -23,6 +23,7 @@ namespace LMSView
 
       private void LibrarianBookInfoSearchForm_Paint(object sender, PaintEventArgs e)
       {
+			Text = Properties.Resources.LibrarianBookWindow;
          listBoxInventoryCodeNotAvailable.Enabled = false;
 
          buttonRentBook.Text = Properties.Resources.rentBook;
@@ -90,15 +91,23 @@ namespace LMSView
 
       private void ButtonRentBook_Click(object sender, EventArgs e)
       {
-         if (listBoxInventoryCodeAvailable.SelectedItem != null)
+			var bookInventoryCode = listBoxInventoryCodeAvailable.SelectedItem;
+
+			if (bookInventoryCode != null)
          {
-            clientInformationRegister.RentBook(currentClient, Convert.ToInt32(listBoxInventoryCodeAvailable.SelectedItem));
+            clientInformationRegister.RentBook(currentClient, Convert.ToInt32(bookInventoryCode)); 
+
+            MessageBox.Show(Properties.Resources.successfull, Properties.Resources.rentBook,
+            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+				listBoxInventoryCodeAvailable.Items.Remove(bookInventoryCode);
+				listBoxInventoryCodeNotAvailable.Items.Add(bookInventoryCode);
          }
          else
          {
             MessageBox.Show(Properties.Resources.selectedInventoryCode, Properties.Resources.failed,
                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
          }
+			Activate();
       }
    }
 }
