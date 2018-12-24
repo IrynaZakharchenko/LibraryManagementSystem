@@ -22,6 +22,7 @@ namespace LMSView
 
       private void ClientLibraryInfoControlForm_Load(object sender, EventArgs e)
       {
+			Text = Properties.Resources.librarianClientWindow;
          labelClientTicketNum.Text = Properties.Resources.libraryNumTicket;
          textBoxTicketNum.Text = currentClient.LibraryTicketNumberCode.ToString(CultureInfo.CurrentCulture);
          labelClientName.Text = Properties.Resources.client;

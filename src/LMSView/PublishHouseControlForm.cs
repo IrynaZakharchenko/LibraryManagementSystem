@@ -38,6 +38,7 @@ namespace LMSView
          {
             MessageBox.Show(Properties.Resources.operationNOK, Properties.Resources.failed,
             MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+				Activate();
          }
       }
 
@@ -54,14 +55,26 @@ namespace LMSView
          if (NViewHelper.FormViewMode.Edit == viewModeForm)
          {
             publishHouseInformationRegister.Delete(publishHouseInformation);
-         }
-         
-      }
+				
+				MessageBox.Show(Properties.Resources.successfull, Properties.Resources.delete,
+					MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+			}
+			else
+			{
+				MessageBox.Show(Properties.Resources.failed, Properties.Resources.delete,
+					MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+			}
+			Activate();
+		}
 
       private void ButtonSave_Click(object sender, EventArgs e)
       {
          publishHouseInformationRegister.Add(PackagePublishHouse(new PublishHouseInformation()));
-      }
+	
+			MessageBox.Show(Properties.Resources.successfull, Properties.Resources.add,
+				MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+			Close();
+		}
 
       private void PublishHouseControlPanel_Paint(object sender, PaintEventArgs e)
       {

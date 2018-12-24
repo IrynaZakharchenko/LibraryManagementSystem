@@ -1,5 +1,4 @@
-﻿using System.Resources;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using LMSController;
 
 namespace LMSView

@@ -390,4 +390,13 @@
   <data name="dateGiveBook" xml:space="preserve">
     <value>Give book date</value>
   </data>
+  <data name="bookDeleteFailed" xml:space="preserve">
+    <value>Book is not save yet</value>
+  </data>
+  <data name="LibrarianBookWindow" xml:space="preserve">
+    <value>Rent book for user</value>
+  </data>
+  <data name="librarianClientWindow" xml:space="preserve">
+    <value>View client books</value>
+  </data>
 </root>

@@ -124,6 +124,15 @@ namespace LMSView.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Book is not save yet.
+        /// </summary>
+        internal static string bookDeleteFailed {
+            get {
+                return ResourceManager.GetString("bookDeleteFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add new book examples.
         /// </summary>
         internal static string bookLibExample {
@@ -435,6 +444,24 @@ namespace LMSView.Properties {
         internal static string librarian {
             get {
                 return ResourceManager.GetString("librarian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rent book for user.
+        /// </summary>
+        internal static string LibrarianBookWindow {
+            get {
+                return ResourceManager.GetString("LibrarianBookWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View client books.
+        /// </summary>
+        internal static string librarianClientWindow {
+            get {
+                return ResourceManager.GetString("librarianClientWindow", resourceCulture);
             }
         }
         

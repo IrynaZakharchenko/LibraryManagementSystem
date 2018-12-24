@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LMSController;
 
@@ -36,7 +29,7 @@ namespace LMSView
                   {
                      accountForm.ShowDialog();
                   }
-               }
+					}
                else
                {
                   DialogResult result = MessageBox.Show(search + Properties.Resources.userSearchFailed, Properties.Resources.failed,
@@ -46,16 +39,17 @@ namespace LMSView
                      using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Create, userInformationRegister))
                      {
                         accountForm.ShowDialog();
+                        accountForm.Activate();
                      }
                   }
-               }
-               Activate();
-            }
+					}
+				}
             else
             {
                MessageBox.Show(Properties.Resources.userSearchEmpty, Properties.Resources.failed,
                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
             }
+            Activate();
          }
          catch (InvalidOperationException)
          {
@@ -69,8 +63,8 @@ namespace LMSView
          using (UserInformationControlForm accountForm = new UserInformationControlForm(NViewHelper.FormViewMode.Create, userInformationRegister))
          {
             accountForm.ShowDialog();
-            Activate();
          }
+         Activate();
       }
 
       private void UserInfoSearchForm_Load(object sender, EventArgs e)

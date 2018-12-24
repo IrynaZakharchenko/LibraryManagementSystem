@@ -71,11 +71,13 @@ namespace LMSView
       {
          currentClient.LibraryTicketNumberCode = Convert.ToInt32(textBoxLibTicketNum.Text, CultureInfo.CurrentCulture);
 
-         PersonalInformation personInfo = new PersonalInformation()
-         {
-            FullName = textBoxName.Text,
-            Birthday = dateTimePickerBirth.Value,
-            Phone = Convert.ToDecimal(textBoxPhone.Text, CultureInfo.CurrentCulture)
+			PersonalInformation personInfo = new PersonalInformation()
+			{
+				FullName = textBoxName.Text,
+				Birthday = dateTimePickerBirth.Value,
+				Phone = Convert.ToDecimal(textBoxPhone.Text, CultureInfo.CurrentCulture),
+				Address = textBoxAddress.Text,
+				
          };
          currentClient.PersonalInformation = personInfo;
 
@@ -95,6 +97,7 @@ namespace LMSView
          {
             MessageBox.Show(Properties.Resources.failed, Properties.Resources.delete,
                             MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification);
+				Activate();
          }
 
       }
